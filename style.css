@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: #141D2F;
     display: flex;
@@ -12,7 +16,7 @@ body {
 }
 
 main {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     width: 100%;
 }
 
@@ -36,11 +40,24 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('./assets/img/shadows-hero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.landing-section__svg {
+.landing-section-header {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 109px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-section-header img {
+    height: 35px;
 }
 
 .landing-section-content {
@@ -91,5 +108,14 @@ h1 {
 }
 
 .landing-section-content-main-btn {
-
+    cursor: pointer;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 15px 30px;
+    background-color: #70E61C;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;
 }
