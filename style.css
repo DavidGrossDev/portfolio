@@ -7,12 +7,23 @@ a {
     text-decoration: none;
 }
 
-body {
-    background-color: #141D2F;
+body,
+.landing-section-header,
+.landing-section-header-menu,
+.landing-section-header-links,
+.landing-section-content,
+.landing-section-header-btns,
+.landing-section-footer-links,
+.landing-section-scr-dwn {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+
+body {
+    background-color: #141D2F;
+    flex-direction: column;
 }
 
 main {
@@ -43,6 +54,7 @@ h1 {
     background-image: url('./assets/img/shadows-hero.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .landing-section-header {
@@ -51,20 +63,48 @@ h1 {
     right: 0;
     left: 0;
     height: 109px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 37px 100px;
 }
 
 .landing-section-header img {
     height: 35px;
 }
 
+.landing-section-header-menu {
+    gap: 92px;
+}
+
+.landing-section-header-menu a,
+.landing-section-header-btns>button {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.landing-section-header-links {
+    gap: 29px;
+}
+
+.landing-section-header-btns {
+    gap: 14px;
+}
+
+.landing-section-header-btns>button {
+    cursor: pointer;
+    border: 1px solid #70E61C;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 5px 8px;
+}
+
+.landing-section-header-btns>button.active {
+    background-color: #70E61C;
+    font-weight: 700;
+}
+
 .landing-section-content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     gap: 72px;
 }
 
@@ -83,7 +123,6 @@ h1 {
     height: 108px;
     width: 200px;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -118,4 +157,33 @@ h1 {
     font-weight: 400;
     font-size: 23px;
     color: #FFFFFF;
+}
+
+.landing-section-scr-dwn {
+    position: absolute;
+    top: 799px;
+    right: 57px;
+    gap: 3px;
+    transform: rotateZ(90deg);
+}
+
+.landing-section-scr-dwn p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;  
+}
+
+.landing-section-scr-dwn svg {
+    transform: rotateZ(-90deg);
+}
+
+.landing-section-footer {
+    position: absolute;
+    top: 867px;
+    left: 0;
+}
+
+.landing-section-footer-links {
+    gap: 42px;
 }
