@@ -193,7 +193,7 @@ h1 {
 }
 
 .about-section {
-    height: 879px;
+    /* height: 1200px; 1200 */
     background-image: url('./assets/img/about-bckgrnd.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -205,10 +205,37 @@ h1 {
     width: 50%;
     font-family: 'Poppins';
     color: #FFFFFF;
-    flex-direction: column;  
+    flex-direction: column; 
+    gap: 35px; 
 }
 
 .about-section-left>section>h2 {
     font-weight: 700;
     font-size: 90px; 
+}
+
+.about-me-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.about-me-description-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.about-me-description-point {
+    display: flex;
+    gap: 16px;
+}
+
+.about-me-description-point>svg {
+    min-width: 48px;
+    min-height: 48px;
 }
