@@ -175,7 +175,7 @@ h1 {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 23px;
-    color: #FFFFFF;  
+    color: #FFFFFF;
 }
 
 .landing-section-scr-dwn svg {
@@ -205,13 +205,15 @@ h1 {
     width: 50%;
     font-family: 'Poppins';
     color: #FFFFFF;
-    flex-direction: column; 
-    gap: 35px; 
+    flex-direction: column;
+    gap: 35px;
 }
 
-.about-section-left>section>h2 {
+h2 {
+    font-family: 'Poppins';
     font-weight: 700;
-    font-size: 90px; 
+    font-size: 90px;
+    color: #FFFFFF;
 }
 
 .about-me-description {
@@ -238,4 +240,79 @@ h1 {
 .about-me-description-point>svg {
     min-width: 48px;
     min-height: 48px;
+}
+
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills-section-left {
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 0 0 0 100px;
+    max-width: 664px;
+    height: 662px;
+}
+
+.skills-section-left svg {
+    min-height: 60px;
+}
+
+.skills-section-left p {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 80px;
+}
+
+.skills-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    width: 88px;
+    height: 101px;
+    text-align: center;
+}
+
+.continually-learnig {
+    width: 88px;
+    height: 119px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 12px;
+    gap: 10px;
+}
+
+.skills-section-right {
+    width: 50%;
+    position: relative;
+}
+
+.skills-section-headline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
 }
