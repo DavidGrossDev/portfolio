@@ -240,6 +240,13 @@ h2 {
 .about-me-description-point>svg {
     min-width: 48px;
     min-height: 48px;
+    transition: scale 100ms ease-out;
+}
+
+.about-me-description-location-svg:hover,
+.about-me-description-passion-svg:hover,
+.about-me-description-approach-svg:hover {
+    scale: 1.5;
 }
 
 .skills-section {
@@ -286,8 +293,15 @@ h2 {
     gap: 10px;
     padding-top: 10px;
     width: 88px;
-    height: 101px;
+    min-height: 101px;
+    max-height: 101px;
     text-align: center;
+    /* transition: padding-top 100ms ease-in-out; */
+    
+}
+
+.skills-card:hover {
+    animation: paddingBounce 600ms;
 }
 
 .continually-learnig {
