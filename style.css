@@ -192,6 +192,14 @@ h1 {
     gap: 42px;
 }
 
+.landing-section-footer-links a {
+    transition: scale 100ms ease-out;
+}
+
+.landing-section-footer-links a:hover {
+    scale: 1.5;
+}
+
 .about-section {
     /* height: 1200px; 1200 */
     background-image: url('./assets/img/about-bckgrnd.png');
@@ -243,9 +251,7 @@ h2 {
     transition: scale 100ms ease-out;
 }
 
-.about-me-description-location-svg:hover,
-.about-me-description-passion-svg:hover,
-.about-me-description-approach-svg:hover {
+.about-me-description-point>svg:hover {
     scale: 1.5;
 }
 
@@ -256,13 +262,11 @@ h2 {
 }
 
 .skills-section-left {
-    /* width: 50%; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 80px;
-    padding: 0 0 0 100px;
-    max-width: 664px;
+    padding: 0 100px;
     height: 662px;
 }
 
@@ -317,16 +321,48 @@ h2 {
 }
 
 .skills-section-right {
-    width: 50%;
+    width: 560px;
     position: relative;
+    height: 492px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.skills-section-right p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-right: 89px;
 }
 
 .skills-section-headline {
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    right: 0;
+    right: 0; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+}
+
+.get-in-touch-btn {
+    cursor: pointer;
+    width: 200px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: #70E61C;
+}
+
+.portfolio-section-header {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 32px;
 }
