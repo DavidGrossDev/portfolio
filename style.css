@@ -197,15 +197,18 @@ h1 {
 }
 
 .landing-section-footer-links a:hover {
-    scale: 1.5;
+    scale: 1.3;
+}
+
+.sharedbckgrd {
+    background-image: url('./assets/img/about-bckgrnd.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 760px;
 }
 
 .about-section {
     /* height: 1200px; 1200 */
-    background-image: url('./assets/img/about-bckgrnd.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     padding: 100px;
 }
 
@@ -258,7 +261,7 @@ h2 {
 .skills-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
 }
 
 .skills-section-left {
@@ -360,9 +363,122 @@ h2 {
     background-color: #70E61C;
 }
 
+.portfolio-section {
+    padding: 150px 0;
+}
+
 .portfolio-section-header {
-    display: flex;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 40px;
+}
+
+.portfolio-section-header p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 473px;
+    padding-left: 100px;
+}
+
+.portfolio-section-header-headline {
+     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
+}
+
+.portfolio-projects-section {
+    /* width: 1238px; */
+    /* height: 1238px; */
+    padding: 40px 100px 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.portfolio-projects-section>section {
+    width: 603px;
+    height: 603px;
+    border: 1px solid #70E61C;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.porfolio-project-el-pollo-loco {
+    background-image: url('./assets/img/pollo-loco.png');
+}
+
+.porfolio-project-join {
+    background-image: url('./assets/img/join.png');
+}
+
+.porfolio-project-da-bubble {
+    background-image: url('./assets/img/dabubble.png');
+}
+
+.porfolio-project-pokedex {
+    background-image: url('./assets/img/pokedex.png');
+}
+
+.comments-section {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.comments-section-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+}
+
+.comment-container {
+    position: relative;
+    width: 852px;
+    height: 272px;
+    border: 4px solid #9747FF;
+    border-radius: 32px;
+    padding: 48px 96px;
+}
+
+.comment-container>svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-72%, -50%);
+}
+
+.comment-container p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.comment-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-circle {
+    width: 272px;
+    height: 272px;
+    border: 4px solid #70E61C;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img-circle>img {
+    width: 658px;
+    transform: rotateZ(90deg) translate(68px, 202px);
 }
