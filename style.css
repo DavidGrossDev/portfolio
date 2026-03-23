@@ -5,6 +5,7 @@
 
 a {
     text-decoration: none;
+    color: #FFFFFF;
 }
 
 body,
@@ -392,12 +393,11 @@ h2 {
 }
 
 .portfolio-projects-section {
-    /* width: 1238px; */
-    /* height: 1238px; */
+    /* max-height: 1238px; */
     padding: 40px 100px 0 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 18px;
 }
@@ -555,7 +555,7 @@ h3 {
 .contact-section-main {
     display: flex;
     justify-content: space-between;
-
+    padding-top: 40px;
 }
 
 .contact-section-main-left-header {
@@ -569,6 +569,8 @@ h3 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-right: 100px;
+    
 }
 
 form {
@@ -576,4 +578,97 @@ form {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 32px;
+    width: 617px;
+    height: 504px;
+}
+
+form>input,
+form>textarea {
+    width: 100%;
+    border: 1px solid #9747FF;
+    border-radius: 10px;
+    padding: 15px 25px;
+    background-color: #141D2F;
+}
+
+form>input {
+    height: 50px;
+}
+
+form>textarea {
+    height: 202px;
+}
+
+form>button {
+    border-width: 0;
+    border-radius: 10px;
+    padding: 15px 30px;
+    background-color: #B6B6B6;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
+.checkbox {
+    cursor: pointer;
+    border-width: 0;
+    background-color: #141D2F;
+}
+
+.privacy-policy-checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.privacy-policy-link {
+    color: #9747FF;
+}
+
+form ::placeholder {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.main-footer {
+    height: 291px;
+    border-top: 4px solid #70E61C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.footer-name-ln-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-name-ln-container img {
+    width: 216px;
+}
+
+.footer-name-ln-container a:last-child {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.main-footer p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;
 }
