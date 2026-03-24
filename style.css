@@ -643,21 +643,24 @@ form ::placeholder {
     height: 291px;
     border-top: 4px solid #70E61C;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     padding: 0 100px;
 }
 
-.footer-name-ln-container {
+.footer-section {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer-name-ln-container img {
+.footer-name-img {
     width: 216px;
 }
 
-.footer-name-ln-container a:last-child {
+.legal-notice-link {
     height: 32px;
     display: flex;
     align-items: center;
