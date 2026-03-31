@@ -8,6 +8,10 @@ a {
     color: #FFFFFF;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body,
 .landing-section-header,
 .landing-section-header-menu,
@@ -64,7 +68,13 @@ h1 {
     gap: 92px;
 }
 
-.landing-section-header-menu a,
+.landing-section-header-menu a {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
 .landing-section-header-btns>button {
     font-family: 'Poppins';
     font-weight: 400;
@@ -78,6 +88,10 @@ h1 {
 
 .landing-section-header-btns {
     gap: 14px;
+}
+
+.landing-section-header-menu a:hover {
+    color: #70E61C;
 }
 
 .landing-section-header-btns>button {
@@ -174,11 +188,16 @@ h1 {
     transition: all 0.15s ease-in;
 }
 
-.landing-section-content-main-btn:hover {
-    /* width: 183px;
-    height: 68px; */
+.landing-section-content-main-btn:hover,
+.get-in-touch-btn:hover {
     padding: 20px 40px;
     background-color: #9747FF;
+}
+
+.landing-section-content-main-btn:active,
+.get-in-touch-btn:active {
+    color: #000000;
+    background-color: #FFFFFF;
 }
 
 .landing-section-scr-dwn {
@@ -321,8 +340,7 @@ h2 {
     min-height: 101px;
     max-height: 101px;
     text-align: center;
-    /* transition: padding-top 100ms ease-in-out; */
-    
+    /* transition: padding-top 100ms ease-in-out; */ 
 }
 
 .skills-card:hover {
@@ -349,12 +367,44 @@ h2 {
     width: 188px;
     height: 129px;
     background-color: #FFFFFF;
+    
 }
 
-.continually-learning-hover>p {
+.continually-learning-hover-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.continually-learning-hover-div>p {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 16px;
+    color: #000000;
+}
+
+.interest-to-learn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interest-to-learn>div {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.interest-to-learn>div>svg {
+    min-height: 32px;
+}
+
+.interest-to-learn p {
     color: #000000;
 }
 
@@ -387,11 +437,9 @@ h2 {
 
 .get-in-touch-btn-container {
     height: 68px;
-    min-width: 200px;
-    max-width: 220px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .get-in-touch-btn {
@@ -406,13 +454,7 @@ h2 {
     background-color: #70E61C;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
-    transition: all 0.15s ease-in;
-}
-
-.get-in-touch-btn:hover {
-    width: 220px;
-    padding: 20px 40px;
-    background-color: #9747FF;
+    transition: padding 0.15s ease-in;
 }
 
 .portfolio-section {
@@ -581,7 +623,7 @@ h2 {
 }
 
 .contact-section {
-    padding: 100px 0;
+    padding: 100px 0 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -607,6 +649,21 @@ h3 {
     display: flex;
     justify-content: space-between;
     padding-top: 40px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.contact-section-main-left {
+    width: 573px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-section-main-left p {
+    padding-left: 100px;
 }
 
 .contact-section-main-left-header {
@@ -616,10 +673,16 @@ h3 {
     gap: 32px;
 }
 
+.contact-me-msg {
+    font-weight: 700;
+}
+
 .contact-section-main-right {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
     padding-right: 100px;
     
 }
@@ -720,6 +783,20 @@ form ::placeholder {
     color: #FFFFFF;
 }
 
+.to-landing-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to-landing-section:hover .to-landing-section-svg path{
+    fill: #70E61C;
+}
+
+.to-landing-section:hover .to-landing-section-svg rect {
+    stroke: #70E61C;
+}
+
 .main-footer {
     height: 291px;
     border-top: 4px solid #70E61C;
@@ -741,13 +818,30 @@ form ::placeholder {
     width: 216px;
 }
 
-.legal-notice-link {
+.legal-notice-link-container {
     height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 3px; */
+}
+
+.legal-notice-link-container:hover .legal-notice-link-highlight {
+    opacity: 1;
+} 
+
+.legal-notice-link {
     display: flex;
     align-items: center;
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 16px;
+}
+
+.legal-notice-link-highlight {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 }
 
 .main-footer p {
