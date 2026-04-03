@@ -86,12 +86,28 @@ h1 {
     gap: 29px;
 }
 
-.landing-section-header-btns {
-    gap: 14px;
+.landing-section-header-links-highlight-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4px;
 }
 
-.landing-section-header-menu a:hover {
+.landing-section-header-links-highlight-div:hover a{
     color: #70E61C;
+}
+
+.landing-section-header-links-highlight-div:active .landing-section-header-link-highlight {
+    opacity: 1;
+}
+
+.landing-section-header-link-highlight {
+    opacity: 0;
+}
+
+.landing-section-header-btns {
+    gap: 14px;
 }
 
 .landing-section-header-btns>button {
@@ -100,6 +116,17 @@ h1 {
     border-radius: 10px;
     background-color: transparent;
     padding: 5px 8px;
+}
+
+.landing-section-header-btns>button:hover:not(.active) {
+    background-color: #9747FF;
+    border-color: #9747FF;
+}
+
+.landing-section-header-btns>button:active:not(.active) {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #9747FF;
 }
 
 .landing-section-header-btns>button.active {
@@ -245,8 +272,7 @@ h1 {
 }
 
 .about-section {
-    /* height: 1200px; 1200 */
-    padding: 100px;
+    padding: 100px 100px 0 100px;
 }
 
 .about-section-left {
@@ -299,6 +325,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center; 
+    padding-top: 100px;
 }
 
 .skills-section-left {
@@ -360,14 +387,25 @@ h2 {
     gap: 10px;
 }
 
+.continually-learnig:hover >svg path {
+    fill: #FFFFFF;
+}
+
+.continually-learnig:hover .continually-learning-hover {
+    display: flex;
+}
+
 .continually-learning-hover {
     position: absolute;
-    top: -100px;
-    left: 0;
+    top: -120px;
+    left: -8px;
     width: 188px;
     height: 129px;
     background-color: #FFFFFF;
-    
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .continually-learning-hover-div {
@@ -376,6 +414,18 @@ h2 {
     justify-content: space-between;
     align-items: center;
     gap: 8px;
+}
+
+.continually-learning-hover-div::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #FFFFFF;
 }
 
 .continually-learning-hover-div>p {
@@ -389,6 +439,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 16px;
 }
 
 .interest-to-learn>div {
@@ -406,6 +457,7 @@ h2 {
 
 .interest-to-learn p {
     color: #000000;
+    font-size: 12px;
 }
 
 .skills-section-right {
@@ -458,7 +510,7 @@ h2 {
 }
 
 .portfolio-section {
-    padding: 150px 0;
+    padding: 100px 0;
 }
 
 .portfolio-section-header {
@@ -502,7 +554,17 @@ h2 {
     border-radius: 15px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 150%;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-projects-section>section:hover {
+    background-size: 250%;
+    background-position: bottom;
+}
+
+.portfolio-projects-section>section:hover .project-hover-info {
+    opacity: 1;
 }
 
 .porfolio-project-el-pollo-loco {
@@ -519,6 +581,92 @@ h2 {
 
 .porfolio-project-pokedex {
     background-image: url('./assets/img/pokedex.png');
+}
+
+.project-hover-info {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 23px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.project-hover-info-top {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-hover-info-top>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 86px;
+}
+
+.project-hover-info-top>div>a {
+    border-radius: 10px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-to-github {
+    border: 1px solid #1CDAE6;
+}
+
+.link-to-github:hover {
+    background-color: #1CDAE6;
+}
+
+.link-to-github:active {
+    background-color: #FFFFFF;
+    color: #9747FF;
+}
+
+.link-to-live-test {
+    background-color: #9747FF;
+}
+
+.link-to-live-test:hover {
+    background-color: #70E61C;
+}
+
+.link-to-live-test:active {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.project-hover-info-bottom {
+    height: 350px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 30px 30px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 27px;
+    padding: 66px 45px;
+    text-align: center;
+}
+
+.project-hover-info-bottom h3 {
+    color: #9747FF;
+}
+
+.used {
+    color: #70E61C;
 }
 
 .comments-section {
