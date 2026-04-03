@@ -16,13 +16,38 @@
             <a href=""><img src="./assets/img/david.png" alt="my Name"></a>
             <section class="landing-section-header-menu">
                 <div class="landing-section-header-links">
-                    <a href="">About me</a>
-                    <a href="">Skills</a>
-                    <a href="">Portfolio</a>
+                    <div class="landing-section-header-links-highlight-div">
+                        <a href="#about_me">About me</a>
+                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
+                            fill="none">
+                            <path
+                                d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
+                                fill="#9747FF" />
+                        </svg>
+                    </div>
+                    <div class="landing-section-header-links-highlight-div">
+                        <a href="#skills">Skills</a>
+                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
+                            fill="none">
+                            <path
+                                d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
+                                fill="#9747FF" />
+                        </svg>
+                    </div>
+                    <div class="landing-section-header-links-highlight-div">
+                        <a href="#portfolio">Portfolio</a>
+                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
+                            fill="none">
+                            <path
+                                d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
+                                fill="#9747FF" />
+                        </svg>
+                    </div>
+
                 </div>
                 <div class="landing-section-header-btns">
                     <button>DE</button>
-                    <button class="active">EN</button>
+                    <button class="active">EN</button> <!--class="active"-->
                 </div>
             </section>
         </header>
@@ -61,7 +86,7 @@
             </footer>
         </section>
         <div class="sharedbckgrd">
-            <section class="about-section">
+            <section class="about-section" id="about_me">
                 <div class="about-section-left">
                     <section class="about-me-description">
                         <h2>About me</h2>
@@ -134,7 +159,7 @@
                 <div class="about-section-right">
                 </div>
             </section>
-            <section class="skills-section">
+            <section class="skills-section" id="skills">
                 <section class="skills-section-left">
                     <section class="skills-list">
                         <div class="skills-card">
@@ -325,7 +350,7 @@
                 </section>
             </section>
         </div>
-        <section class="portfolio-section">
+        <section class="portfolio-section" id="portfolio">
             <div class="portfolio-section-header">
                 <div class="portfolio-section-header-headline">
                     <svg width="70" height="4" viewBox="0 0 70 4" fill="none">
@@ -337,16 +362,64 @@
             </div>
             <div class="portfolio-projects-section">
                 <section class="porfolio-project-el-pollo-loco">
-
+                    <div class="project-hover-info">
+                        <section class="project-hover-info-top">
+                            <div>
+                                <a class="link-to-github" href="">Github</a>
+                                <a class="link-to-live-test" href="">Live test</a>
+                            </div>
+                        </section>
+                        <section class="project-hover-info-bottom">
+                            <h3>El Pollo Loco</h3>
+                            <p>Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.</p>
+                            <p class="used">JavaScript | HTML | CSS</p>
+                        </section>
+                    </div>
                 </section>
                 <section class="porfolio-project-join">
-
+                    <div class="project-hover-info">
+                        <section class="project-hover-info-top">
+                            <div>
+                                <a class="link-to-github" href="">Github</a>
+                                <a class="link-to-live-test" href="">Live test</a>
+                            </div>
+                        </section>
+                        <section class="project-hover-info-bottom">
+                            <h3>Join</h3>
+                            <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.</p>
+                            <p class="used">JavaScript | HTML | CSS | Firebase</p>
+                        </section>
+                    </div>
                 </section>
-                <section class="porfolio-project-da-bubble">
-
-                </section>
+                <!-- <section class="porfolio-project-da-bubble">
+                    <div class="project-hover-info">
+                        <section class="project-hover-info-top">
+                            <div>
+                                <a class="link-to-github" href="">Github</a>
+                                <a class="link-to-live-test" href="">Live test</a>
+                            </div>
+                        </section>
+                        <section class="project-hover-info-bottom">
+                            <h3>DABubble</h3>
+                            <p>This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.</p>
+                            <p class="used">Angular | TypeScript | Firebase</p>
+                        </section>
+                    </div>
+                </section> -->
                 <section class="porfolio-project-pokedex">
-
+                    <div class="project-hover-info">
+                        <section class="project-hover-info-top">
+                            <div>
+                                <a class="link-to-github" href="">Github</a>
+                                <a class="link-to-live-test" href="">Live test</a>
+                            </div>
+                        </section>
+                        <section class="project-hover-info-bottom">
+                            <h3>Pokédex</h3>
+                            <p>Based on the PokéAPI a simple library that provides and catalogues pokemon information.</p>
+                            <p class="used">JavaScript | HTML | CSS | Api</p>
+                        </section>
+                    </div>
                 </section>
             </div>
         </section>
