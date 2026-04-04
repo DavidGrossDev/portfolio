@@ -33,9 +33,10 @@ body {
     flex-direction: column;
 }
 
-main {
-    /* max-width: 1440px; */
+.document-main {
+    max-width: 1920px;
     width: 100%;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -72,7 +73,6 @@ h1 {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 23px;
-    color: #FFFFFF;
 }
 
 .landing-section-header-btns>button {
@@ -94,12 +94,8 @@ h1 {
     gap: 4px;
 }
 
-.landing-section-header-links-highlight-div:hover a{
+.landing-section-header-links-highlight-div a:hover{
     color: #70E61C;
-}
-
-.landing-section-header-links-highlight-div:active .landing-section-header-link-highlight {
-    opacity: 1;
 }
 
 .landing-section-header-link-highlight {
@@ -343,7 +339,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .skills-section-left {
@@ -746,7 +742,7 @@ h2 {
     height: 272px;
     border: 4px solid #9747FF;
     border-radius: 32px;
-    padding: 48px 96px;
+    padding: 24px 40px; /* 48px 96px*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -798,7 +794,18 @@ h2 {
 
 .img-circle>img {
     width: 658px;
+}
+
+.schuster-img {
     transform: rotateZ(90deg) translate(68px, 202px);
+}
+
+.eichinger-img {
+    transform: rotateZ(0deg) translate(-200px, -40px);
+}
+
+.nuber-img {
+    transform: rotateZ(90deg) translate(36px, 191px);
 }
 
 .switch-comment-btns {
@@ -820,6 +827,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.comment-mark-highlight circle{
+    fill:#70E61C;
 }
 
 .switch-comment-btns>button:hover {
@@ -851,6 +862,7 @@ h3 {
 }
 
 .contact-section-main {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding-top: 40px;
@@ -1062,6 +1074,14 @@ form ::placeholder {
     font-weight: 400;
     font-size: 23px;
     color: #FFFFFF;
+}
+
+.clr-grn {
+    color: #70E61C;
+}
+
+.header-link-svg-active {
+    opacity: 1;
 }
 
 .d_none {
