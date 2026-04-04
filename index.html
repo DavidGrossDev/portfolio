@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <main>
+<body onload="init()">
+    <main class="document-main">
         <header class="landing-section-header">
-            <a href=""><img src="./assets/img/david.png" alt="my Name"></a>
+            <a href="#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
             <section class="landing-section-header-menu">
                 <div class="landing-section-header-links">
                     <div class="landing-section-header-links-highlight-div">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="landing-section-header-btns">
                     <button>DE</button>
-                    <button class="active">EN</button> <!--class="active"-->
+                    <button class="active">EN</button>
                 </div>
             </section>
         </header>
@@ -442,6 +442,21 @@
                             </section>
                         </div>
                     </div>
+                    <svg class="project-bckgrd-highlight" width="553" height="305" viewBox="0 0 553 305" fill="none">
+                        <g filter="url(#filter0_f_123_226)">
+                            <path
+                                d="M3.5 48.8719C11.5 42.4719 115.833 72.8719 167 88.8719L504.5 134.872L115.5 324.372L-82 302.372C-56.8333 220.539 -4.5 55.2719 3.5 48.8719Z"
+                                fill="black" fill-opacity="0.5" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_f_123_226" x="-130" y="0" width="682.5" height="372.372"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feGaussianBlur stdDeviation="24" result="effect1_foregroundBlur_123_226" />
+                            </filter>
+                        </defs>
+                    </svg>
                 </section>
                 <section>
                     <div class="porfolio-project-da-bubble">
@@ -544,36 +559,11 @@
             </svg>
         </section>
         <section class="comments-section">
-            <div class="comments-section-main">
-                <section class="comment-container">
-                    <svg width="97" height="69" viewBox="0 0 97 69" fill="none">
-                        <path d="M30.6 68.1H0L28.8 0H48.3L30.6 68.1ZM79.2 68.1H48.6L77.4 0H96.9L79.2 68.1Z"
-                            fill="#70E61C" />
-                    </svg>
-                    <p>
-                        David really kept the team together with his great organization and clear communication. We
-                        wouldn't have got this far without his commitment.
-                    </p>
-                    <div class="comment-footer">
-                        <svg width="405" height="2" viewBox="0 0 405 2" fill="none">
-                            <path d="M404.5 1H0" stroke="#1CDAE6" stroke-width="2" />
-                        </svg>
-                        <p>V. Schuster - Team Partner</p>
-                    </div>
-                </section>
-                <section class="comment-img-container">
-                    <div class="img-circle">
-                        <img src="./assets/img/v-schuster.png" alt="">
-                    </div>
-                    <svg width="102" height="4" viewBox="0 0 102 4" fill="none">
-                        <path
-                            d="M2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4V0ZM102 4H104V0H102V4ZM2 4H102V0H2V4Z"
-                            fill="#70E61C" />
-                    </svg>
-                </section>
+            <div id="comments_area" class="comments-section-main">
+                
             </div>
             <div class="switch-comment-btns">
-                <button>
+                <button onclick="reduceCommentCounter()">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <mask id="mask0_183473_355" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
                             width="32" height="32">
@@ -586,16 +576,16 @@
                         </g>
                     </svg>
                 </button>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                    <circle cx="4" cy="4" r="4" fill="#1CDAE6" />
+                <svg class="comment-mark" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <circle cx="4" cy="4" r="4" fill="#9747FF" />
                 </svg>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                    <circle cx="4" cy="4" r="4" fill="#70E61C" />
+                <svg class="comment-mark" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <circle cx="4" cy="4" r="4" fill="#9747FF" />
                 </svg>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                    <circle cx="4" cy="4" r="4" fill="#70E61C" />
+                <svg class="comment-mark" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <circle cx="4" cy="4" r="4" fill="#9747FF" />
                 </svg>
-                <button>
+                <button onclick="increaseCommentCounter()">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <mask id="mask0_183473_365" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
                             width="32" height="32">
@@ -707,7 +697,7 @@
         </section>
         <footer class="main-footer">
             <section class="footer-section">
-                <a href=""><img class="footer-name-img" src="./assets/img/david.png" alt=""></a>
+                <a href="#landing_section"><img class="footer-name-img" src="./assets/img/david.png" alt=""></a>
                 <p>© David Groß 2026</p>
                 <div>
                     <section class="landing-section-footer-links">
@@ -718,7 +708,7 @@
                 </div>
             </section>
             <div class="legal-notice-link-container">
-                <a class="legal-notice-link" href="">Legal Notice</a>
+                <a class="legal-notice-link" href="./legal_notice.html">Legal Notice</a>
                 <svg class="legal-notice-link-highlight" width="58" height="2" viewBox="0 0 58 2" fill="none">
                     <path
                         d="M1 0H0V2H1V0ZM56.5 2C57.0523 2 57.5 1.55228 57.5 1C57.5 0.447715 57.0523 0 56.5 0V2ZM1 2H56.5V0H1V2Z"
@@ -728,6 +718,9 @@
 
         </footer>
     </main>
+
+    <script src="./scripts/team_comments.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
