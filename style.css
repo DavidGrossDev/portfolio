@@ -51,7 +51,7 @@ h1 {
 
 .landing-section-header {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     right: 0;
     left: 0;
@@ -321,6 +321,24 @@ h2 {
     scale: 1.5;
 }
 
+.about-section-right {
+    width: 593px;
+    height: 647px;
+    border: 1px dotted white;
+    position: relative;
+}
+
+.me-img-highlight {
+    position: absolute;
+    top: 40px;
+    left: -16%;
+    z-index: -1;
+}
+
+.me-img {
+
+}
+
 .skills-section {
     display: flex;
     justify-content: space-between;
@@ -511,6 +529,7 @@ h2 {
 
 .portfolio-section {
     padding: 100px 0;
+    position: relative;
 }
 
 .portfolio-section-header {
@@ -531,14 +550,13 @@ h2 {
 }
 
 .portfolio-section-header-headline {
-     display: flex;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
 }
 
 .portfolio-projects-section {
-    /* max-height: 1238px; */
     padding: 40px 100px 0 100px;
     display: flex;
     flex-wrap: wrap;
@@ -552,10 +570,26 @@ h2 {
     height: 603px;
     border: 1px solid #70E61C;
     border-radius: 15px;
-    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    background-color: #141D2F;
+    position: relative;
+    z-index: 1;
+}
+
+.portfolio-projects-section>section>div {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-size: 150%;
     transition: all 0.3s ease-in-out;
+}
+
+.project-bckgrd-highlight {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .portfolio-projects-section>section:hover {
@@ -567,8 +601,16 @@ h2 {
     opacity: 1;
 }
 
+.portfolio-projects-section>section:hover .porfolio-project-el-pollo-loco,
+.portfolio-projects-section>section:hover .porfolio-project-join,
+.portfolio-projects-section>section:hover .porfolio-project-da-bubble,
+.portfolio-projects-section>section:hover .porfolio-project-pokedex {
+    background-size: 250%;
+    background-position: bottom;
+}
+
 .porfolio-project-el-pollo-loco {
-    background-image: url('./assets/img/pollo-loco.png');
+    background-image: url('./assets/img/pollo-loco.png'); 
 }
 
 .porfolio-project-join {
@@ -648,7 +690,7 @@ h2 {
 }
 
 .project-hover-info-bottom {
-    height: 350px;
+    height: 58%;
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 30px 30px 14px 14px;
@@ -667,6 +709,20 @@ h2 {
 
 .used {
     color: #70E61C;
+}
+
+.portfolio-right-highlight {
+    z-index: -1;
+    position: absolute;
+    top: -140px;
+    left: 66%;
+}
+
+.portfolio-left-highlight {
+    z-index: -1;
+    position: absolute;
+    bottom: -120px;
+    right: 80%;
 }
 
 .comments-section {
@@ -777,6 +833,7 @@ h2 {
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+    position: relative;
 }
 
 .contact-section-header {
@@ -945,6 +1002,13 @@ form ::placeholder {
     stroke: #70E61C;
 }
 
+.contact-section-highlight {
+    position: absolute;
+    z-index: -1;
+    top: -134px;
+    left: 60%;
+}
+
 .main-footer {
     height: 291px;
     border-top: 4px solid #70E61C;
@@ -953,6 +1017,7 @@ form ::placeholder {
     justify-content: center;
     align-items: flex-start;
     padding: 0 100px;
+    background-color: #141D2F;
 }
 
 .footer-section {
