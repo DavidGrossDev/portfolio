@@ -18,3 +18,53 @@
     color: #70E61C;
 }
 
+.legal-notice-main-content {
+    font-family: 'Open Sans';
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 100px 0;
+}
+
+.legal-notice-main-content ul {
+    padding-inline-start: 20px;
+}
+
+.legal-notice-main-content ul,
+.legal-notice-main-content p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.legal-notice-main-content span {
+    color: #9747FF;
+}
+
+.legal-notice-main-content>section {
+    max-width: 968px;
+    width: 100%;
+}
+
+.legal-notice-imprint {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.imprint-h2 {
+    font-weight: 700;
+    font-size: 33px;
+    color: #9747FF;
+}
+
+.legal-notice-h3 {
+    font-weight: 700;
+    font-size: 19px;
+    color: #9747FF;
+}
+
