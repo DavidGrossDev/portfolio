@@ -908,14 +908,23 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    gap: 32px;
+    align-items: flex-start;
+    gap: 5px;
     width: 617px;
     height: 504px;
 }
 
-form>input,
-form>textarea {
+form ::placeholder,
+input,
+textarea {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.inputfield,
+.form-textarea-container>textarea {
     width: 100%;
     border: 1px solid #9747FF;
     border-radius: 10px;
@@ -923,12 +932,52 @@ form>textarea {
     background-color: #141D2F;
 }
 
-form>input {
+.form-input-container,
+.form-textarea-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-input-container {
+    min-height: 77px;
+}
+
+.form-textarea-container {
+    position: relative;
+    min-height: 229px;
+}
+
+.form-input-container>label {
+    position: relative;
+    width: 100%;
+}
+
+.form-input-container>label>input {
     height: 50px;
 }
 
-form>textarea {
-    height: 202px;
+.form-textarea-container>textarea {
+    resize: none;
+    height: 202px;;
+}
+
+.form-input-container>label>svg,
+.form-textarea-container>svg {
+    position: absolute;
+    transform: translateY(-50%);
+    right: 25px;
+}
+
+.form-input-container>label>svg {
+    top: 50%; 
+}
+
+.form-textarea-container>svg {
+    top: 25px;
 }
 
 .send-message-btn {
@@ -991,13 +1040,6 @@ form>textarea {
 
 .privacy-policy-link {
     color: #9747FF;
-}
-
-form ::placeholder {
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 16px;
-    color: #FFFFFF;
 }
 
 .to-landing-section {
@@ -1074,6 +1116,14 @@ form ::placeholder {
     font-weight: 400;
     font-size: 23px;
     color: #FFFFFF;
+}
+
+.brd-rd {
+    border-color: #E61C40;
+}
+
+.brd-gr {
+    border-color: #70E61C;
 }
 
 .clr-grn {
