@@ -923,8 +923,14 @@ textarea {
     color: #FFFFFF;
 }
 
+.inputfield:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #1CDAE6;
+}
+
 .inputfield,
-.form-textarea-container>textarea {
+.form-textarea {
     width: 100%;
     border: 1px solid #9747FF;
     border-radius: 10px;
@@ -960,7 +966,7 @@ textarea {
     height: 50px;
 }
 
-.form-textarea-container>textarea {
+.form-textarea {
     resize: none;
     height: 202px;;
 }
@@ -1119,11 +1125,11 @@ textarea {
 }
 
 .brd-rd {
-    border-color: #E61C40;
+    border-color: #E61C40 !important;
 }
 
 .brd-gr {
-    border-color: #70E61C;
+    border-color: #70E61C !important;
 }
 
 .clr-grn {
