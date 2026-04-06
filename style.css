@@ -986,7 +986,17 @@ textarea {
     top: 25px;
 }
 
+.form-footer {
+    min-height: 122px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
 .send-message-btn {
+    cursor: pointer;
     max-width: 253px;
     height: 58px;
     border-width: 0;
@@ -1003,12 +1013,16 @@ textarea {
     align-items: center;
 }
 
+.send-message-btn-active {
+    background-color: #70E61C;
+}
+
 .alertmessage-container {
-    min-height: 122px;
+    min-height: 52px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
 }
 
@@ -1046,6 +1060,10 @@ textarea {
 
 .privacy-policy-link {
     color: #9747FF;
+}
+
+.privacy-policy-link:hover {
+    text-decoration: underline 1px solid #9747FF;
 }
 
 .to-landing-section {
