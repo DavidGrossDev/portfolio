@@ -1,6 +1,18 @@
 const headerLinks = document.querySelectorAll('.landing-section-header-links-highlight-div a');
 const commentsAreaRef = document.getElementById('comments_area');
 const commentMarks = document.querySelectorAll('.comment-mark');
+
+const inputNameRef = document.getElementById('name');
+const inputNameFailSvgRef = document.getElementById('name_fail_svg');
+const inputNameSuccessSvgRef = document.getElementById('name_succes_svg');
+const inputNameAlertMessageRef = document.getElementById('name_alert_msg');
+
+const inputEmailRef = document.getElementById('email');
+const inputEmailFailSvgRef = document.getElementById('email_fail_svg');
+const inputEmailSuccessSvgRef = document.getElementById('email_succes_svg');
+const inputEmailAlertMessageRef = document.getElementById('email_alert_msg');
+
+const textareaMessageRef = document.getElementById('message');
 let commentCounter = 0;
 
 headerLinks.forEach(link => {
@@ -39,12 +51,12 @@ function init() {
                             fill="#70E61C" />
                     </svg>
                 </section>`;
-    addCommentMarkHighlight();            
+    addCommentMarkHighlight();
 }
 
 function reduceCommentCounter() {
     commentCounter--;
-    if(commentCounter < 0) {
+    if (commentCounter < 0) {
         commentCounter = 2;
     }
     removeCommentMarkHighlight();
@@ -53,7 +65,7 @@ function reduceCommentCounter() {
 
 function increaseCommentCounter() {
     commentCounter++;
-    if(commentCounter >= 3) {
+    if (commentCounter >= 3) {
         commentCounter = 0;
     }
     removeCommentMarkHighlight();
@@ -68,6 +80,81 @@ function addCommentMarkHighlight() {
     commentMarks[commentCounter].classList.add('comment-mark-highlight');
 }
 
+inputNameRef.addEventListener('focus', () => {
+    if(!inputNameRef.value) {
+        resetNameInputfield();
+    inputNameRef.classList.add('brd-gr');
+    }
+})
 
+inputNameRef.addEventListener('input', () => {
+    let value = inputNameRef.value.trim();
+    console.log(value);
+    
+    const onlyLetters = /^[A-Za-zÄÖÜäöüß ]+$/;
+    resetNameInputfield();
+    if ((value.length < 3 && value.length >= 0) || !onlyLetters.test(value)) {
+        markNameInputfieldRed();
+    } else {
+        resetNameInputfield();
+        markNameInputfieldGreen();
+    }
+});
 
+function resetNameInputfield() {
+    inputNameRef.classList.remove('brd-rd');
+    inputNameRef.classList.remove('brd-gr');
+    inputNameFailSvgRef.classList.add('d_none');
+    inputNameSuccessSvgRef.classList.add('d_none');
+    inputNameAlertMessageRef.classList.add('d_none');
+}
 
+function markNameInputfieldRed() {
+    inputNameRef.classList.add('brd-rd');
+    inputNameFailSvgRef.classList.remove('d_none');
+    inputNameAlertMessageRef.classList.remove('d_none');
+}
+
+function markNameInputfieldGreen() {
+    inputNameRef.classList.add('brd-gr');
+    inputNameSuccessSvgRef.classList.remove('d_none');
+}
+
+inputEmailRef.addEventListener('focus', () => {
+    if (!inputEmailRef.value) {
+        resetEmailInputfield();
+        inputEmailRef.classList.add('brd-gr');
+    }
+});
+
+inputEmailRef.addEventListener('input', () => {
+    let value = inputEmailRef.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    resetEmailInputfield();
+    if (!emailRegex.test(value)) {
+        markEmailInputfieldRed();
+    } else {
+        resetEmailInputfield();
+        markEmailInputfieldGreen();
+    }
+});
+
+function resetEmailInputfield() {
+    inputEmailRef.classList.remove('brd-rd');
+    inputEmailRef.classList.remove('brd-gr');
+    inputEmailFailSvgRef.classList.add('d_none');
+    inputEmailSuccessSvgRef.classList.add('d_none');
+    inputEmailAlertMessageRef.classList.add('d_none');
+}
+
+function markEmailInputfieldRed() {
+    inputEmailRef.classList.add('brd-rd');
+    inputEmailFailSvgRef.classList.remove('d_none');
+    inputEmailAlertMessageRef.classList.remove('d_none');
+}
+
+function markEmailInputfieldGreen() {
+    inputEmailRef.classList.add('brd-gr');
+    inputEmailSuccessSvgRef.classList.remove('d_none');
+}
