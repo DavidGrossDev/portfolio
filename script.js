@@ -4,15 +4,20 @@ const commentMarks = document.querySelectorAll('.comment-mark');
 
 const inputNameRef = document.getElementById('name');
 const inputNameFailSvgRef = document.getElementById('name_fail_svg');
-const inputNameSuccessSvgRef = document.getElementById('name_succes_svg');
+const inputNameSuccessSvgRef = document.getElementById('name_success_svg');
 const inputNameAlertMessageRef = document.getElementById('name_alert_msg');
 
 const inputEmailRef = document.getElementById('email');
 const inputEmailFailSvgRef = document.getElementById('email_fail_svg');
-const inputEmailSuccessSvgRef = document.getElementById('email_succes_svg');
+const inputEmailSuccessSvgRef = document.getElementById('email_success_svg');
 const inputEmailAlertMessageRef = document.getElementById('email_alert_msg');
 
 const textareaMessageRef = document.getElementById('message');
+const textareaMessageFailSvgRef = document.getElementById('message_fail_svg');
+const textareaMessageSuccessSvgRef = document.getElementById('message_success_svg');
+const textareaMessageAlertMessageRef = document.getElementById('message_alert_msg');
+
+
 let commentCounter = 0;
 
 headerLinks.forEach(link => {
@@ -80,18 +85,10 @@ function addCommentMarkHighlight() {
     commentMarks[commentCounter].classList.add('comment-mark-highlight');
 }
 
-inputNameRef.addEventListener('focus', () => {
-    if(!inputNameRef.value) {
-        resetNameInputfield();
-    inputNameRef.classList.add('brd-gr');
-    }
-})
-
 inputNameRef.addEventListener('input', () => {
     let value = inputNameRef.value.trim();
-    console.log(value);
-    
     const onlyLetters = /^[A-Za-zÄÖÜäöüß ]+$/;
+
     resetNameInputfield();
     if ((value.length < 3 && value.length >= 0) || !onlyLetters.test(value)) {
         markNameInputfieldRed();
@@ -119,13 +116,6 @@ function markNameInputfieldGreen() {
     inputNameRef.classList.add('brd-gr');
     inputNameSuccessSvgRef.classList.remove('d_none');
 }
-
-inputEmailRef.addEventListener('focus', () => {
-    if (!inputEmailRef.value) {
-        resetEmailInputfield();
-        inputEmailRef.classList.add('brd-gr');
-    }
-});
 
 inputEmailRef.addEventListener('input', () => {
     let value = inputEmailRef.value.trim();
@@ -157,4 +147,33 @@ function markEmailInputfieldRed() {
 function markEmailInputfieldGreen() {
     inputEmailRef.classList.add('brd-gr');
     inputEmailSuccessSvgRef.classList.remove('d_none');
+}
+
+textareaMessageRef.addEventListener('input',() => {
+    resetMessageTextarea();
+    if(textareaMessageRef.value.length < 2){
+        console.log(textareaMessageRef.value);
+        markMessageTextareaRed();
+    } else {
+        markMessageTextareaGreen();
+    }
+});
+
+function resetMessageTextarea() {
+    textareaMessageRef.classList.remove('brd-rd');
+    textareaMessageRef.classList.remove('brd-gr');
+    textareaMessageFailSvgRef.classList.add('d_none');
+    textareaMessageSuccessSvgRef.classList.add('d_none');
+    textareaMessageAlertMessageRef.classList.add('d_none');
+}
+
+function markMessageTextareaRed() {
+    textareaMessageRef.classList.add('brd-rd');
+    textareaMessageFailSvgRef.classList.remove('d_none');
+    textareaMessageAlertMessageRef.classList.remove('d_none');
+}
+
+function markMessageTextareaGreen() {
+    textareaMessageRef.classList.add('brd-gr');
+    textareaMessageSuccessSvgRef.classList.remove('d_none');
 }
