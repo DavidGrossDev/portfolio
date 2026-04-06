@@ -17,8 +17,19 @@ const textareaMessageFailSvgRef = document.getElementById('message_fail_svg');
 const textareaMessageSuccessSvgRef = document.getElementById('message_success_svg');
 const textareaMessageAlertMessageRef = document.getElementById('message_alert_msg');
 
+const privacyPolicyCheckboxRef = document.getElementById('privacy_policy_checkbox');
+const privacyPolicyEmptyBoxSvgRef = document.getElementById('privacy_policy_empty_checkbox');
+const privacyPolicyCheckedBoxSvgRef = document.getElementById('privacy_policy_checked_checkbox');
+const privacyPolicyAlertMsgRef = document.getElementById('privacy_policy_alert_msg');
+
+const sendMessageBtnRef = document.getElementById('send_msg_btn');
 
 let commentCounter = 0;
+
+let inputNameIsChecked = false;
+let inputEmailIsChecked = false;
+let textareaIsChecked =false;
+let checkCounter = 0;
 
 headerLinks.forEach(link => {
     link.addEventListener("click", () => {
@@ -92,9 +103,13 @@ inputNameRef.addEventListener('input', () => {
     resetNameInputfield();
     if ((value.length < 3 && value.length >= 0) || !onlyLetters.test(value)) {
         markNameInputfieldRed();
+        inputNameIsChecked = false;
+        checkFormStatus();
     } else {
         resetNameInputfield();
         markNameInputfieldGreen();
+        inputNameIsChecked = true;
+        checkFormStatus();
     }
 });
 
@@ -120,13 +135,17 @@ function markNameInputfieldGreen() {
 inputEmailRef.addEventListener('input', () => {
     let value = inputEmailRef.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     resetEmailInputfield();
     if (!emailRegex.test(value)) {
         markEmailInputfieldRed();
+        inputEmailIsChecked = false;
+        checkFormStatus();
     } else {
         resetEmailInputfield();
         markEmailInputfieldGreen();
+        inputEmailIsChecked = true;
+        checkFormStatus();
     }
 });
 
@@ -149,13 +168,17 @@ function markEmailInputfieldGreen() {
     inputEmailSuccessSvgRef.classList.remove('d_none');
 }
 
-textareaMessageRef.addEventListener('input',() => {
+textareaMessageRef.addEventListener('input', () => {
     resetMessageTextarea();
-    if(textareaMessageRef.value.length < 2){
+    if (textareaMessageRef.value.length < 2) {
         console.log(textareaMessageRef.value);
         markMessageTextareaRed();
+        textareaIsChecked = false;
+        checkFormStatus();
     } else {
         markMessageTextareaGreen();
+        textareaIsChecked = true;
+        checkFormStatus();
     }
 });
 
@@ -176,4 +199,31 @@ function markMessageTextareaRed() {
 function markMessageTextareaGreen() {
     textareaMessageRef.classList.add('brd-gr');
     textareaMessageSuccessSvgRef.classList.remove('d_none');
+}
+
+privacyPolicyCheckboxRef.addEventListener('click', () => {
+    checkCounter++;
+    if (checkCounter == 1) {
+        privacyPolicyAlertMsgRef.classList.add('d_none');
+        privacyPolicyEmptyBoxSvgRef.classList.add('d_none');
+        privacyPolicyCheckedBoxSvgRef.classList.remove('d_none');
+        checkFormStatus();
+    } else {
+        privacyPolicyAlertMsgRef.classList.remove('d_none');
+        privacyPolicyEmptyBoxSvgRef.classList.remove('d_none');
+        privacyPolicyCheckedBoxSvgRef.classList.add('d_none');
+        checkCounter=0;
+        checkFormStatus();
+    }
+});
+
+function checkFormStatus() {
+    if(!inputNameIsChecked | !inputEmailIsChecked | !textareaIsChecked | checkCounter == 0) {
+        sendMessageBtnRef.classList.remove('send-message-btn-active');
+        return;
+    }
+
+    if(inputNameIsChecked && inputEmailIsChecked && textareaIsChecked && checkCounter == 1) {
+        sendMessageBtnRef.classList.add('send-message-btn-active');
+    }
 }
