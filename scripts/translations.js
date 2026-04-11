@@ -1,0 +1,138 @@
+const translations = {
+    en: {
+        nav: {
+            about_me: "About me",
+            skills: "Skills"
+        },
+        about_me: {
+            title: "About me",
+            description: {
+                mainContent: "Hi, I'm David — a developer who discovered a passion for programming through my work. I'm fascinated by the endless possibilities technology offers and enjoy continuously improving my skills while building practical and meaningful solutions. My focus is on web development, using technologies like JavaScript, HTML, and CSS to create modern and responsive web applications.",
+                callOut: "Let's connect and create something amazing together!"
+            },
+            location: "I'm based in Merzig, Saarland, Germany, and open to various ways of working, including on-site, remote, or relocation opportunities.",
+            passion: "I'm passionate about learning new technologies and continuously improving my skills. I enjoy exploring modern tools, frameworks, and development practices to grow as a developer and build better, more efficient solutions.",
+            approach: "My approach to problem-solving is based on analytical thinking, creativity, and persistence. I enjoy breaking down complex problems into smaller parts and exploring different solutions to find the most efficient and elegant approach. Every challenge is an opportunity to learn, improve my skills, and grow as a developer. I also value collaboration and believe that exchanging ideas often leads to better solutions."
+        },
+        skills: {
+            title: "Skills",
+            mainContent: "I have gained experience working on different projects using front-end technologies such as HTML, CSS, and JavaScript. Each project has helped me strengthen my understanding of building responsive and user-friendly web applications. I'm always open to learning new technologies and adapting to modern tools and frameworks as the field continues to evolve. Continuous learning is essential to me in order to keep up with the fast-paced changes in web development and to grow as a developer.",
+            learning: "Continually learning",
+            specInterest: "I have a special interest in learning"
+        },
+        portfolio: {
+            explore: "Explore a selection of my work here - Interact with projects to see my skills in action.",
+            loco: {
+                description: "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+            },
+            join: {
+                description: "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+            },
+            pokedex: {
+                description: "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+            }
+        },
+        contact: {
+            title: "Contact",
+            undertitle: "Got a problem to solve?",
+            mainContent: "I'm looking for opportunities as a junior web developer where I can contribute to meaningful projects and continue developing my skills. I aim to add value by writing clean, maintainable code and creating modern, user-focused web applications.",
+            callOut: {
+                mainContent: "Need a Frontend developer?",
+                contactMe: "Contact me!"
+            }
+        },
+        form : {
+            nameMsg: "Your name is required",
+            emailMsg: "Your email is required",
+            messageMsg: "Your message is empty",
+            ppCheck:"Please accept the privacy policy."
+        }
+    },
+    de: {
+        nav: {
+            about_me: "Über mich",
+            skills: "Fähigkeiten"
+        },
+        about_me: {
+            title: "Über mich",
+            description: {
+                mainContent: "Hi, ich bin David — ein Entwickler, der durch seine berufliche Tätigkeit eine Leidenschaft für das Programmieren entdeckt hat. Ich bin fasziniert von den unzähligen Möglichkeiten, die Technologie bietet, und habe Freude daran, meine Fähigkeiten kontinuierlich weiterzuentwickeln und dabei praktische sowie sinnvolle Lösungen zu entwickeln. Mein Fokus liegt auf der Webentwicklung, wobei ich Technologien wie JavaScript, HTML und CSS nutze, um moderne und responsive Webanwendungen zu erstellen.",
+                callOut: "Lass uns gemeinsam etwas Großartiges schaffen!"
+            },
+            location: "Ich lebe in Merzig, Saarland und bin offen für Vor-Ort-, Remote- oder Umzugsoptionen.",
+            passion: "Ich habe große Freude daran, neue Technologien zu lernen und mich kontinuierlich weiterzuentwickeln. Dabei arbeite ich gerne mit modernen Tools, Frameworks und Entwicklungsansätzen, um als Entwickler zu wachsen und effiziente, hochwertige Lösungen zu entwickeln.",
+            approach: "Mein Ansatz zur Problemlösung basiert auf analytischem Denken, Kreativität und Ausdauer. Ich zerlege komplexe Probleme in kleinere Schritte und erkunde verschiedene Lösungswege, um die effizienteste und zugleich eleganteste Lösung zu finden. Jede Herausforderung ist für mich eine Chance, zu lernen, meine Fähigkeiten zu verbessern und als Entwickler zu wachsen. Zudem lege ich großen Wert auf Zusammenarbeit, da der Austausch von Ideen häufig zu besseren Ergebnissen führt."
+        },
+        skills: {
+            title: "Fähigkeiten",
+            mainContent: "Ich habe an verschiedenen Projekten mit Frontend-Technologien wie HTML, CSS und JavaScript gearbeitet. Dabei konnte ich mein Verständnis für die Entwicklung responsiver und benutzerfreundlicher Webanwendungen stetig verbessern. Ich bin offen für neue Technologien und passe mich gerne modernen Tools und Frameworks an, da sich die Webentwicklung ständig weiterentwickelt. Kontinuierliches Lernen ist für mich ein wichtiger Bestandteil, um als Entwickler zu wachsen und Schritt mit den schnellen Veränderungen der Branche zu halten.",
+            learning: "Kontinuierlich lernen",
+            specInterest: "Speziell Interessiert am lernen von"
+        },
+        portfolio: {
+            explore: "Schau dir einige meiner Arbeiten an - Interagiere mit den Projekten mache dir einen Eindruck.",
+            loco: {
+                description: "Spring, renn und Wurf-Spiel basierent auf Objekt-Orientierung. Hilf Pepe Coins und Tabasco für den Kampf gegen die verrückten Hühner zu finden."
+            },
+            join: {
+                description: "Ein Aufgabenmanager, inspiriert vom Kanban-System. Aufgaben lassen sich per Drag-and-Drop erstellen und organisieren, außerdem können Benutzer und Kategorien zugewiesen werden."
+            },
+            pokedex: {
+                description: "Basierend auf der PokéAPI, einer einfachen Bibliothek zur Bereitstellung und Katalogisierung von Pokémon-Informationen."
+            }
+        },
+        contact: {
+            title: "Kontakt",
+            undertitle: "Hast du ein Problem, das gelöst werden soll?",
+            mainContent: "Ich suche nach einer Position als Junior Web Developer, in der ich an sinnvollen Projekten mitarbeiten und mich fachlich weiterentwickeln kann. Dabei ist es mein Ziel, Mehrwert zu schaffen, indem ich sauberen, wartbaren Code schreibe und moderne, benutzerorientierte Webanwendungen entwickle.",
+            callOut: {
+                mainContent: "Suchst du einen Frontend-Entwickler?",
+                contactMe: "Kontaktiere mich!"
+            }
+        },
+        form : {
+            nameMsg: "Dein name ist erforderlich",
+            emailMsg: "Deine Email ist erforderlich",
+            messageMsg: "Deine Nachricht ist leer",
+            ppCheck:"Bitte akzeptiere die Datenschutzerklärung"
+        }
+    }
+}
+
+const switchLangToDeBtnRef = document.getElementById('language_de');
+const switchLangToEnBtnRef = document.getElementById('language_en');
+
+let langDe = false;
+
+switchLangToDeBtnRef.addEventListener('click', () => {
+    removeLanguageBtnMark();
+    setLanguage('de');
+    langDe = true;
+    switchLangToDeBtnRef.classList.add('active');
+    init();
+
+});
+
+switchLangToEnBtnRef.addEventListener('click', () => {
+    removeLanguageBtnMark();
+    setLanguage('en');
+    langDe = false;
+    switchLangToEnBtnRef.classList.add('active');
+    init();
+});
+
+function removeLanguageBtnMark() {
+    switchLangToDeBtnRef.classList.remove('active');
+    switchLangToEnBtnRef.classList.remove('active');
+}
+
+function setLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        let key = el.getAttribute('data-i18n');
+        el.textContent = getTranslation(lang, key);
+    });
+}
+
+function getTranslation(lang, key) {
+    return key.split('.').reduce((obj, i) => obj[i], translations[lang]);
+}
