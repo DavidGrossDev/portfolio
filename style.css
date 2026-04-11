@@ -343,6 +343,7 @@ h2 {
 }
 
 .skills-section-left {
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -475,7 +476,7 @@ h2 {
 }
 
 .skills-section-right {
-    width: 560px;
+    width: 40%; /*560px*/
     position: relative;
     height: 492px;
     display: flex;
@@ -873,13 +874,21 @@ h3 {
 }
 
 .contact-section-main-left {
-    width: 573px;
+    width: 50%; /*573px*/
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.contact-section-main-left p {
+.contact-section-main-left>p {
+    padding: 0 100px;
+}
+
+.contact-section-call-out {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
     padding-left: 100px;
 }
 
@@ -895,6 +904,7 @@ h3 {
 }
 
 .contact-section-main-right {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -910,8 +920,9 @@ form {
     justify-content: space-between;
     align-items: flex-start;
     gap: 5px;
-    width: 617px;
-    height: 504px;
+    width: 100%;
+    /* width: 617px;
+    height: 504px; */
 }
 
 form ::placeholder,
@@ -949,7 +960,7 @@ textarea {
 }
 
 .form-input-container {
-    min-height: 77px;
+    min-height: 82px;
 }
 
 .form-textarea-container {
@@ -1025,7 +1036,6 @@ textarea {
     align-items: flex-start;
     gap: 8px;
 }
-
 
 .checkbox {
     cursor: pointer;
