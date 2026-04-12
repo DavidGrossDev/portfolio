@@ -165,7 +165,6 @@ let currentLang = "";
 switchLangToDeBtnRef?.addEventListener('click', () => {
     langDe = true;
     currentLang = setCurrentLanguage();
-    console.log(currentLang);
     removeLanguageBtnMark();
     setLanguage(currentLang);
     switchLangToDeBtnRef.classList.add('active');
@@ -175,7 +174,6 @@ switchLangToDeBtnRef?.addEventListener('click', () => {
 switchLangToEnBtnRef?.addEventListener('click', () => {
     langDe = false;
     currentLang = setCurrentLanguage();
-    console.log(currentLang);
     removeLanguageBtnMark();
     setLanguage(currentLang);
     switchLangToEnBtnRef.classList.add('active');
