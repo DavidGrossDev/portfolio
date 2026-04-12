@@ -998,12 +998,20 @@ textarea {
 }
 
 .form-footer {
+    width: 100%;
     min-height: 122px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
+}
+
+.send-message-btn-df-center-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .send-message-btn {
