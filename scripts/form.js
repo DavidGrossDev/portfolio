@@ -25,7 +25,7 @@ let inputEmailIsChecked = false;
 let textareaIsChecked =false;
 let checkCounter = 0;
 
-inputNameRef.addEventListener('input', () => {
+inputNameRef?.addEventListener('input', () => {
     let value = inputNameRef.value.trim();
     const onlyLetters = /^[A-Za-zÄÖÜäöüß ]+$/;
 
@@ -61,7 +61,7 @@ function markNameInputfieldGreen() {
     inputNameSuccessSvgRef.classList.remove('d_none');
 }
 
-inputEmailRef.addEventListener('input', () => {
+inputEmailRef?.addEventListener('input', () => {
     let value = inputEmailRef.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -97,7 +97,7 @@ function markEmailInputfieldGreen() {
     inputEmailSuccessSvgRef.classList.remove('d_none');
 }
 
-textareaMessageRef.addEventListener('input', () => {
+textareaMessageRef?.addEventListener('input', () => {
     resetMessageTextarea();
     if (textareaMessageRef.value.length < 2) {
         console.log(textareaMessageRef.value);
@@ -130,7 +130,7 @@ function markMessageTextareaGreen() {
     textareaMessageSuccessSvgRef.classList.remove('d_none');
 }
 
-privacyPolicyCheckboxRef.addEventListener('click', () => {
+privacyPolicyCheckboxRef?.addEventListener('click', () => {
     checkCounter++;
     if (checkCounter == 1) {
         privacyPolicyAlertMsgRef.classList.add('d_none');
