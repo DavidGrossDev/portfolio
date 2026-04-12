@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body onload="legalNoticeInit()">
     <main class="document-main">
         <header class="landing-section-header">
             <a href="#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
             <section class="landing-section-header-menu">
                 <div class="landing-section-header-links">
                     <div class="landing-section-header-links-highlight-div">
-                        <a href="./index.html">About me</a>
+                        <a data-i18n="nav.about_me" href="./index.html"></a>
                         <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
                             fill="none">
                             <path
@@ -27,7 +27,7 @@
                         </svg>
                     </div>
                     <div class="landing-section-header-links-highlight-div">
-                        <a href="#skills">Skills</a>
+                        <a data-i18n="nav.skills" href="#skills"></a>
                         <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
                             fill="none">
                             <path
@@ -47,8 +47,8 @@
 
                 </div>
                 <div class="landing-section-header-btns">
-                    <button>DE</button>
-                    <button class="active">EN</button>
+                    <button id="language_ln_de" >DE</button>
+                    <button id="language_ln_en" class="active">EN</button>
                 </div>
             </section>
         </header>
@@ -58,7 +58,7 @@
                     <path d="M2.01532 2.01514L132.015 3.01514" stroke="#9747FF" stroke-width="4"
                         stroke-linecap="square" />
                 </svg>
-                <h1 class="legal-notice-headline-h1">Legal Notice</h1>
+                <h1 data-i18n="legNot.headline" class="legal-notice-headline-h1"></h1>
                 <svg width="501" height="5" viewBox="0 0 501 5" fill="none">
                     <path d="M2.004 2.00391L502.004 3.00391" stroke="#9747FF" stroke-width="4"
                         stroke-linecap="square" />
@@ -67,86 +67,42 @@
         </section>
         <main class="legal-notice-main-content">
             <section class="legal-notice-imprint">
-                <h2 class="imprint-h2">Imprint</h2>
+                <h2 class="imprint-h2" data-i18n="legNot.imprint.headline"></h2>
                 <ul>
                     <li>David Groß</li>
-                    <li>66663 Merzig (Germany)</li>
+                    <li data-i18n="legNot.imprint.location"></li>
                 </ul>
                 <div>
-                    <h3 class="legal-notice-h3">Exploring the Board</h3>
+                    <h3 class="legal-notice-h3" data-i18n="legNot.explore"></h3>
                     <p>Email: d.g1r2o3s4s@gmail.com</p>
                 </div>
             </section>
             <section>
-                <h3 class="legal-notice-h3">Acceptance of terms</h3>
-                <p>
-                    By accessing and using <span>Portfolio</span> (Product), you acknowledge and agree to the following
-                    terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to
-                    you from time to time. We, the listed students, may update or change the terms and conditions from
-                    time to time without notice.
+                <h3 class="legal-notice-h3" data-i18n="legNot.acceptance"></h3>
+                <p id="legal_notice_acceptance">
+                    
                 </p>
             </section>
             <section>
-                <h3 class="legal-notice-h3">Scope and ownership of the product</h3>
-                <p>
-                    <span>Portfolio</span> has been developed as part of a student group project in a web development
-                    bootcamp at the
-                    <span>Developer Akademie GmbH</span>. It has an educational purpose and is not intended for
-                    extensive personal &
-                    business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any
-                    other aspect of quality regarding this Product.
-                    <br><br>
-                    The design of <span>Portfolio</span> is owned by the <span>Developer Akademie GmbH</span>.
-                    Unauthorized use, reproduction,
-                    modification, distribution, or replication of the design is strictly prohibited.
-                </p>
+                <h3 class="legal-notice-h3" data-i18n="legNot.scope"></h3>
+                <p id="legal_notice_scope"></p>
             </section>
             <section>
-                <h3 class="legal-notice-h3">Proprietary rights</h3>
-                <p>
-                    Aside from the design owned by <span>Developer Akademie GmbH</span>, we, the listed students, retain
-                    all
-                    proprietary rights in <span>Portfolio</span>, including any associated copyrighted material,
-                    trademarks, and
-                    other proprietary information.
-                </p>
+                <h3 class="legal-notice-h3" data-i18n="legNot.proprietary"></h3>
+                <p id="legal_notice_proprietary"></p>
             </section>
             <section>
-                <h3 class="legal-notice-h3">Use of the product</h3>
-                <p>
-                    <span>Portfolio</span> is intended to be used for lawful purposes only, in accordance with all
-                    applicable laws
-                    and regulations. Any use of <span>Portfolio</span> for illegal activities, or to harass, harm,
-                    threaten, or
-                    intimidate another person, is strictly prohibited. You are solely responsible for your interactions
-                    with other users of <span>Portfolio</span>.
-                </p>
+                <h3 class="legal-notice-h3" data-i18n="legNot.use"></h3>
+                <p id="legal_notice_use"></p>
             </section>
             <section>
-                <h3 class="legal-notice-h3">Disclaimer of warranties and limitation of liability</h3>
-                <p>
-                    <span>Portfolio</span> is provided "as is" without warranty of any kind, whether express or implied,
-                    including
-                    but not limited to the implied warranties of merchantability, fitness for a particular purpose, and
-                    non-infringement. In no event will we, the listed students, or the <span>Developer Akademie</span>,
-                    be liable for
-                    any direct, indirect, incidental, special, consequential or exemplary damages, including but not
-                    limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we
-                    have been advised of the possibility of such damages, arising out of or in connection with the use
-                    or performance of <span>Portfolio</span>.
-                </p>
+                <h3 class="legal-notice-h3" data-i18n="legNot.disclaimer"></h3>
+                <p id="legal_notice_disclaimer"></p>
             </section>
             <section>
-                <h3 class="legal-notice-h3">Indemnity</h3>
-                <p>
-                    You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie,
-                    and our affiliates, partners, officers, directors, agents, and employees, from and against any
-                    claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or
-                    relating to your use of Portfolio and/or your breach of this Legal Notice.
-                    <br><br>
-                    For any questions or notices, please contact us at <span>info@developerakademie.com</span>.
-                    <br><br>
-                    Date: April 5, 2026
+                <h3 class="legal-notice-h3" data-i18n="legNot.indemnity"></h3>
+                <p id="legal_notice_indemnity">
+                    
                 </p>
             </section>
         </main>
@@ -164,16 +120,19 @@
                 </div>
             </section>
             <div class="legal-notice-link-container">
-                <a class="legal-notice-link" href="">Legal Notice</a>
+                <a class="legal-notice-link" href="" data-i18n="footer.legNot"></a>
                 <svg class="legal-notice-link-highlight" width="58" height="2" viewBox="0 0 58 2" fill="none">
                     <path
                         d="M1 0H0V2H1V0ZM56.5 2C57.0523 2 57.5 1.55228 57.5 1C57.5 0.447715 57.0523 0 56.5 0V2ZM1 2H56.5V0H1V2Z"
                         fill="#70E61C" />
                 </svg>
             </div>
-
         </footer>
     </main>
+
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/translations.js"></script>
+    <script src="./scripts/legal_notice.js"></script>
 </body>
 
 </html>
