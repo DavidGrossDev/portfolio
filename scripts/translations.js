@@ -4,6 +4,10 @@ const translations = {
             about_me: "About me",
             skills: "Skills"
         },
+        landing: {
+            btn: "Let's talk!",
+            scrlDown: "Scroll down"
+        },
         about_me: {
             title: "About me",
             description: {
@@ -18,7 +22,8 @@ const translations = {
             title: "Skills",
             mainContent: "I have gained experience working on different projects using front-end technologies such as HTML, CSS, and JavaScript. Each project has helped me strengthen my understanding of building responsive and user-friendly web applications. I'm always open to learning new technologies and adapting to modern tools and frameworks as the field continues to evolve. Continuous learning is essential to me in order to keep up with the fast-paced changes in web development and to grow as a developer.",
             learning: "Continually learning",
-            specInterest: "I have a special interest in learning"
+            specInterest: "I have a special interest in learning",
+            btn: "Get in touch"
         },
         portfolio: {
             explore: "Explore a selection of my work here - Interact with projects to see my skills in action.",
@@ -41,17 +46,43 @@ const translations = {
                 contactMe: "Contact me!"
             }
         },
-        form : {
+        form: {
             nameMsg: "Your name is required",
             emailMsg: "Your email is required",
             messageMsg: "Your message is empty",
-            ppCheck:"Please accept the privacy policy."
+            ppCheck: "Please accept the privacy policy.",
+            placeholder: {
+                namePh: "Your Name",
+                emailPh: "Your Email",
+                messagePh: "Your Message"
+            }
+        },
+        footer: {
+            legNot: "Legal Notice"
+        },
+        legNot: {
+            headline: "Legal Notice",
+            imprint: {
+                headline: "Imprint",
+                location: "66663 Merzig (Germany)"
+            },
+            explore: "Exploring the Board",
+            acceptance: "Acceptance of terms",
+            scope: "Scope and ownership of the product",
+            proprietary: "Proprietary rights",
+            use: "Use of the product",
+            disclaimer: "Disclaimer of warranties and limitation of liability",
+            indemnity: "Indemnity"
         }
     },
     de: {
         nav: {
             about_me: "Über mich",
             skills: "Fähigkeiten"
+        },
+        landing: {
+            btn: "Kontaktieren!",
+            scrlDown: "Weiter scrollen"
         },
         about_me: {
             title: "Über mich",
@@ -67,7 +98,8 @@ const translations = {
             title: "Fähigkeiten",
             mainContent: "Ich habe an verschiedenen Projekten mit Frontend-Technologien wie HTML, CSS und JavaScript gearbeitet. Dabei konnte ich mein Verständnis für die Entwicklung responsiver und benutzerfreundlicher Webanwendungen stetig verbessern. Ich bin offen für neue Technologien und passe mich gerne modernen Tools und Frameworks an, da sich die Webentwicklung ständig weiterentwickelt. Kontinuierliches Lernen ist für mich ein wichtiger Bestandteil, um als Entwickler zu wachsen und Schritt mit den schnellen Veränderungen der Branche zu halten.",
             learning: "Kontinuierlich lernen",
-            specInterest: "Speziell Interessiert am lernen von"
+            specInterest: "Speziell Interessiert am lernen von",
+            btn: "Kontakt aufnehmen"
         },
         portfolio: {
             explore: "Schau dir einige meiner Arbeiten an - Interagiere mit den Projekten mache dir einen Eindruck.",
@@ -90,46 +122,111 @@ const translations = {
                 contactMe: "Kontaktiere mich!"
             }
         },
-        form : {
+        form: {
             nameMsg: "Dein name ist erforderlich",
             emailMsg: "Deine Email ist erforderlich",
             messageMsg: "Deine Nachricht ist leer",
-            ppCheck:"Bitte akzeptiere die Datenschutzerklärung"
+            ppCheck: "Bitte akzeptiere die Datenschutzerklärung",
+            placeholder: {
+                namePh: "Dein Name",
+                emailPh: "Deine Email",
+                messagePh: "Deine Nachricht"
+            }
+        },
+        footer: {
+            legNot: "Rechtlicher Hinweis"
+        },
+        legNot: {
+            headline: "Rechtlicher Hinweis",
+            imprint: {
+                headline: "Impressum",
+                location: "66663 Merzig (Deutschland)"
+            },
+            explore: "Kontaktinformationen",
+            acceptance: "Akzeptieren der Nutzungsbedingungen",
+            scope: "Umfang und Eigentumsrechte des Produkts",
+            proprietary: "Eigentumsrechte",
+            use: "Verwendung des Produkts",
+            disclaimer: "Gewährleistungsausschluss und Haftungsbeschränkung",
+            indemnity: "Entschädigung"
         }
     }
 }
 
+const checkboxProPolContainerRef = document.getElementById('checkbox_p_container');
 const switchLangToDeBtnRef = document.getElementById('language_de');
 const switchLangToEnBtnRef = document.getElementById('language_en');
+const switchLangToDeLegalNoticeBtnRef = document.getElementById('language_ln_de');
+const switchLangToEnLegalNoticeBtnRef = document.getElementById('language_ln_en');
 
 let langDe = false;
+let currentLang = "";
 
-switchLangToDeBtnRef.addEventListener('click', () => {
-    removeLanguageBtnMark();
-    setLanguage('de');
+switchLangToDeBtnRef?.addEventListener('click', () => {
     langDe = true;
+    currentLang = setCurrentLanguage();
+    console.log(currentLang);
+    removeLanguageBtnMark();
+    setLanguage(currentLang);
     switchLangToDeBtnRef.classList.add('active');
     init();
-
 });
 
-switchLangToEnBtnRef.addEventListener('click', () => {
-    removeLanguageBtnMark();
-    setLanguage('en');
+switchLangToEnBtnRef?.addEventListener('click', () => {
     langDe = false;
+    currentLang = setCurrentLanguage();
+    console.log(currentLang);
+    removeLanguageBtnMark();
+    setLanguage(currentLang);
     switchLangToEnBtnRef.classList.add('active');
-    init();
+    init(); 
 });
+
+switchLangToDeLegalNoticeBtnRef?.addEventListener('click', () => {
+    langDe = true;
+    currentLang = setCurrentLanguage();
+    removeLanguageLnBtnMark();
+    setLanguage(currentLang);
+    legalNoticeInit(currentLang);
+    switchLangToDeLegalNoticeBtnRef.classList.add('active');
+});
+
+switchLangToEnLegalNoticeBtnRef?.addEventListener('click', () => {
+    langDe = false;
+    currentLang = setCurrentLanguage();
+    removeLanguageLnBtnMark();
+    setLanguage(currentLang);
+    legalNoticeInit(currentLang);
+    switchLangToEnLegalNoticeBtnRef.classList.add('active');
+});
+
+function setCurrentLanguage() {
+    if(langDe) {
+        return 'de';
+    } else {
+        return 'en';
+    }
+}
 
 function removeLanguageBtnMark() {
     switchLangToDeBtnRef.classList.remove('active');
     switchLangToEnBtnRef.classList.remove('active');
 }
 
+function removeLanguageLnBtnMark() {
+    switchLangToDeLegalNoticeBtnRef.classList.remove('active');
+    switchLangToEnLegalNoticeBtnRef.classList.remove('active');
+}
+
 function setLanguage(lang) {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
+    document.querySelectorAll('[data-i18n]')?.forEach(el => {
         let key = el.getAttribute('data-i18n');
         el.textContent = getTranslation(lang, key);
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]')?.forEach(el => {
+        let key = el.getAttribute('data-i18n-placeholder');
+        el.setAttribute('placeholder', getTranslation(lang, key));
     });
 }
 
