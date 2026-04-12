@@ -21,7 +21,7 @@ commentsLeftArrowBtnRef?.addEventListener('click', () => {
         commentCounter = 2;
     }
     removeCommentMarkHighlight();
-    init(currentLang);
+    init();
 });
 
 commentsRightArrowBtnRef?.addEventListener('click', () => {
@@ -30,14 +30,13 @@ commentsRightArrowBtnRef?.addEventListener('click', () => {
         commentCounter = 0;
     }
     removeCommentMarkHighlight();
-    init(currentLang);
+    init();
 });
 
 function init() {
     let currentComment = "";
     let currentCheckboxTxt = "";
     let lang = setCurrentLanguage();
-    
     setLanguage(lang);
     currentComment = teamComments[commentCounter][`comment_${lang}`];
     currentCheckboxTxt = translationTemplatePriPol[lang];
