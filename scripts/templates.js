@@ -1,6 +1,6 @@
 const translationTemplatePriPol = {
-    en: `<p>i've read the <a class="privacy-policy-link" href="">privacy policy</a> and agree to the processing of my data as outlined.</p>`,
-    de: `<p>Ich habe die <a class="privacy-policy-link" href="">Datenschutzerklärung</a> gelesen und stimme zu.</p>`
+    en: `<p>i've read the <a class="privacy-policy-link" href="./privacy_policy.html">privacy policy</a> and agree to the processing of my data as outlined.</p>`,
+    de: `<p>Ich habe die <a class="privacy-policy-link" href="./privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme zu.</p>`
 }
 
 const translationtemplatesLegalNotice = {
