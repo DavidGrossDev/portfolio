@@ -1,16 +1,24 @@
-const headerLinks = document.querySelectorAll('.landing-section-header-links-highlight-div a');
+const navToLandingSectionRef = document.getElementById('nav_to_Landing_section');
+const navLinks = document.querySelectorAll('.main-nav-menu-links-highlight-div a');
 const commentsAreaRef = document.getElementById('comments_area');
 const commentMarks = document.querySelectorAll('.comment-mark');
 const commentsLeftArrowBtnRef = document.getElementById('comments_left_arrow');
 const commentsRightArrowBtnRef = document.getElementById('comments_right_arrow');
 let commentCounter = 0;
 
-headerLinks.forEach(link => {
+navToLandingSectionRef?.addEventListener('click', () => {
+    navLinks.forEach(() => {
+    document.querySelectorAll('.main-nav-menu-links-highlight').forEach(svg => svg.classList.remove('main-nav-link-svg-active'));
+        navLinks.forEach(l => l.classList.remove('clr-grn'));
+    });
+});
+
+navLinks.forEach(link => {
     link.addEventListener("click", () => {
-        document.querySelectorAll('.landing-section-header-link-highlight').forEach(svg => svg.classList.remove('header-link-svg-active'));
+        document.querySelectorAll('.main-nav-menu-links-highlight').forEach(svg => svg.classList.remove('main-nav-link-svg-active'));
         let svg = link.nextElementSibling;
-        headerLinks.forEach(l => l.classList.remove('clr-grn'));
-        svg.classList.add('header-link-svg-active');
+        navLinks.forEach(l => l.classList.remove('clr-grn'));
+        svg.classList.add('main-nav-link-svg-active');
         link.classList.add('clr-grn');
     });
 });
