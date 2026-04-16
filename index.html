@@ -8,35 +8,39 @@
     <link rel="stylesheet" href="./styles/keyframes/keyframes.css">
     <link rel="stylesheet" href="./styles/fonts/fonts.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/media_querries_index.css">
 </head>
 
-<body onload="init()">
+<body class="index-body" onload="init()">
+    <section class="overlay">
+
+    </section>
     <main class="document-main">
-        <header class="landing-section-header">
-            <a href="#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
-            <section class="landing-section-header-menu">
-                <div class="landing-section-header-links">
-                    <div class="landing-section-header-links-highlight-div">
+        <nav class="main-nav">
+            <a id="nav_to_Landing_section" href="#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
+            <section class="main-nav-menu">
+                <div class="main-nav-menu-links">
+                    <div class="main-nav-menu-links-highlight-div">
                         <a data-i18n="nav.about_me" href="#about_me"></a>
-                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
+                        <svg class="main-nav-menu-links-highlight" width="59" height="3" viewBox="0 0 59 3"
                             fill="none">
                             <path
                                 d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
                                 fill="#9747FF" />
                         </svg>
                     </div>
-                    <div class="landing-section-header-links-highlight-div">
+                    <div class="main-nav-menu-links-highlight-div">
                         <a data-i18n="nav.skills" href="#skills"></a>
-                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
+                        <svg class="main-nav-menu-links-highlight" width="59" height="3" viewBox="0 0 59 3"
                             fill="none">
                             <path
                                 d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
                                 fill="#9747FF" />
                         </svg>
                     </div>
-                    <div class="landing-section-header-links-highlight-div">
+                    <div class="main-nav-menu-links-highlight-div">
                         <a href="#portfolio">Portfolio</a>
-                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
+                        <svg class="main-nav-menu-links-highlight" width="59" height="3" viewBox="0 0 59 3"
                             fill="none">
                             <path
                                 d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
@@ -44,16 +48,26 @@
                         </svg>
                     </div>
                 </div>
-                <div class="landing-section-header-btns">
+                <div class="main-nav-btns">
                     <button id="language_de">DE</button>
                     <button id="language_en" class="active">EN</button>
                 </div>
             </section>
-        </header>
+            <button class="main-nav-burger-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 30" fill="none">
+                    <path d="M1 1H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M1 15H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M1 29H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </nav>
         <section class="landing-section" id="landing_section">
             <div class="landing-section-content">
                 <section class="landing-section-content-main">
-                    <p class="landing-section-content-main-p">I am</p>
+                    <div class="rotate-div">
+                        <p class="landing-section-content-main-p">I am</p>
+                    </div>
+                    
                     <div class="landing-section-content-main-container">
                         <h1>David Groß</h1>
                         <p class="landing-section-content-main-container-p">FRONTEND DEVELOPER</p>
@@ -134,7 +148,6 @@
                 </div>
                 <div class="about-section-right">
                     <div class="me-img">
-
                     </div>
                     <svg class="me-img-highlight" width="859" height="820" viewBox="0 0 859 820" fill="none">
                         <g filter="url(#filter0_f_230_447)">
@@ -581,7 +594,8 @@
                     <form action="">
                         <div class="form-input-container">
                             <label for="name">
-                                <input id="name" type="text" class="inputfield" data-i18n-placeholder="form.placeholder.namePh">
+                                <input id="name" type="text" class="inputfield"
+                                    data-i18n-placeholder="form.placeholder.namePh">
                                 <svg id="name_fail_svg" class="d_none" width="26" height="25" viewBox="0 0 26 25"
                                     fill="none">
                                     <g clip-path="url(#clip0_167_974)">
@@ -613,7 +627,8 @@
                         </div>
                         <div class="form-input-container">
                             <label for="email">
-                                <input id="email" class="inputfield" type="text" data-i18n-placeholder="form.placeholder.emailPh">
+                                <input id="email" class="inputfield" type="text"
+                                    data-i18n-placeholder="form.placeholder.emailPh">
                                 <svg id="email_fail_svg" class="d_none" width="26" height="25" viewBox="0 0 26 25"
                                     fill="none">
                                     <g clip-path="url(#clip0_167_974)">
@@ -644,7 +659,8 @@
                             <p id="email_alert_msg" class="alertmessage d_none" data-i18n="form.emailMsg"></p>
                         </div>
                         <div class="form-textarea-container">
-                            <textarea name="" id="message" class="form-textarea" data-i18n-placeholder="form.placeholder.messagePh"></textarea>
+                            <textarea name="" id="message" class="form-textarea"
+                                data-i18n-placeholder="form.placeholder.messagePh"></textarea>
                             <svg id="message_fail_svg" class="d_none" width="26" height="25" viewBox="0 0 26 25"
                                 fill="none">
                                 <g clip-path="url(#clip0_167_974)">
@@ -702,13 +718,15 @@
                                             </g>
                                         </svg>
                                     </button>
-                                    <div id="checkbox_p_container" class="checkbox-agree-txt-container"> 
+                                    <div id="checkbox_p_container" class="checkbox-agree-txt-container">
                                     </div>
                                 </div>
-                                <p id="privacy_policy_alert_msg" class="alertmessage d_none" data-i18n="form.ppCheck"></p>
+                                <p id="privacy_policy_alert_msg" class="alertmessage d_none" data-i18n="form.ppCheck">
+                                </p>
                             </div>
                             <div class="send-message-btn-df-center-container">
-                                <button id="send_msg_btn" class="send-message-btn" type="button">Send message :)</button>
+                                <button id="send_msg_btn" class="send-message-btn" type="button">Send message
+                                    :)</button>
                             </div>
                         </footer>
                     </form>
