@@ -73,6 +73,9 @@ const translations = {
             use: "Use of the product",
             disclaimer: "Disclaimer of warranties and limitation of liability",
             indemnity: "Indemnity"
+        },
+        priPol: {
+            headline: "Privacy Policy"
         }
     },
     de: {
@@ -149,6 +152,9 @@ const translations = {
             use: "Verwendung des Produkts",
             disclaimer: "Gewährleistungsausschluss und Haftungsbeschränkung",
             indemnity: "Entschädigung"
+        },
+        priPol: {
+            headline: "Datenschutzerklärung"
         }
     }
 }
