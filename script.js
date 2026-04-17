@@ -42,14 +42,17 @@ commentsRightArrowBtnRef?.addEventListener('click', () => {
 });
 
 function init() {
+    let currentSkillsCallOutTxt = "";
     let currentComment = "";
     let currentCheckboxTxt = "";
     let lang = setCurrentLanguage();
     setLanguage(lang);
+    currentSkillsCallOutTxt = translationSkillsCallOut[lang];
     currentComment = teamComments[commentCounter][`comment_${lang}`];
     currentCheckboxTxt = translationTemplatePriPol[lang];
     commentsAreaRef.innerHTML = renderComment(currentComment);
     addCommentMarkHighlight();
+    skillSectionCallOutRef.innerHTML = currentSkillsCallOutTxt;
     checkboxProPolContainerRef.innerHTML = currentCheckboxTxt;
 }
 

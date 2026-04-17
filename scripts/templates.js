@@ -1,3 +1,8 @@
+const translationSkillsCallOut = {
+    en:`Looking for <span>another skill</span>?`,
+    de:`Suchen Sie eine <span>anderen Fähigkeit</span>?`
+}
+
 const translationTemplatePriPol = {
     en: `<p>i've read the <a class="privacy-policy-link" href="./privacy_policy.html">privacy policy</a> and agree to the processing of my data as outlined.</p>`,
     de: `<p>Ich habe die <a class="privacy-policy-link" href="./privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme zu.</p>`
