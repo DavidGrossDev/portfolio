@@ -21,6 +21,7 @@ const translations = {
         skills: {
             title: "Skills",
             mainContent: "I have gained experience working on different projects using front-end technologies such as HTML, CSS, and JavaScript. Each project has helped me strengthen my understanding of building responsive and user-friendly web applications. I'm always open to learning new technologies and adapting to modern tools and frameworks as the field continues to evolve. Continuous learning is essential to me in order to keep up with the fast-paced changes in web development and to grow as a developer.",
+            callOut:"I'm enthusiastic about learning new technologies and constantly improving my skills.",
             learning: "Continually learning",
             specInterest: "I have a special interest in learning",
             btn: "Get in touch"
@@ -100,6 +101,7 @@ const translations = {
         skills: {
             title: "Fähigkeiten",
             mainContent: "Ich habe an verschiedenen Projekten mit Frontend-Technologien wie HTML, CSS und JavaScript gearbeitet. Dabei konnte ich mein Verständnis für die Entwicklung responsiver und benutzerfreundlicher Webanwendungen stetig verbessern. Ich bin offen für neue Technologien und passe mich gerne modernen Tools und Frameworks an, da sich die Webentwicklung ständig weiterentwickelt. Kontinuierliches Lernen ist für mich ein wichtiger Bestandteil, um als Entwickler zu wachsen und Schritt mit den schnellen Veränderungen der Branche zu halten.",
+            callOut:"Ich habe große Freude daran, neue Technologien zu erlernen und meine Fähigkeiten stetig weiterzuentwickeln.",
             learning: "Kontinuierlich lernen",
             specInterest: "Speziell Interessiert am lernen von",
             btn: "Kontakt aufnehmen"
@@ -159,6 +161,7 @@ const translations = {
     }
 }
 
+const skillSectionCallOutRef = document.getElementById('skill_section_callOut')
 const checkboxProPolContainerRef = document.getElementById('checkbox_p_container');
 const switchLangToDeBtnRef = document.getElementById('language_de');
 const switchLangToEnBtnRef = document.getElementById('language_en');
