@@ -149,19 +149,30 @@ nav {}
 .landing-section {
     height: 100vh;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: #141D2F;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('./assets/img/shadows-hero.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+}
+
+.landing-section-bckgrd-left-highlight {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+}
+
+.landing-section-bckgrd-right-highlight {
+    position: absolute;
+    top: 50%;
+    left: 102%;
+    transform: translate(-50%, -50%) ;
 }
 
 .landing-section-content {
+    z-index: 1;
     flex-direction: column;
     gap: 72px;
 }
@@ -246,7 +257,7 @@ nav {}
 
 .landing-section-scr-dwn {
     position: absolute;
-    top: 799px;
+    bottom: 10%;
     right: 57px;
     height: 36px;
     gap: 3px;
@@ -267,7 +278,7 @@ nav {}
     justify-content: flex-start;
     align-items: center;
     position: absolute;
-    top: 867px;
+    bottom: 6%;
     left: 0;
 }
 
@@ -289,7 +300,7 @@ nav {}
     background-image: url('./assets/img/about-bckgrnd.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0 760px;
+    background-position: 0 710px;
 }
 
 .about-section {
@@ -341,7 +352,7 @@ h2 {
 }
 
 .about-section-right {
-    width: 593px;
+    width: 530px;
     height: 647px;
     position: relative;
 }
@@ -505,6 +516,7 @@ h2 {
 .skills-section-right {
     width: 40%;
     /*560px*/
+    height: 100%;
     position: relative;
     height: 492px;
     display: flex;
@@ -512,20 +524,36 @@ h2 {
     gap: 40px;
 }
 
-.skills-section-right p {
+.skills-section-right>p {
     font-size: 16px;
     color: #FFFFFF;
     padding-right: 89px;
 }
 
 .skills-section-headline {
-    /* position: absolute;
-    top: 0;
-    right: 0; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 32px;
+}
+
+.skills-section-right-callout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    color: #FFFFFF;
+    padding-right: 89px;
+}
+
+.skills-section-right-callout {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.skills-section-right-callout>span {
+    color:#9747FF;
 }
 
 .get-in-touch-btn-container {
