@@ -1,6 +1,7 @@
 const navToLandingSectionRef = document.getElementById('nav_to_Landing_section');
 const navLinks = document.querySelectorAll('.main-nav-menu-links-highlight-div a');
 const commentsAreaRef = document.getElementById('comments_area');
+const contactCalloutRef = document.getElementById('contact_section_callout');
 const commentMarks = document.querySelectorAll('.comment-mark');
 const commentsLeftArrowBtnRef = document.getElementById('comments_left_arrow');
 const commentsRightArrowBtnRef = document.getElementById('comments_right_arrow');
@@ -44,15 +45,18 @@ commentsRightArrowBtnRef?.addEventListener('click', () => {
 function init() {
     let currentSkillsCallOutTxt = "";
     let currentComment = "";
+    let currentContactCallOut = "";
     let currentCheckboxTxt = "";
     let lang = setCurrentLanguage();
     setLanguage(lang);
     currentSkillsCallOutTxt = translationSkillsCallOut[lang];
     currentComment = teamComments[commentCounter][`comment_${lang}`];
-    currentCheckboxTxt = translationTemplatePriPol[lang];
     commentsAreaRef.innerHTML = renderComment(currentComment);
+    currentContactCallOut = translationTemplateContact[lang];
+    currentCheckboxTxt = translationTemplatePriPol[lang];
     addCommentMarkHighlight();
     skillSectionCallOutRef.innerHTML = currentSkillsCallOutTxt;
+    contactCalloutRef.innerHTML = currentContactCallOut;
     checkboxProPolContainerRef.innerHTML = currentCheckboxTxt;
 }
 

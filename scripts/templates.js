@@ -8,6 +8,11 @@ const translationTemplatePriPol = {
     de: `<p>Ich habe die <a class="privacy-policy-link" href="./privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme zu.</p>`
 }
 
+const translationTemplateContact = {
+    en: `<p>Need a Frontend developer? <span class="contact-me-msg">Contact me!</span></p>`,
+    de: `<p>Suchst du einen Frontend-Entwickler? <span class="contact-me-msg">Kontaktiere mich!</span></p>`
+}
+
 const translationtemplatesLegalNotice = {
     en: {
         acceptance: `By accessing and using <span>Portfolio</span> (Product), you acknowledge and agree to the following
