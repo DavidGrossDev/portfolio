@@ -936,6 +936,14 @@ h2 {
     gap: 32px;
 }
 
+.contact-section-header-big-highlight {
+    display: flex;
+}
+
+.contact-section-header-small-highlight {
+    display: none;
+}
+
 h3 {
     font-weight: 700;
     font-size: 32px;
@@ -976,6 +984,14 @@ h3 {
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
+}
+
+.contact-section-main-left-header-big-highlight {
+    display: flex;
+}
+
+.contact-section-main-left-header-small-highlight {
+    display: none;
 }
 
 .contact-me-msg {

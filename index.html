@@ -771,23 +771,30 @@
         <section class="contact-section" id="contact_section">
             <div class="contact-section-header">
                 <h2 data-i18n="contact.title">Contact</h2>
-                <svg width="502" height="4" viewBox="0 0 502 4" fill="none">
+                <svg class="contact-section-header-big-highlight" width="502" height="4" viewBox="0 0 502 4"
+                    fill="none">
                     <path d="M2 2L502 1.99996" stroke="#70E61C" stroke-width="4" stroke-linecap="round" />
+                </svg>
+                <svg class="contact-section-header-small-highlight" width="87" height="4" viewBox="0 0 87 4"
+                    fill="none">
+                    <path d="M2 2H87" stroke="#70E61C" stroke-width="4" stroke-linecap="round" />
                 </svg>
             </div>
             <main class="contact-section-main">
                 <section class="contact-section-main-left">
                     <div class="contact-section-main-left-header">
-                        <svg width="68" height="4" viewBox="0 0 70 4" fill="none">
+                        <svg class="contact-section-main-left-header-big-highlight" width="68" height="4" viewBox="0 0 70 4" fill="none">
                             <path d="M0 2L68 2.00001" stroke="#1CDAE6" stroke-width="4" stroke-linecap="round" />
+                        </svg>
+                        <svg class="contact-section-main-left-header-small-highlight" width="22" height="4" viewBox="0 0 22 4" fill="none">
+                            <path
+                                d="M1.74846e-07 0L-2 -1.74846e-07L-2 4L-1.74846e-07 4L1.74846e-07 0ZM20 4C21.1046 4 22 3.10457 22 2C22 0.895432 21.1046 1.84502e-06 20 1.74846e-06L20 4ZM-1.74846e-07 4L20 4L20 1.74846e-06L1.74846e-07 0L-1.74846e-07 4Z"
+                                fill="#1CDAE6" />
                         </svg>
                         <h3 data-i18n="contact.undertitle"></h3>
                     </div>
                     <p data-i18n="contact.mainContent"></p>
-                    <div class="contact-section-call-out">
-                        <p data-i18n="contact.callOut.mainContent"></p>
-                        <p data-i18n="contact.callOut.contactMe" class="contact-me-msg"></p>
-                    </div>
+                    <div id="contact_section_callout" class="contact-section-call-out"></div>
                 </section>
                 <section class="contact-section-main-right">
                     <form action="">
@@ -957,7 +964,7 @@
         </section>
         <footer class="main-footer">
             <section class="footer-section">
-                <a href="#landing_section"><img class="footer-name-img" src="./assets/img/david.png" alt=""></a>
+                <a class="footer-section-to-landing-section" href="#landing_section"><img class="footer-name-img" src="./assets/img/david.png" alt=""></a>
                 <p>© David Groß 2026</p>
                 <div>
                     <section class="landing-section-footer-links">
