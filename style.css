@@ -168,7 +168,7 @@ nav {}
     position: absolute;
     top: 50%;
     left: 102%;
-    transform: translate(-50%, -50%) ;
+    transform: translate(-50%, -50%);
 }
 
 .landing-section-content {
@@ -380,7 +380,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 120px;
+    padding: 120px 0;
 }
 
 .skills-section-left {
@@ -515,10 +515,8 @@ h2 {
 
 .skills-section-right {
     width: 40%;
-    /*560px*/
     height: 100%;
     position: relative;
-    height: 492px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -537,6 +535,31 @@ h2 {
     gap: 32px;
 }
 
+.skills-section-right-small-skills-list {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding-right: 89px;
+}
+
+.skills-section-right-small-skills-list-visuals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.skills-section-right-small-skills-list svg {
+    max-width: 48px;
+    max-height: 48px;
+    min-height: 48px;
+}
+
 .skills-section-right-callout-container {
     display: flex;
     flex-direction: column;
@@ -553,7 +576,7 @@ h2 {
 }
 
 .skills-section-right-callout>span {
-    color:#9747FF;
+    color: #9747FF;
 }
 
 .get-in-touch-btn-container {
@@ -561,6 +584,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    padding-right: 89px;
 }
 
 .get-in-touch-btn {
@@ -621,6 +645,11 @@ h2 {
     background-color: #141D2F;
     position: relative;
     z-index: 1;
+}
+
+.portfolio-projects-section>section:last-child {
+    border: none;
+    background-color: transparent;
 }
 
 .portfolio-projects-section>section>div {
@@ -741,7 +770,7 @@ h2 {
     border-radius: 30px 30px 14px 14px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 27px;
     padding: 66px 45px;
@@ -759,14 +788,14 @@ h2 {
 .portfolio-right-highlight {
     z-index: -1;
     position: absolute;
-    top: -140px;
+    top: -6%;
     left: 66%;
 }
 
 .portfolio-left-highlight {
     z-index: -1;
     position: absolute;
-    bottom: -120px;
+    bottom: -6%;
     right: 80%;
 }
 
@@ -819,6 +848,14 @@ h2 {
     gap: 6px;
 }
 
+.comment-footer-big-highlight {
+    display: flex;
+}
+
+.comment-footer-small-highlight {
+    display: none;
+}
+
 .comment-footer>p {
     font-size: 18px;
     color: #FFFFFF;
@@ -838,20 +875,19 @@ h2 {
     overflow: hidden;
 }
 
-.img-circle>img {
-    width: 658px;
-}
-
 .schuster-img {
+    width: 658px;
     transform: rotateZ(90deg) translate(68px, 202px);
 }
 
 .eichinger-img {
-    transform: rotateZ(0deg) translate(-200px, -40px);
+    width: 498px;
+    transform: rotateZ(0deg) translate(-117px, -10px);
 }
 
 .nuber-img {
-    transform: rotateZ(90deg) translate(36px, 191px);
+    width: 543px;
+    transform: rotateZ(90deg) translate(15px, 137px);
 }
 
 .switch-comment-btns {
