@@ -41,11 +41,7 @@ const translations = {
         contact: {
             title: "Contact",
             undertitle: "Got a problem to solve?",
-            mainContent: "I'm looking for opportunities as a junior web developer where I can contribute to meaningful projects and continue developing my skills. I aim to add value by writing clean, maintainable code and creating modern, user-focused web applications.",
-            callOut: {
-                mainContent: "Need a Frontend developer?",
-                contactMe: "Contact me!"
-            }
+            mainContent: "I'm looking for opportunities as a junior web developer where I can contribute to meaningful projects and continue developing my skills. I aim to add value by writing clean, maintainable code and creating modern, user-focused web applications."
         },
         form: {
             nameMsg: "Your name is required",
@@ -121,11 +117,7 @@ const translations = {
         contact: {
             title: "Kontakt",
             undertitle: "Hast du ein Problem, das gelöst werden soll?",
-            mainContent: "Ich suche nach einer Position als Junior Web Developer, in der ich an sinnvollen Projekten mitarbeiten und mich fachlich weiterentwickeln kann. Dabei ist es mein Ziel, Mehrwert zu schaffen, indem ich sauberen, wartbaren Code schreibe und moderne, benutzerorientierte Webanwendungen entwickle.",
-            callOut: {
-                mainContent: "Suchst du einen Frontend-Entwickler?",
-                contactMe: "Kontaktiere mich!"
-            }
+            mainContent: "Ich suche nach einer Position als Junior Web Developer, in der ich an sinnvollen Projekten mitarbeiten und mich fachlich weiterentwickeln kann. Dabei ist es mein Ziel, Mehrwert zu schaffen, indem ich sauberen, wartbaren Code schreibe und moderne, benutzerorientierte Webanwendungen entwickle."
         },
         form: {
             nameMsg: "Dein name ist erforderlich",
