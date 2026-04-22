@@ -274,12 +274,19 @@ nav {}
 }
 
 .landing-section-footer {
+    z-index: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     position: absolute;
     bottom: 6%;
     left: 0;
+}
+
+.landing-section-footer-highlight {
+    width: 100px;
+    height: 0;
+    border: 2px solid #70E61C;
 }
 
 .landing-section-footer-links {
@@ -535,6 +542,12 @@ h2 {
     gap: 32px;
 }
 
+.skills-section-headline-highlight {
+    width: 287px;
+    height: 0;
+    border: 2px solid #1CDAE6;
+}
+
 .skills-section-right-small-skills-list {
     display: none;
     flex-direction: column;
@@ -625,6 +638,12 @@ h2 {
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
+}
+
+.portfolio-section-header-headline-highlight {
+    width: 68px;
+    height: 0;
+    border: 2px solid #9747FF;
 }
 
 .portfolio-projects-section {
@@ -773,7 +792,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     gap: 27px;
-    padding: 66px 45px;
+    padding: 30px 45px;
     text-align: center;
 }
 
@@ -848,12 +867,10 @@ h2 {
     gap: 6px;
 }
 
-.comment-footer-big-highlight {
-    display: flex;
-}
-
-.comment-footer-small-highlight {
-    display: none;
+.comment-footer-highlight {
+    width: 404px;
+    height: 0;
+    border: 1px solid #1CDAE6;
 }
 
 .comment-footer>p {
@@ -865,6 +882,12 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.comment-img-container-highlight {
+    width: 100px;
+    height: 0;
+    border: 2px solid #70E61C;
 }
 
 .img-circle {
@@ -934,14 +957,13 @@ h2 {
     justify-content: flex-end;
     align-items: center;
     gap: 32px;
+    width: 100%;
 }
 
-.contact-section-header-big-highlight {
-    display: flex;
-}
-
-.contact-section-header-small-highlight {
-    display: none;
+.contact-section-header-highlight {
+    width: 35%;
+    height: 0;
+    border: 2px solid #70E61C;
 }
 
 h3 {
@@ -986,12 +1008,10 @@ h3 {
     gap: 32px;
 }
 
-.contact-section-main-left-header-big-highlight {
-    display: flex;
-}
-
-.contact-section-main-left-header-small-highlight {
-    display: none;
+.contact-section-main-left-header-highlight {
+    width: 68px;
+    height: 0;
+    border: 2px solid #1CDAE6;
 }
 
 .contact-me-msg {
@@ -1007,6 +1027,10 @@ h3 {
     gap: 40px;
     padding-right: 100px;
 
+}
+
+.contact-main-right-form-container {
+    width: 100%;
 }
 
 form {
