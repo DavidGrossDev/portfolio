@@ -85,7 +85,56 @@ const translationtemplatesLegalNotice = {
     }
 }
 
-function renderComment(currentComment) {
+function skillCardTemplate(index) {
+    return `<div class="skills-card">
+                            ${skillsList[index].svg}
+                            <p>${skillsList[index].name}</p>
+                        </div>`;
+}
+
+function specLearnCardTemplate(index) {
+    return `<div>
+                ${specInterest[index].svg}
+                <p>${specInterest[index].name}</p>
+            </div>`;
+}
+
+function portfolioProjectTemplate(index) {
+    return `<section>
+                    <div class="porfolio-project-${portfolioProjects[index].className}">
+                        <div class="project-hover-info">
+                            <section class="project-hover-info-top">
+                                <div>
+                                    <a class="link-to-github" href="${portfolioProjects[index].linkToGithub}">Github</a>
+                                    <a class="link-to-live-test" href="${portfolioProjects[index].linkToLiveTest}">Live test</a>
+                                </div>
+                            </section>
+                            <section class="project-hover-info-bottom">
+                                <h3>${portfolioProjects[index].name}</h3>
+                                <p data-i18n="portfolio.${portfolioProjects[index].dataShort}.description"></p>
+                                <p class="used">${portfolioProjects[index].usedTech}</p>
+                            </section>
+                        </div>
+                    </div>
+                    <svg class="project-bckgrd-highlight" width="553" height="305" viewBox="0 0 553 305" fill="none">
+                        <g filter="url(#filter0_f_123_226)">
+                            <path
+                                d="M3.5 48.8719C11.5 42.4719 115.833 72.8719 167 88.8719L504.5 134.872L115.5 324.372L-82 302.372C-56.8333 220.539 -4.5 55.2719 3.5 48.8719Z"
+                                fill="black" fill-opacity="0.5" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_f_123_226" x="-130" y="0" width="682.5" height="372.372"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feGaussianBlur stdDeviation="24" result="effect1_foregroundBlur_123_226" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </section>`;
+}
+
+function commentTemplate(currentComment) {
     return `<section class="comment-container">
             <svg width="97" height="69" viewBox="0 0 97 69" fill="none">
                 <path d="M30.6 68.1H0L28.8 0H48.3L30.6 68.1ZM79.2 68.1H48.6L77.4 0H96.9L79.2 68.1Z" fill="#70E61C" />
@@ -94,12 +143,7 @@ function renderComment(currentComment) {
                 ${currentComment}
             </p>
             <div class="comment-footer">
-                <svg class="comment-footer-big-highlight" width="405" height="2" viewBox="0 0 405 2" fill="none">
-                    <path d="M404.5 1H0" stroke="#1CDAE6" stroke-width="2" />
-                </svg>
-                <svg class="comment-footer-small-highlight" width="55" height="2" viewBox="0 0 55 2" fill="none">
-                    <path d="M55 1H0" stroke="#9747FF" stroke-width="2" />
-                </svg>
+                <div class="comment-footer-highlight"></div>
                 <p>${teamComments[commentCounter].name} - ${teamComments[commentCounter].role}</p>
             </div>
         </section>
@@ -107,9 +151,6 @@ function renderComment(currentComment) {
             <div class="img-circle">
                 <img class="${teamComments[commentCounter].class}" src="${teamComments[commentCounter].imgsrc}" alt="">
             </div>
-            <svg width="102" height="4" viewBox="0 0 102 4" fill="none">
-                <path d="M2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4V0ZM102 4H104V0H102V4ZM2 4H102V0H2V4Z"
-                    fill="#70E61C" />
-            </svg>
+            <div class="comment-img-container-highlight"></div>
         </section>`;
 }
