@@ -431,6 +431,13 @@
     }
 }
 
+@media(max-width: 1264px) {
+    .comment-container>p {
+        font-size: 18px;
+    }
+}
+
+
 @media(max-width: 1160px) {
     .comment-container>p {
         font-size: 16px;
@@ -535,10 +542,16 @@
     }
 }
 
+@media(max-width: 424px) {
+    .comment-container {
+        min-height: 400px;
+    }
+}
+
 @media(max-width:370px) {
     .comment-container {
         margin: 0;
-        min-height: 380px;
+        min-height: 410px;
     }
 }
 
