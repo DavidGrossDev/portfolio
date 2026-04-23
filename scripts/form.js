@@ -17,7 +17,7 @@ const privacyPolicyCheckboxRef = document.getElementById('privacy_policy_checkbo
 const privacyPolicyEmptyBoxSvgRef = document.getElementById('privacy_policy_empty_checkbox');
 const privacyPolicyCheckedBoxSvgRef = document.getElementById('privacy_policy_checked_checkbox');
 const privacyPolicyAlertMsgRef = document.getElementById('privacy_policy_alert_msg');
-
+const checkboxProPolContainerRef = document.getElementById('checkbox_p_container');
 const sendMessageBtnRef = document.getElementById('send_msg_btn');
 
 let inputNameIsChecked = false;
