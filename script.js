@@ -1,5 +1,8 @@
+const overlay = document.getElementById('overlay');
 const navToLandingSectionRef = document.getElementById('nav_to_Landing_section');
 const navLinks = document.querySelectorAll('.main-nav-menu-links-highlight-div a');
+const openOverlayBtnRef = document.getElementById('open_overlay');
+const closeOverlayBtnRef = document.getElementById('close_overlay');
 const commentsAreaRef = document.getElementById('comments_area');
 const contactCalloutRef = document.getElementById('contact_section_callout');
 const commentMarks = document.querySelectorAll('.comment-mark');
@@ -211,28 +214,29 @@ commentsRightArrowBtnRef?.addEventListener('click', () => {
 });
 
 function init() {
+    let lang = setCurrentLanguage();
+    setLangContentIn(lang);
+    addCommentMarkHighlight();
+    renderSkillsList();
+    renderContinuallyLearning();
+    renderSpecInterestToLearn();
+    renderPortfolioProjects();
+    setLanguage(lang);
+}
+
+function setLangContentIn(lang) {
     let currentSkillsCallOutTxt = "";
     let currentComment = "";
     let currentContactCallOut = "";
     let currentCheckboxTxt = "";
-    let lang = setCurrentLanguage();
-    // setLanguage(lang);
     currentSkillsCallOutTxt = translationSkillsCallOut[lang];
     currentComment = teamComments[commentCounter][`comment_${lang}`];
     commentsAreaRef.innerHTML = commentTemplate(currentComment);
     currentContactCallOut = translationTemplateContact[lang];
     currentCheckboxTxt = translationTemplatePriPol[lang];
-    addCommentMarkHighlight();
     skillSectionCallOutRef.innerHTML = currentSkillsCallOutTxt;
     contactCalloutRef.innerHTML = currentContactCallOut;
-
-    renderSkillsList();
-    renderContinuallyLearning();
-    renderSpecInterestToLearn();
-    renderPortfolioProjects();
-    renderForm(currentCheckboxTxt);
-
-    setLanguage(lang);
+    checkboxProPolContainerRef.innerHTML = currentCheckboxTxt;
 }
 
 function removeCommentMarkHighlight() {
@@ -278,178 +282,18 @@ function renderContinuallyLearning() {
     continuallyLearningSmallRef.innerHTML = continuallyLearningTemplate('interestToLearnSmall', '#9747FF');
 }
 
-function continuallyLearningTemplate(id, color) {
-    return `<svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                            <g clip-path="url(#clip0_183337_1759)">
-                                <path
-                                    d="M49.8287 25.245L30.6153 36.1892C30.2695 36.3926 29.8423 36.3926 29.4863 36.1892L10.2729 25.245C9.52021 24.8178 9.52021 23.7294 10.2729 23.2921L29.4863 12.3479C29.8321 12.1444 30.2593 12.1444 30.6153 12.3479L49.8287 23.2921C50.5814 23.7193 50.5814 24.8076 49.8287 25.245Z"
-                                    fill="${color}" />
-                                <path
-                                    d="M46.5028 28.9269V37.9488C46.5028 38.3557 46.2892 38.7218 45.9332 38.9252L30.6153 47.6521C30.2695 47.8556 29.8423 47.8556 29.4863 47.6521L14.1685 38.9252C13.8125 38.7218 13.5989 38.3557 13.5989 37.9488V28.9269L22.0918 33.7583L29.4863 37.9793C29.8321 38.1827 30.2593 38.1827 30.6153 37.9793L38.0098 33.7583L46.5028 28.9269Z"
-                                    fill="${color}" />
-                                <path
-                                    d="M55.4535 14.0363L55.9824 13.6701C56.6232 13.2226 56.5418 12.2563 55.84 11.9207L51.6291 9.91694C50.9171 9.58129 50.1136 10.1407 50.1746 10.9239L50.5815 15.5721C50.6527 16.3451 51.5376 16.7622 52.1783 16.3146L52.931 15.7959C59.6237 26.5774 57.8234 40.9391 48.4659 49.6864C39.2609 58.2912 25.0721 59.3389 14.7279 52.1783C14.0363 51.7003 13.0802 51.8732 12.6022 52.5648C12.1241 53.2565 12.297 54.2126 12.9887 54.6906C18.1048 58.2302 24.0549 59.9695 29.9949 59.9695C37.4301 59.9695 44.8449 57.2436 50.551 51.9139C60.9968 42.1393 63.0107 26.0587 55.4535 14.0363Z"
-                                    fill="${color}" />
-                                <path
-                                    d="M47.113 5.30936C35.5992 -2.66487 19.8033 -1.49518 9.55075 8.0861C-1.15954 18.1047 -3.0819 34.1142 4.9025 46.34L4.16 46.8486C3.51922 47.2961 3.60059 48.2624 4.3024 48.5981L8.51328 50.6018C9.22527 50.9374 10.0288 50.378 9.96777 49.5948L9.56092 44.9466C9.48972 44.1736 8.60483 43.7566 7.96404 44.2041L7.41479 44.5906C0.315285 33.6159 2.03422 19.2846 11.6358 10.3136C20.8408 1.70875 35.0296 0.650944 45.3738 7.82165C46.0654 8.2997 47.0215 8.12679 47.4996 7.43515C47.9776 6.7435 47.8047 5.78741 47.113 5.30936Z"
-                                    fill="${color}" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_183337_1759">
-                                    <rect width="60" height="59.939" fill="white" transform="translate(0 0.0305176)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <p data-i18n="skills.learning"></p>
-                        <section class="continually-learning-hover">
-                            <div class="continually-learning-hover-div">
-                                <p data-i18n="skills.specInterest"></p>
-                                <div id="${id}" class="interest-to-learn"></div>
-                            </div>
-                        </section>`;
-}
+openOverlayBtnRef?.addEventListener('click', () => {
+    overlay.classList.remove('fade-out');
+    overlay.classList.remove('d_none');
+    setTimeout(()=> {
+        overlay.classList.add('fade-in');
+    },150);
+});
 
-function renderForm(currentCheckboxTxt) {
-    contactFormRef.innerHTML = `<form  action="">
-                            <div class="form-input-container">
-                                <label for="name">
-                                    <input id="name" type="text" class="inputfield"
-                                        data-i18n-placeholder="form.placeholder.namePh">
-                                    <svg id="name_fail_svg" class="d_none" width="26" height="25" viewBox="0 0 26 25"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_167_974)">
-                                            <path
-                                                d="M12.5247 0C5.6213 0 0 5.6213 0 12.5247C0 19.428 5.6213 25.0493 12.5247 25.0493C19.428 25.0493 25.0493 19.428 25.0493 12.5247C25.0493 5.6213 19.428 0 12.5247 0ZM13.9053 21.499C13.5108 21.8442 13.0671 22.0414 12.5247 22.0414C11.9822 22.0414 11.5385 21.8442 11.144 21.499C10.7495 21.1538 10.5523 20.6607 10.5523 20.0197C10.5523 19.4773 10.7495 19.0335 11.144 18.6391C11.5385 18.2446 11.9822 18.0473 12.574 18.0473C13.1164 18.0473 13.6095 18.2446 14.0039 18.6391C14.3984 19.0335 14.5957 19.4773 14.5957 20.0197C14.497 20.6607 14.2998 21.1538 13.9053 21.499ZM14.3984 7.84024L13.8067 14.3491C13.7574 15.1381 13.6095 15.7298 13.4122 16.1243C13.215 16.5187 12.8698 16.7653 12.426 16.7653C11.9329 16.7653 11.6371 16.568 11.4398 16.1736C11.2426 15.7791 11.144 15.1381 11.0454 14.3491L10.6016 8.03747C10.503 6.80473 10.503 5.91716 10.503 5.37475C10.503 4.63511 10.7002 4.0927 11.0947 3.64892C11.4892 3.25444 11.9822 3.0572 12.6233 3.0572C13.3629 3.0572 13.9053 3.30375 14.1519 3.84615C14.3984 4.38856 14.5464 5.1282 14.5464 6.1144C14.497 6.6568 14.497 7.24852 14.3984 7.84024Z"
-                                                fill="#E61C40" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_167_974">
-                                                <rect width="25.0493" height="25" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <svg id="name_success_svg" class="d_none" width="25" height="25" viewBox="0 0 25 25"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_167_980)">
-                                            <path
-                                                d="M12.4717 0C5.61225 0 0 5.61225 0 12.4717C0 19.3878 5.61225 25 12.4717 25C19.3878 25 24.9433 19.3878 24.9433 12.4717C25 5.61225 19.3878 0 12.4717 0ZM20.1247 6.46258L11.9615 19.898C11.678 20.3515 11.2245 20.6916 10.6576 20.6916C10.6009 20.6916 10.5442 20.6916 10.4875 20.6916C9.97732 20.6916 9.52381 20.4649 9.18367 20.1247L5.04535 15.3061C4.42177 14.6259 4.47846 13.5488 5.21542 12.9252C5.89569 12.3016 7.02948 12.3583 7.59637 13.0952L10.2608 16.1565L17.1769 4.70522C17.6871 3.91157 18.7075 3.62812 19.5011 4.13832C20.3515 4.59184 20.5782 5.66893 20.1247 6.46258Z"
-                                                fill="#70E61C" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_167_980">
-                                                <rect width="25" height="25" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </label>
-                                <p id="name_alert_msg" class="alertmessage d_none" data-i18n="form.nameMsg"></p>
-                            </div>
-                            <div class="form-input-container">
-                                <label for="email">
-                                    <input id="email" class="inputfield" type="text"
-                                        data-i18n-placeholder="form.placeholder.emailPh">
-                                    <svg id="email_fail_svg" class="d_none" width="26" height="25" viewBox="0 0 26 25"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_167_974)">
-                                            <path
-                                                d="M12.5247 0C5.6213 0 0 5.6213 0 12.5247C0 19.428 5.6213 25.0493 12.5247 25.0493C19.428 25.0493 25.0493 19.428 25.0493 12.5247C25.0493 5.6213 19.428 0 12.5247 0ZM13.9053 21.499C13.5108 21.8442 13.0671 22.0414 12.5247 22.0414C11.9822 22.0414 11.5385 21.8442 11.144 21.499C10.7495 21.1538 10.5523 20.6607 10.5523 20.0197C10.5523 19.4773 10.7495 19.0335 11.144 18.6391C11.5385 18.2446 11.9822 18.0473 12.574 18.0473C13.1164 18.0473 13.6095 18.2446 14.0039 18.6391C14.3984 19.0335 14.5957 19.4773 14.5957 20.0197C14.497 20.6607 14.2998 21.1538 13.9053 21.499ZM14.3984 7.84024L13.8067 14.3491C13.7574 15.1381 13.6095 15.7298 13.4122 16.1243C13.215 16.5187 12.8698 16.7653 12.426 16.7653C11.9329 16.7653 11.6371 16.568 11.4398 16.1736C11.2426 15.7791 11.144 15.1381 11.0454 14.3491L10.6016 8.03747C10.503 6.80473 10.503 5.91716 10.503 5.37475C10.503 4.63511 10.7002 4.0927 11.0947 3.64892C11.4892 3.25444 11.9822 3.0572 12.6233 3.0572C13.3629 3.0572 13.9053 3.30375 14.1519 3.84615C14.3984 4.38856 14.5464 5.1282 14.5464 6.1144C14.497 6.6568 14.497 7.24852 14.3984 7.84024Z"
-                                                fill="#E61C40" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_167_974">
-                                                <rect width="25.0493" height="25" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <svg id="email_success_svg" class="d_none" width="25" height="25"
-                                        viewBox="0 0 25 25" fill="none">
-                                        <g clip-path="url(#clip0_167_980)">
-                                            <path
-                                                d="M12.4717 0C5.61225 0 0 5.61225 0 12.4717C0 19.3878 5.61225 25 12.4717 25C19.3878 25 24.9433 19.3878 24.9433 12.4717C25 5.61225 19.3878 0 12.4717 0ZM20.1247 6.46258L11.9615 19.898C11.678 20.3515 11.2245 20.6916 10.6576 20.6916C10.6009 20.6916 10.5442 20.6916 10.4875 20.6916C9.97732 20.6916 9.52381 20.4649 9.18367 20.1247L5.04535 15.3061C4.42177 14.6259 4.47846 13.5488 5.21542 12.9252C5.89569 12.3016 7.02948 12.3583 7.59637 13.0952L10.2608 16.1565L17.1769 4.70522C17.6871 3.91157 18.7075 3.62812 19.5011 4.13832C20.3515 4.59184 20.5782 5.66893 20.1247 6.46258Z"
-                                                fill="#70E61C" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_167_980">
-                                                <rect width="25" height="25" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </label>
-                                <p id="email_alert_msg" class="alertmessage d_none" data-i18n="form.emailMsg"></p>
-                            </div>
-                            <div class="form-textarea-container">
-                                <textarea name="" id="message" class="form-textarea"
-                                    data-i18n-placeholder="form.placeholder.messagePh"></textarea>
-                                <svg id="message_fail_svg" class="d_none" width="26" height="25" viewBox="0 0 26 25"
-                                    fill="none">
-                                    <g clip-path="url(#clip0_167_974)">
-                                        <path
-                                            d="M12.5247 0C5.6213 0 0 5.6213 0 12.5247C0 19.428 5.6213 25.0493 12.5247 25.0493C19.428 25.0493 25.0493 19.428 25.0493 12.5247C25.0493 5.6213 19.428 0 12.5247 0ZM13.9053 21.499C13.5108 21.8442 13.0671 22.0414 12.5247 22.0414C11.9822 22.0414 11.5385 21.8442 11.144 21.499C10.7495 21.1538 10.5523 20.6607 10.5523 20.0197C10.5523 19.4773 10.7495 19.0335 11.144 18.6391C11.5385 18.2446 11.9822 18.0473 12.574 18.0473C13.1164 18.0473 13.6095 18.2446 14.0039 18.6391C14.3984 19.0335 14.5957 19.4773 14.5957 20.0197C14.497 20.6607 14.2998 21.1538 13.9053 21.499ZM14.3984 7.84024L13.8067 14.3491C13.7574 15.1381 13.6095 15.7298 13.4122 16.1243C13.215 16.5187 12.8698 16.7653 12.426 16.7653C11.9329 16.7653 11.6371 16.568 11.4398 16.1736C11.2426 15.7791 11.144 15.1381 11.0454 14.3491L10.6016 8.03747C10.503 6.80473 10.503 5.91716 10.503 5.37475C10.503 4.63511 10.7002 4.0927 11.0947 3.64892C11.4892 3.25444 11.9822 3.0572 12.6233 3.0572C13.3629 3.0572 13.9053 3.30375 14.1519 3.84615C14.3984 4.38856 14.5464 5.1282 14.5464 6.1144C14.497 6.6568 14.497 7.24852 14.3984 7.84024Z"
-                                            fill="#E61C40" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_167_974">
-                                            <rect width="25.0493" height="25" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <svg id="message_success_svg" class="d_none" width="25" height="25" viewBox="0 0 25 25"
-                                    fill="none">
-                                    <g clip-path="url(#clip0_167_980)">
-                                        <path
-                                            d="M12.4717 0C5.61225 0 0 5.61225 0 12.4717C0 19.3878 5.61225 25 12.4717 25C19.3878 25 24.9433 19.3878 24.9433 12.4717C25 5.61225 19.3878 0 12.4717 0ZM20.1247 6.46258L11.9615 19.898C11.678 20.3515 11.2245 20.6916 10.6576 20.6916C10.6009 20.6916 10.5442 20.6916 10.4875 20.6916C9.97732 20.6916 9.52381 20.4649 9.18367 20.1247L5.04535 15.3061C4.42177 14.6259 4.47846 13.5488 5.21542 12.9252C5.89569 12.3016 7.02948 12.3583 7.59637 13.0952L10.2608 16.1565L17.1769 4.70522C17.6871 3.91157 18.7075 3.62812 19.5011 4.13832C20.3515 4.59184 20.5782 5.66893 20.1247 6.46258Z"
-                                            fill="#70E61C" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_167_980">
-                                            <rect width="25" height="25" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <p id="message_alert_msg" class="alertmessage d_none" data-i18n="form.messageMsg"></p>
-                            </div>
-                            <footer class="form-footer">
-                                <div class="alertmessage-container">
-                                    <div class="privacy-policy-checkbox-container">
-                                        <button id="privacy_policy_checkbox" class="checkbox" type="button">
-                                            <svg id="privacy_policy_empty_checkbox" class="" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none">
-                                                <mask id="mask0_183714_1736" style="mask-type:alpha"
-                                                    maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                                                    <rect width="24" height="24" fill="#797EF3" />
-                                                </mask>
-                                                <g mask="url(#mask0_183714_1736)">
-                                                    <path
-                                                        d="M5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H19C19.55 3 20.0208 3.19583 20.4125 3.5875C20.8042 3.97917 21 4.45 21 5V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5ZM5 19H19V5H5V19Z"
-                                                        fill="#70E61C" />
-                                                </g>
-                                            </svg>
-                                            <svg id="privacy_policy_checked_checkbox" class="d_none" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none">
-                                                <mask id="mask0_41963_3104" style="mask-type:alpha"
-                                                    maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                                                    <rect width="24" height="24" fill="#797EF3" />
-                                                </mask>
-                                                <g mask="url(#mask0_41963_3104)">
-                                                    <path
-                                                        d="M10.6 13.4L8.45 11.25C8.26667 11.0667 8.03333 10.975 7.75 10.975C7.46667 10.975 7.23333 11.0667 7.05 11.25C6.86667 11.4333 6.775 11.6667 6.775 11.95C6.775 12.2333 6.86667 12.4667 7.05 12.65L9.9 15.5C10.1 15.7 10.3333 15.8 10.6 15.8C10.8667 15.8 11.1 15.7 11.3 15.5L16.95 9.85C17.1333 9.66667 17.225 9.43333 17.225 9.15C17.225 8.86667 17.1333 8.63333 16.95 8.45C16.7667 8.26667 16.5333 8.175 16.25 8.175C15.9667 8.175 15.7333 8.26667 15.55 8.45L10.6 13.4ZM5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H19C19.55 3 20.0208 3.19583 20.4125 3.5875C20.8042 3.97917 21 4.45 21 5V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5ZM5 19H19V5H5V19Z"
-                                                        fill="#70E61C" />
-                                                </g>
-                                            </svg>
-                                        </button>
-                                        <div id="checkbox_p_container" class="checkbox-agree-txt-container">
-                                        </div>
-                                    </div>
-                                    <p id="privacy_policy_alert_msg" class="alertmessage d_none"
-                                        data-i18n="form.ppCheck">
-                                    </p>
-                                </div>
-                                <div class="send-message-btn-df-center-container">
-                                    <button id="send_msg_btn" class="send-message-btn" type="button">Send message
-                                        :)</button>
-                                </div>
-                            </footer>
-                        </form>`;
-    const checkboxProPolContainerRef = document.getElementById('checkbox_p_container');
-    checkboxProPolContainerRef.innerHTML = currentCheckboxTxt;
-}
+closeOverlayBtnRef?.addEventListener('click', () => {
+    overlay.classList.remove('fade-in');
+    overlay.classList.add('fade-out');
+    setTimeout(()=> {
+        overlay.classList.add('d_none');
+    },150);  
+});
