@@ -154,7 +154,6 @@ const translations = {
 }
 
 const skillSectionCallOutRef = document.getElementById('skill_section_callOut')
-const checkboxProPolContainerRef = document.getElementById('checkbox_p_container');
 const switchLangToDeBtnRef = document.getElementById('language_de');
 const switchLangToEnBtnRef = document.getElementById('language_en');
 const switchLangToDeLegalNoticeBtnRef = document.getElementById('language_ln_de');
