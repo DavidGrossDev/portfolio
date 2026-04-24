@@ -2,7 +2,8 @@ const translations = {
     en: {
         nav: {
             about_me: "About me",
-            skills: "Skills"
+            skills: "Skills",
+            contact: "Contact"
         },
         landing: {
             btn: "Let's talk!",
@@ -78,7 +79,8 @@ const translations = {
     de: {
         nav: {
             about_me: "Über mich",
-            skills: "Fähigkeiten"
+            skills: "Fähigkeiten",
+            contact: "Kontakt"
         },
         landing: {
             btn: "Kontaktieren!",
