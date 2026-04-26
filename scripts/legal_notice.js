@@ -5,7 +5,8 @@ const sectionLegNotArray = ids.map(id =>
 );
 
 function legalNoticeInit() {
-    let lang = setCurrentLanguage();
+    let lang = JSON.parse(localStorage.getItem("lang"));
+    
     setLanguage(lang);
     let keyArray = Object.keys(translationtemplatesLegalNotice[lang]);
     for (let index = 0; index < sectionLegNotArray.length; index++) {

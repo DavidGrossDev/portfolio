@@ -165,13 +165,13 @@ function portfolioProjectTemplate(index) {
                 </section>`;
 }
 
-function commentTemplate(currentComment) {
+function commentTemplate(lang) {
     return `<section class="comment-container">
             <svg width="97" height="69" viewBox="0 0 97 69" fill="none">
                 <path d="M30.6 68.1H0L28.8 0H48.3L30.6 68.1ZM79.2 68.1H48.6L77.4 0H96.9L79.2 68.1Z" fill="#70E61C" />
             </svg>
             <p>
-                ${currentComment}
+                ${teamComments[commentCounter][`comment_${lang}`]}
             </p>
             <div class="comment-footer">
                 <div class="comment-footer-highlight"></div>

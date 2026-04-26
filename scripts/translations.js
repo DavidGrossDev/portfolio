@@ -22,7 +22,7 @@ const translations = {
         skills: {
             title: "Skills",
             mainContent: "I have gained experience working on different projects using front-end technologies such as HTML, CSS, and JavaScript. Each project has helped me strengthen my understanding of building responsive and user-friendly web applications. I'm always open to learning new technologies and adapting to modern tools and frameworks as the field continues to evolve. Continuous learning is essential to me in order to keep up with the fast-paced changes in web development and to grow as a developer.",
-            callOut:"I'm enthusiastic about learning new technologies and constantly improving my skills.",
+            callOut: "I'm enthusiastic about learning new technologies and constantly improving my skills.",
             learning: "Continually learning",
             specInterest: "I have a special interest in learning",
             btn: "Get in touch"
@@ -99,7 +99,7 @@ const translations = {
         skills: {
             title: "Fähigkeiten",
             mainContent: "Ich habe an verschiedenen Projekten mit Frontend-Technologien wie HTML, CSS und JavaScript gearbeitet. Dabei konnte ich mein Verständnis für die Entwicklung responsiver und benutzerfreundlicher Webanwendungen stetig verbessern. Ich bin offen für neue Technologien und passe mich gerne modernen Tools und Frameworks an, da sich die Webentwicklung ständig weiterentwickelt. Kontinuierliches Lernen ist für mich ein wichtiger Bestandteil, um als Entwickler zu wachsen und Schritt mit den schnellen Veränderungen der Branche zu halten.",
-            callOut:"Ich habe große Freude daran, neue Technologien zu erlernen und meine Fähigkeiten stetig weiterzuentwickeln.",
+            callOut: "Ich habe große Freude daran, neue Technologien zu erlernen und meine Fähigkeiten stetig weiterzuentwickeln.",
             learning: "Kontinuierlich lernen",
             specInterest: "Speziell Interessiert am lernen von",
             btn: "Kontakt aufnehmen"
@@ -155,53 +155,87 @@ const translations = {
     }
 }
 
-const skillSectionCallOutRef = document.getElementById('skill_section_callOut')
-const switchLangToDeBtnRef = document.getElementById('language_de');
-const switchLangToEnBtnRef = document.getElementById('language_en');
-const switchLangToDeLegalNoticeBtnRef = document.getElementById('language_ln_de');
-const switchLangToEnLegalNoticeBtnRef = document.getElementById('language_ln_en');
+const skillSectionCallOutRef = document.getElementById('skill_section_callOut');
+// const switchLangToDeLegalNoticeBtnRef = ;
+// const switchLangToEnLegalNoticeBtnRef = ;
+// const switchLangToDeLegalNoticeMobileBtnRef = ;
+// const switchLangToEnLegalNoticeMobileBtnRef = ;
 
 let langDe = false;
 let currentLang = "";
 
-switchLangToDeBtnRef?.addEventListener('click', () => {
-    langDe = true;
-    currentLang = setCurrentLanguage();
+const langButtonsIndex = {
+    de: [
+        document.getElementById('language_de'),
+        document.getElementById('language_de_mobile')
+    ],
+    en: [
+        document.getElementById('language_en'),
+        document.getElementById('language_en_mobile')
+    ]
+};
+
+const langButtonsLegal = {
+    de: [
+        document.getElementById('language_ln_de'),
+        document.getElementById('language_ln_de_mobile')
+    ],
+    en: [
+        document.getElementById('language_ln_en'),
+        document.getElementById('language_ln_en_mobile')
+    ]
+};
+
+function handleLangSwitchIndex(lang) {
     removeLanguageBtnMark();
-    setLanguage(currentLang);
-    switchLangToDeBtnRef.classList.add('active');
-    init();
-});
+    if (lang === 'de') {
+        langDe = true;
+    } else {
+        langDe = false;
+    }
+    setLangToLocalStorage(lang);
+    langButtonsIndex[lang].forEach(btn => {
+        btn?.classList.add('active');
+    });
+    init(lang);
+}
 
-switchLangToEnBtnRef?.addEventListener('click', () => {
-    langDe = false;
-    currentLang = setCurrentLanguage();
-    removeLanguageBtnMark();
-    setLanguage(currentLang);
-    switchLangToEnBtnRef.classList.add('active');
-    init(); 
-});
-
-switchLangToDeLegalNoticeBtnRef?.addEventListener('click', () => {
-    langDe = true;
-    currentLang = setCurrentLanguage();
+function handleLangSwitchLegal(lang) {
     removeLanguageLnBtnMark();
-    setLanguage(currentLang);
-    legalNoticeInit(currentLang);
-    switchLangToDeLegalNoticeBtnRef.classList.add('active');
+    if (lang === 'de') {
+        langDe = true;
+    } else {
+        langDe = false;
+    }
+
+    langButtonsLegal[lang].forEach(btn => {
+        btn?.classList.add('active');
+    });
+    legalNoticeInit(lang);
+}
+
+Object.entries(langButtonsIndex).forEach(([lang, buttons]) => {
+    buttons.forEach(btn => {
+        btn?.addEventListener('click', () => {
+            handleLangSwitchIndex(lang);
+        });
+    })
 });
 
-switchLangToEnLegalNoticeBtnRef?.addEventListener('click', () => {
-    langDe = false;
-    currentLang = setCurrentLanguage();
-    removeLanguageLnBtnMark();
-    setLanguage(currentLang);
-    legalNoticeInit(currentLang);
-    switchLangToEnLegalNoticeBtnRef.classList.add('active');
+Object.entries(langButtonsLegal).forEach(([lang, buttons]) => {
+    buttons.forEach(btn => {
+        btn?.addEventListener('click', () => {
+            handleLangSwitchLegal(lang);
+        });
+    })
 });
+
+function setLangToLocalStorage(lang) {
+    localStorage.setItem("lang",JSON.stringify(lang));
+}
 
 function setCurrentLanguage() {
-    if(langDe) {
+    if (langDe) {
         return 'de';
     } else {
         return 'en';
@@ -209,13 +243,20 @@ function setCurrentLanguage() {
 }
 
 function removeLanguageBtnMark() {
-    switchLangToDeBtnRef.classList.remove('active');
-    switchLangToEnBtnRef.classList.remove('active');
+    Object.values(langButtonsIndex).forEach((buttons) => {
+        buttons.forEach(btn => {
+            btn?.classList.remove('active');
+        });
+    });
+
 }
 
 function removeLanguageLnBtnMark() {
-    switchLangToDeLegalNoticeBtnRef.classList.remove('active');
-    switchLangToEnLegalNoticeBtnRef.classList.remove('active');
+    Object.values(langButtonsLegal).forEach((buttons) => {
+        buttons.forEach(btn => {
+            btn?.classList.remove('active');
+        });
+    });
 }
 
 function setLanguage(lang) {
