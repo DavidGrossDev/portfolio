@@ -9,60 +9,86 @@
     <link rel="stylesheet" href="./styles/fonts/fonts.css">
     <link rel="stylesheet" href="./styles/legal_notice.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/media_querries_index.css">
 </head>
 
 <body onload="legalNoticeInit()">
+    <section id="overlay" class="overlay d_none">
+        <div class="overlay-card">
+            <header class="overlay-header">
+                <a href="./index.html#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
+                <button id="close_overlay" class="main-nav-burger-menu-btn">
+                    <svg width="35" height="32" viewBox="0 0 35 32" fill="none">
+                        <path d="M7 5.00024L27.6506 26.7615" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M7 27L27.46 5.05939" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </header>
+            <section class="overlay-menu-body">
+                <nav class="overlay-nav">
+                    <div class="overlay-nav-menu-links">
+                        <div class="overlay-nav-menu-links-highlight-div">
+                            <a data-i18n="nav.about_me" href="./index.html#about_me"></a>
+                            <div class="overlay-nav-menu-links-highlight" ></div>
+                        </div>
+                        <div class="overlay-nav-menu-links-highlight-div">
+                            <a data-i18n="nav.skills" href="./index.html#skills"></a>
+                            <div class="overlay-nav-menu-links-highlight" ></div>
+                        </div>
+                        <div class="overlay-nav-menu-links-highlight-div">
+                            <a href="./index.html#portfolio">Portfolio</a>
+                            <div class="overlay-nav-menu-links-highlight" ></div>
+                        </div>
+                        <div class="overlay-nav-menu-links-highlight-div">
+                            <a data-i18n="nav.contact" href="./index.html#contact_section">Portfolio</a>
+                            <div class="overlay-nav-menu-links-highlight" ></div>
+                        </div>
+                    </div>
+                    <div class="overlay-nav-btns">
+                        <button id="language_ln_de_mobile">DE</button>
+                        <p>/</p>
+                        <button id="language_ln_en_mobile" class="active">EN</button>
+                    </div>
+                </nav>
+            </section>
+        </div>
+    </section>
     <main class="document-main">
-        <header class="landing-section-header">
-            <a href="#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
-            <section class="landing-section-header-menu">
-                <div class="landing-section-header-links">
-                    <div class="landing-section-header-links-highlight-div">
-                        <a data-i18n="nav.about_me" href="./index.html"></a>
-                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
-                            fill="none">
-                            <path
-                                d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
-                                fill="#9747FF" />
-                        </svg>
+        <nav class="main-nav">
+            <a id="nav_to_Landing_section" href="./index.html#landing_section"><img src="./assets/img/david.png" alt="my Name"></a>
+            <section class="main-nav-menu">
+                <div class="main-nav-menu-links">
+                    <div class="main-nav-menu-links-highlight-div">
+                        <a data-i18n="nav.about_me" href="./index.html#about_me"></a>
+                        <div class="main-nav-menu-links-highlight" ></div>
                     </div>
-                    <div class="landing-section-header-links-highlight-div">
-                        <a data-i18n="nav.skills" href="#skills"></a>
-                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
-                            fill="none">
-                            <path
-                                d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
-                                fill="#9747FF" />
-                        </svg>
+                    <div class="main-nav-menu-links-highlight-div">
+                        <a data-i18n="nav.skills" href="./index.html#skills"></a>
+                        <div class="main-nav-menu-links-highlight" ></div>
                     </div>
-                    <div class="landing-section-header-links-highlight-div">
-                        <a href="#portfolio">Portfolio</a>
-                        <svg class="landing-section-header-link-highlight" width="59" height="3" viewBox="0 0 59 3"
-                            fill="none">
-                            <path
-                                d="M1.5 0H0V3H1.5V0ZM57 3C57.8284 3 58.5 2.32843 58.5 1.5C58.5 0.671573 57.8284 0 57 0V3ZM1.5 3H57V0H1.5V3Z"
-                                fill="#9747FF" />
-                        </svg>
+                    <div class="main-nav-menu-links-highlight-div">
+                        <a href="./index.html#portfolio">Portfolio</a>
+                        <div class="main-nav-menu-links-highlight" ></div>
                     </div>
-
                 </div>
-                <div class="landing-section-header-btns">
-                    <button id="language_ln_de" >DE</button>
+                <div class="main-nav-btns">
+                    <button id="language_ln_de">DE</button>
                     <button id="language_ln_en" class="active">EN</button>
                 </div>
             </section>
-        </header>
+            <button id="open_overlay" class="main-nav-burger-menu-btn">
+                <svg width="32" height="30" viewBox="0 0 32 30" fill="none">
+                    <path d="M1 1H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M1 15H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M1 29H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </nav>
         <section class="legal-notice-headline">
             <div class="legal-notice-headline-container">
-                <svg width="135" height="6" viewBox="0 0 135 6" fill="none">
-                    <path d="M2.01532 2.01514L132.015 3.01514" stroke="#9747FF" stroke-width="4"
-                        stroke-linecap="square" />
-                </svg>
+                <div class="legal-notice-headline-highlight-left"></div>
                 <h1 data-i18n="legNot.headline" class="legal-notice-headline-h1"></h1>
-                <svg width="501" height="5" viewBox="0 0 501 5" fill="none">
-                    <path d="M2.004 2.00391L502.004 3.00391" stroke="#9747FF" stroke-width="4"
-                        stroke-linecap="square" />
-                </svg>
+                <div class="legal-notice-headline-highlight-right"></div>
             </div>
         </section>
         <main class="legal-notice-main-content">
@@ -133,6 +159,7 @@
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/translations.js"></script>
     <script src="./scripts/legal_notice.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
