@@ -177,8 +177,6 @@ h1 {
     align-items: center;
 }
 
-nav {}
-
 .main-nav {
     position: fixed;
     z-index: 3;
@@ -188,6 +186,9 @@ nav {}
     height: 109px;
     padding: 37px 100px;
     background-color: #141D2F;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #FFFFFF;
 }
 
 .main-nav img {
@@ -733,7 +734,7 @@ h2 {
 }
 
 .portfolio-section {
-    padding: 100px 0;
+    padding: 109px 0;
     position: relative;
 }
 

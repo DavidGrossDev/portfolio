@@ -11,11 +11,21 @@
     gap: 25px;
 }
 
+.legal-notice-headline-highlight-left {
+    border: 2px solid #9747FF;
+    width: 130px;
+}
+
 .legal-notice-headline-h1 {
     font-family: 'Open Sans';
     font-weight: 700;
     font-size: 61px;
     color: #70E61C;
+}
+
+.legal-notice-headline-highlight-right {
+    border: 2px solid #9747FF;
+    width: 500px;
 }
 
 .legal-notice-main-content {
@@ -26,7 +36,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    padding: 100px 0;
+    padding: 100px 20px;
 }
 
 .legal-notice-main-content ul {
