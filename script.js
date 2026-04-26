@@ -49,7 +49,8 @@ commentsLeftArrowBtnRef?.addEventListener('click', () => {
         commentCounter = 2;
     }
     removeCommentMarkHighlight();
-    init();
+    let lang = setCurrentLanguage();
+    init(lang);
 });
 
 commentsRightArrowBtnRef?.addEventListener('click', () => {
@@ -58,33 +59,38 @@ commentsRightArrowBtnRef?.addEventListener('click', () => {
         commentCounter = 0;
     }
     removeCommentMarkHighlight();
-    init();
+    let lang = setCurrentLanguage();
+    init(lang);
 });
 
-function init() {
-    let lang = setCurrentLanguage();
-    setLangContentIn(lang);
+function init(lang = 'en') {
+    let langLocal = JSON.parse(localStorage.getItem('lang'));
+    console.log(langLocal);
+    
+    if(langLocal != null ) {
+        lang = langLocal;
+    } 
+    else {
+        lang = lang;
+    }
+        
+    
+        setLangContentIn(lang);
     addCommentMarkHighlight();
     renderSkillsList();
     renderContinuallyLearning();
     renderSpecInterestToLearn();
     renderPortfolioProjects();
     setLanguage(lang);
+    
+    
 }
 
 function setLangContentIn(lang) {
-    let currentSkillsCallOutTxt = "";
-    let currentComment = "";
-    let currentContactCallOut = "";
-    let currentCheckboxTxt = "";
-    currentSkillsCallOutTxt = translationSkillsCallOut[lang];
-    currentComment = teamComments[commentCounter][`comment_${lang}`];
-    commentsAreaRef.innerHTML = commentTemplate(currentComment);
-    currentContactCallOut = translationTemplateContact[lang];
-    currentCheckboxTxt = translationTemplatePriPol[lang];
-    skillSectionCallOutRef.innerHTML = currentSkillsCallOutTxt;
-    contactCalloutRef.innerHTML = currentContactCallOut;
-    checkboxProPolContainerRef.innerHTML = currentCheckboxTxt;
+    commentsAreaRef.innerHTML = commentTemplate(lang);
+    skillSectionCallOutRef.innerHTML = translationSkillsCallOut[lang];
+    contactCalloutRef.innerHTML = translationTemplateContact[lang];
+    checkboxProPolContainerRef.innerHTML = translationTemplatePriPol[lang];
 }
 
 function removeCommentMarkHighlight() {
