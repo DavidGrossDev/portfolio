@@ -4,9 +4,9 @@ const sectionLegNotArray = ids.map(id =>
     document.getElementById(`legal_notice_${id}`)
 );
 
-function legalNoticeInit() {
-    let lang = JSON.parse(localStorage.getItem("lang"));
-    
+function legalNoticeInit(lang = 'en') {
+    lang = checkLocalStorage(lang);
+    setRightLanguageBtnLegalActive(lang);
     setLanguage(lang);
     let keyArray = Object.keys(translationtemplatesLegalNotice[lang]);
     for (let index = 0; index < sectionLegNotArray.length; index++) {
@@ -14,5 +14,10 @@ function legalNoticeInit() {
     }
 }
 
-
+function setRightLanguageBtnLegalActive(lang) {
+    removeLanguageLnBtnMark();
+    langButtonsLegal[lang].forEach(btn => {
+        btn?.classList.add('active');
+    });
+}
 
