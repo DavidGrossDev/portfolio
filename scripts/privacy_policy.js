@@ -1,0 +1,6 @@
+
+
+
+function privacyPolicyInit() {
+    setLanguage('en');
+}
