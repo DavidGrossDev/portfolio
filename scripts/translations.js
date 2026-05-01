@@ -156,10 +156,7 @@ const translations = {
 }
 
 const skillSectionCallOutRef = document.getElementById('skill_section_callOut');
-// const switchLangToDeLegalNoticeBtnRef = ;
-// const switchLangToEnLegalNoticeBtnRef = ;
-// const switchLangToDeLegalNoticeMobileBtnRef = ;
-// const switchLangToEnLegalNoticeMobileBtnRef = ;
+
 
 let langDe = false;
 let currentLang = "";
@@ -207,7 +204,7 @@ function handleLangSwitchLegal(lang) {
     } else {
         langDe = false;
     }
-
+    setLangToLocalStorage(lang);
     langButtonsLegal[lang].forEach(btn => {
         btn?.classList.add('active');
     });

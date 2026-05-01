@@ -64,26 +64,33 @@ commentsRightArrowBtnRef?.addEventListener('click', () => {
 });
 
 function init(lang = 'en') {
-    let langLocal = JSON.parse(localStorage.getItem('lang'));
-    console.log(langLocal);
-    
-    if(langLocal != null ) {
-        lang = langLocal;
-    } 
-    else {
-        lang = lang;
-    }
-        
-    
-        setLangContentIn(lang);
+    lang = checkLocalStorage(lang);
+    setRightLanguageBtnIndexActive(lang);
+    setLangContentIn(lang);
     addCommentMarkHighlight();
     renderSkillsList();
     renderContinuallyLearning();
     renderSpecInterestToLearn();
     renderPortfolioProjects();
-    setLanguage(lang);
-    
-    
+    setLanguage(lang); 
+}
+
+function checkLocalStorage(lang) {
+    let langLocal = JSON.parse(localStorage.getItem('lang'));
+    if(langLocal != null ) {
+        lang = langLocal;  
+    } 
+    else {
+        lang = lang;
+    }
+    return lang;
+}
+
+function setRightLanguageBtnIndexActive(lang) {
+    removeLanguageBtnMark();
+    langButtonsIndex[lang].forEach(btn => {
+        btn?.classList.add('active');
+    }); 
 }
 
 function setLangContentIn(lang) {
