@@ -12,3 +12,15 @@
     font-size: 61px;
     color: #70E61C;
 }
+
+.privacy-policy-headline-highlight-left {
+    border: 2px solid #9747FF;
+    width: 130px;
+}
+
+
+
+.privacy-policy-headline-highlight-right {
+    border: 2px solid #9747FF;
+    width: 500px;
+}
