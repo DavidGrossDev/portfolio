@@ -23,6 +23,7 @@
 }
 
 @media (max-width: 500px) {
+
     .main-nav,
     .overlay-header {
         padding: 37px 25px;
@@ -223,7 +224,7 @@
         font-size: 60px;
     }
 
-     .about-section-right {
+    .about-section-right {
         width: 100%;
         height: 680px;
     }
@@ -243,6 +244,7 @@
     .me-img-highlight {
         left: -25%;
     }
+
     .about-section-right {
         height: 555px;
     }
@@ -262,6 +264,7 @@
     .about-section-right {
         height: 434px;
     }
+
     .sharedbckgrd {
         background-position: 0px 480px;
     }
@@ -691,6 +694,7 @@
 /*legal notice & privacy policy*/
 
 @media(max-width: 1313px) {
+
     .legal-notice-headline-highlight-right,
     .privacy-policy-headline-highlight-right {
         width: calc(50% - 303px);
@@ -716,9 +720,25 @@
     .privacy-policy-headline-highlight-right {
         width: calc(50% - 235px);
     }
+
+    .privacy-policy-main-content {
+        padding: 30px 25px;
+    }
 }
 
-@media(max-width: 520px) {
+@media(max-width: 880px) {
+
+    .privacy-policy-h2 {
+        font-size: 23px;
+    }
+
+    .privacy-policy-h3,
+    .privacy-policy-h4 {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 550px) {
     .legal-notice-headline-h1 {
         max-width: 260px;
         height: auto;
@@ -737,13 +757,17 @@
     }
 }
 
-@media(max-width: 389px) {
+@media(max-width: 440px) {
     .privacy-policy-headline-h1 {
         font-size: 26px;
     }
 
     .privacy-policy-headline-highlight-right {
         width: calc(50% - 145px);
+    }
+
+    .privacy-policy-main-content a {
+        font-size: 14px;
     }
 }
 
@@ -753,7 +777,15 @@
         font-size: 32px;
     }
 
+    .privacy-policy-headline-h1 {
+        font-size: 22px;
+    }
+
     .legal-notice-headline-highlight-right {
         width: calc(50% - 100px);
+    }
+
+    .privacy-policy-headline-highlight-right {
+        width: calc(50% - 123px);
     }
 }

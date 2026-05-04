@@ -33,11 +33,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 35px;
     padding: 40px 200px;
 }
 
 .privacy-policy-main-content>section {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -88,4 +89,8 @@
 .privacy-policy-contact-dates>ul {
     list-style: none;
     padding: 0;
+}
+
+.restriction-list {
+    padding-inline-start: 20px;
 }
