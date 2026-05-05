@@ -74,6 +74,7 @@ const translations = {
         },
         priPol: {
             headline: "Privacy policy",
+            disclaimer: "This privacy policy is a translated version of the original German text provided for convenience. In case of any discrepancies or inconsistencies, the German version shall prevail as the legally binding version.",
             overview: {
                 headline: "1. Overview of data protection",
                 general: {
@@ -82,6 +83,14 @@ const translations = {
                 },
                 collection: {
                     headline: "Data collection on this website",
+                    local: {
+                        headline: "Use of local storage",
+                        content: {
+                            first: "This website uses the browser’s local storage to store your language preference. This information is stored locally on your device and is not transmitted to third parties.",
+                            second: "The use of local storage is based on our legitimate interest in providing a user-friendly experience (Art. 6(1)(f) GDPR).",
+                            third: "The stored data remains on your device until it is manually deleted."
+                        }
+                    },
                     responsible: {
                         headline: "Who is responsible for data collection on this website?",
                         content: "Data processing on this website is carried out by the website operator. You can find the contact details in the section “Information about the responsible party” in this privacy policy."
@@ -305,6 +314,7 @@ const translations = {
         },
         priPol: {
             headline: "Datenschutzerklärung",
+            disclaimer: "",
             overview: {
                 headline: "1. Datenschutz auf einen Blick",
                 general: {
@@ -313,6 +323,14 @@ const translations = {
                 },
                 collection: {
                     headline: "Datenerfassung auf dieser Website",
+                    local: {
+                        headline: "Verwendung von Local Storage",
+                        content: {
+                            first: "Diese Website nutzt den Local Storage Ihres Browsers, um Ihre Sprachpräferenz zu speichern. Diese Information wird ausschließlich lokal auf Ihrem Endgerät gespeichert und nicht an Dritte weitergegeben.",
+                            second: "Die Nutzung erfolgt auf Grundlage unseres berechtigten Interesses an einer nutzerfreundlichen Darstellung (Art. 6 Abs. 1 lit. f DSGVO).",
+                            third: "Die gespeicherten Daten verbleiben auf Ihrem Endgerät, bis Sie diese manuell löschen."
+                        }
+                    },
                     responsible: {
                         headline: "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
                         content: "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen."
