@@ -19,3 +19,21 @@
         gap: 10px;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 100%;
+    }
+}

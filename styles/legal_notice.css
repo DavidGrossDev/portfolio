@@ -1,7 +1,4 @@
-
-
-
-
+@import url('../style.css');
 
 .legal-notice-headline-container {
     margin-top: 168px;
@@ -78,3 +75,44 @@
     color: #9747FF;
 }
 
+@media(max-width: 1313px) {
+    .legal-notice-headline-highlight-right {
+        width: calc(50% - 303px);
+    }
+}
+
+@media(max-width: 1000px) {
+    .legal-notice-headline-highlight-left {
+        display: none;
+    }
+
+    .legal-notice-headline-h1{
+        font-size: 42px;
+    }
+
+    .legal-notice-headline-highlight-right {
+        width: calc(50% - 208px);
+    }
+}
+
+@media(max-width: 550px) {
+    .legal-notice-headline-h1 {
+        max-width: 260px;
+        height: auto;
+    }
+
+    .legal-notice-headline-highlight-right {
+        width: calc(50% - 113px);
+    }
+}
+
+@media(max-width: 380px) {
+    .legal-notice-headline-h1 {
+        max-width: 200px;
+        font-size: 32px;
+    }
+
+    .legal-notice-headline-highlight-right {
+        width: calc(50% - 100px);
+    }
+}
