@@ -123,7 +123,7 @@ h1 {
 .landing-section-scr-dwn {
     position: absolute;
     bottom: 10%;
-    right: 57px;
+    right: 40%;
     height: 36px;
     gap: 3px;
     transform: rotateZ(90deg);
@@ -146,16 +146,18 @@ h1 {
     position: absolute;
     bottom: 6%;
     left: 0;
+    width: 40%;
 }
 
 .landing-section-footer-highlight {
-    width: 100px;
+    width: 100%;
     height: 0;
     border: 2px solid #70E61C;
 }
 
 .landing-section-footer-links {
     gap: 42px;
+    width: 100%;
 }
 
 .landing-section-footer-links a {
@@ -166,6 +168,21 @@ h1 {
 
 .landing-section-footer-links a:hover {
     scale: 1.3;
+}
+
+@media(max-width:1920px) {
+    .landing-section-scr-dwn {
+        right: 57px;
+    }
+
+    .landing-section-footer,
+    .landing-section-footer-links {
+        width: auto;
+    }
+
+    .landing-section-footer-highlight {
+        width: 100px;
+    }
 }
 
 @media (max-width: 1100px) {
