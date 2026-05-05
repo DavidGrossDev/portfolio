@@ -133,24 +133,24 @@ const specInterest = [
 const portfolioProjects = [
     {
         className: "el-pollo-loco",
-        linkToGithub: "",
-        linkToLiveTest: "",
+        linkToGithub: "https://github.com/DavidGrossDev/el_pollo_loco",
+        linkToLiveTest: "https://el-pollo-loco.gross-david.de/",
         name: "El Pollo Loco",
         dataShort: "loco",
         usedTech: "JavaScript | HTML | CSS"
     },
     {
         className: "join",
-        linkToGithub: "",
-        linkToLiveTest: "",
+        linkToGithub: "https://github.com/Fu1rkan/join",
+        linkToLiveTest: "https://join.gross-david.de/",
         name: "Join",
         dataShort: "join",
         usedTech: "JavaScript | HTML | CSS | Firebase"
     },
     {
         className: "pokedex",
-        linkToGithub: "",
-        linkToLiveTest: "",
+        linkToGithub: "https://github.com/DavidGrossDev/pokedex",
+        linkToLiveTest: "https://pokedex.gross-david.de/",
         name: "Pokédex",
         dataShort: "pokedex",
         usedTech: "JavaScript | HTML | CSS | Api"
