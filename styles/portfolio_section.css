@@ -23,14 +23,19 @@ h3 {
 .portfolio-section {
     padding: 109px 0;
     position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .portfolio-section-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
+    width: 100%;
 }
 
 .portfolio-section-header p {
@@ -45,10 +50,12 @@ h3 {
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
+    width: 100%;
 }
 
 .portfolio-section-header-headline-highlight {
-    width: 68px;
+    /* width: 68px; */
+    width: calc(50% - 226px);
     height: 0;
     border: 2px solid #9747FF;
 }
@@ -57,6 +64,7 @@ h3 {
     padding: 40px 100px 0 100px;
     flex-wrap: wrap;
     gap: 18px;
+    max-width: 1920px;
 }
 
 .portfolio-projects-section>section {
@@ -192,7 +200,7 @@ h3 {
 .portfolio-right-highlight {
     z-index: -1;
     position: absolute;
-    top: -6%;
+    top: 2%; 
     left: 66%;
 }
 
@@ -201,6 +209,20 @@ h3 {
     position: absolute;
     bottom: -6%;
     right: 80%;
+}
+
+@media(max-width: 1920px) {
+    .portfolio-section-header {
+        align-items: flex-start;
+    }
+
+    .portfolio-section-header-headline-highlight {
+        width: 68px;
+    }
+
+    .portfolio-right-highlight {
+    top: -6%; 
+}
 }
 
 @media(max-width:1438px) {
