@@ -19,11 +19,14 @@ const privacyPolicyCheckedBoxSvgRef = document.getElementById('privacy_policy_ch
 const privacyPolicyAlertMsgRef = document.getElementById('privacy_policy_alert_msg');
 const checkboxProPolContainerRef = document.getElementById('checkbox_p_container');
 const sendMessageBtnRef = document.getElementById('send_msg_btn');
+const succesSendMsgRef = document.getElementById('succes_send_msg');
 
 let inputNameIsChecked = false;
 let inputEmailIsChecked = false;
-let textareaIsChecked =false;
+let textareaIsChecked = false;
 let checkCounter = 0;
+
+
 
 inputNameRef?.addEventListener('input', () => {
     let value = inputNameRef.value.trim();
@@ -33,13 +36,12 @@ inputNameRef?.addEventListener('input', () => {
     if ((value.length < 3 && value.length >= 0) || !onlyLetters.test(value)) {
         markNameInputfieldRed();
         inputNameIsChecked = false;
-        checkFormStatus();
     } else {
         resetNameInputfield();
         markNameInputfieldGreen();
         inputNameIsChecked = true;
-        checkFormStatus();
     }
+    checkFormStatus();
 });
 
 function resetNameInputfield() {
@@ -69,13 +71,12 @@ inputEmailRef?.addEventListener('input', () => {
     if (!emailRegex.test(value)) {
         markEmailInputfieldRed();
         inputEmailIsChecked = false;
-        checkFormStatus();
     } else {
         resetEmailInputfield();
         markEmailInputfieldGreen();
         inputEmailIsChecked = true;
-        checkFormStatus();
     }
+    checkFormStatus();
 });
 
 function resetEmailInputfield() {
@@ -99,16 +100,14 @@ function markEmailInputfieldGreen() {
 
 textareaMessageRef?.addEventListener('input', () => {
     resetMessageTextarea();
-    if (textareaMessageRef.value.length < 2) {
-        console.log(textareaMessageRef.value);
+    if (textareaMessageRef.value.length < 1) {
         markMessageTextareaRed();
         textareaIsChecked = false;
-        checkFormStatus();
     } else {
         markMessageTextareaGreen();
         textareaIsChecked = true;
-        checkFormStatus();
     }
+    checkFormStatus();
 });
 
 function resetMessageTextarea() {
@@ -141,18 +140,79 @@ privacyPolicyCheckboxRef?.addEventListener('click', () => {
         privacyPolicyAlertMsgRef.classList.remove('d_none');
         privacyPolicyEmptyBoxSvgRef.classList.remove('d_none');
         privacyPolicyCheckedBoxSvgRef.classList.add('d_none');
-        checkCounter=0;
+        checkCounter = 0;
         checkFormStatus();
     }
 });
 
 function checkFormStatus() {
-    if(!inputNameIsChecked | !inputEmailIsChecked | !textareaIsChecked | checkCounter == 0) {
+    if (!inputNameIsChecked || !inputEmailIsChecked || !textareaIsChecked || checkCounter == 0) {
         sendMessageBtnRef.classList.remove('send-message-btn-active');
+        sendMessageBtnRef.disabled = true;
         return;
     }
 
-    if(inputNameIsChecked && inputEmailIsChecked && textareaIsChecked && checkCounter == 1) {
+    if (inputNameIsChecked && inputEmailIsChecked && textareaIsChecked && checkCounter == 1) {
         sendMessageBtnRef.classList.add('send-message-btn-active');
+        sendMessageBtnRef.disabled = false;
     }
+}
+
+sendMessageBtnRef?.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const formData = {
+        name: inputNameRef.value.trim(),
+        email: inputEmailRef.value.trim(),
+        message: textareaMessageRef.value.trim()
+    };
+    await tryPostMessage(formData);
+});
+
+async function tryPostMessage(formData) {
+    try {
+        const response = await fetch("https://gross-david.de/contact.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+        const data = await response.json();
+        checkData(data);
+    } catch (error) {
+        console.error(error);
+        alert("Something went wrong. Please try again later.");
+    }
+}
+
+function checkData(data) {
+    if (data.success) {
+        succesSendMsgRef.classList.remove('d_none');
+        resetInputValues();
+        resetCheckbox();
+        resetNameInputfield();
+        resetEmailInputfield();
+        resetMessageTextarea();
+        checkFormStatus();
+    } else {
+        alert("Error: " + data.error);
+    }
+    setTimeout(() => {
+        succesSendMsgRef.classList.add('d_none');
+    },1000)
+}
+
+function resetInputValues() {
+    inputNameRef.value = "";
+    inputEmailRef.value = "";
+    textareaMessageRef.value = "";
+    inputNameIsChecked = false;
+    inputEmailIsChecked = false;
+    textareaIsChecked = false;
+}
+
+function resetCheckbox() {
+    privacyPolicyEmptyBoxSvgRef.classList.remove('d_none');
+    privacyPolicyCheckedBoxSvgRef.classList.add('d_none');
+    checkCounter = 0;
 }
