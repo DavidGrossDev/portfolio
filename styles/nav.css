@@ -1,0 +1,139 @@
+.main-nav,
+.main-nav-menu,
+.main-nav-menu-links,
+.main-nav-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav-btns>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 109px;
+    padding: 37px 100px;
+    background-color: #141D2F;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.main-nav img {
+    height: 35px;
+}
+
+.main-nav-menu {
+    gap: 92px;
+}
+
+.main-nav-menu a {
+    font-size: 23px;
+}
+
+.main-nav-btns>button {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 1px solid #70E61C;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 5px 8px;
+}
+
+.main-nav-menu-links {
+    gap: 29px;
+}
+
+.main-nav-menu-links-highlight-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.main-nav-menu-links-highlight {
+    border: 1.5px solid #9747FF;
+    width: 55.5px;
+    height: 0;
+    opacity: 0;
+}
+
+.main-nav-link-svg-active {
+    opacity: 1;
+}
+
+.main-nav-menu-links-highlight-div a:hover {
+    color: #70E61C;
+}
+
+.main-nav-btns {
+    gap: 14px;
+}
+
+.main-nav-btns>button:hover:not(.active) {
+    background-color: #9747FF;
+    border-color: #9747FF;
+}
+
+.main-nav-btns>button:active:not(.active) {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #9747FF;
+}
+
+.main-nav-btns>button.active {
+    background-color: #70E61C;
+    font-weight: 700;
+}
+
+.main-nav-burger-menu-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border-width: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+@media (max-width: 1080px) {
+    .main-nav-menu {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 930px) {
+    .main-nav {
+        padding: 37px 50px;
+    }
+}
+
+@media (max-width: 820px) {
+    .main-nav-menu {
+        display: none;
+    }
+
+    .main-nav-burger-menu-btn {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .main-nav,
+    .overlay-header {
+        padding: 37px 25px;
+    }
+}

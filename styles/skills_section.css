@@ -1,0 +1,303 @@
+.skills-section,
+.skills-card,
+.continually-learnig,
+.continually-learning-hover-div,
+.interest-to-learn>div,
+.skills-section-right-small-skills-list-visuals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.interest-to-learn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-section {
+    padding: 109px 0;
+}
+
+.skills-section-left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 0 100px;
+    height: 662px;
+}
+
+.skills-section-left svg {
+    min-height: 60px;
+}
+
+.skills-section-left p {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 80px;
+}
+
+.skills-card {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    width: 88px;
+    min-height: 101px;
+    max-height: 101px;
+    text-align: center;
+}
+
+.skills-card:hover {
+    animation: paddingBounce 600ms;
+}
+
+.continually-learnig {
+    position: relative;
+    width: 88px;
+    height: 119px;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 12px;
+    gap: 10px;
+}
+
+.continually-learnig:hover>svg path {
+    fill: #FFFFFF;
+}
+
+.continually-learnig:hover .continually-learning-hover {
+    display: flex;
+}
+
+.continually-learning-hover {
+    position: absolute;
+    top: -120px;
+    left: -8px;
+    width: 188px;
+    height: 129px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.continually-learning-hover-div {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.continually-learning-hover-div::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 40px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #FFFFFF;
+}
+
+.continually-learning-hover-div>p {
+    font-size: 16px;
+    color: #000000;
+}
+
+.interest-to-learn {
+    gap: 16px;
+}
+
+.interest-to-learn>div {
+    height: 50px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.interest-to-learn>div>svg {
+    min-height: 32px;
+}
+
+.interest-to-learn p {
+    color: #000000;
+    font-size: 12px;
+}
+
+.skills-section-right {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.skills-section-right>p {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-right: 89px;
+}
+
+.skills-section-headline {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+}
+
+.skills-section-headline-highlight {
+    width: 287px;
+    height: 0;
+    border: 2px solid #1CDAE6;
+}
+
+.skills-section-right-small-skills-list {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding-right: 89px;
+}
+
+.skills-section-right-small-skills-list-visuals {
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-section-right-small-skills-list svg {
+    max-width: 48px;
+    max-height: 48px;
+    min-height: 48px;
+}
+
+.skills-section-right-callout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    color: #FFFFFF;
+    padding-right: 89px;
+}
+
+.skills-section-right-callout {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.skills-section-right-callout>span {
+    color: #9747FF;
+}
+
+.get-in-touch-btn-container {
+    height: 68px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 89px;
+}
+
+.get-in-touch-btn {
+    cursor: pointer;
+    font-size: 23px;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: #70E61C;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    transition: padding 0.15s ease-in;
+}
+
+.get-in-touch-btn:hover {
+    padding: 20px 40px;
+    background-color: #9747FF;
+}
+
+.get-in-touch-btn:active {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+@media(max-width:1380px) {
+    h2 {
+        font-size: 70px;
+    }
+}
+
+@media(max-width:1120px) {
+    .skills-section {
+        flex-direction: column;
+    }
+
+    .skills-section-left {
+        display: none;
+    }
+
+    .skills-section-right-small-skills-list {
+        display: flex;
+    }
+
+    .skills-section-right {
+        width: 100%;
+        padding-left: 89px;
+    }
+
+    .skills-section-right-callout-container {
+        align-items: flex-end;
+    }
+
+    .get-in-touch-btn-container {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-width:660px) {
+    .skills-section-right {
+        padding-left: 26px;
+    }
+
+    .skills-section-right>p,
+    .skills-section-right-small-skills-list,
+    .skills-section-right-callout-container,
+    .get-in-touch-btn-container {
+        padding-right: 26px;
+    }
+}
+
+@media(max-width:560px) {
+    h2 {
+        font-size: 50px;
+    }
+}
+
+@media(max-width:400px) {
+    h2 {
+        font-size: 40px;
+    }
+
+    .skills-section-right-small-skills-list>div {
+        gap: 11px;
+    }
+}
+
+@media(max-width:370px) {
+    h2 {
+        font-size: 32px;
+    }
+}

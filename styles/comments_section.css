@@ -1,0 +1,261 @@
+.comments-section-main,
+.comment-container,
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-img-container,
+.switch-comment-btns,
+.switch-comment-btns>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+}
+
+.comments-section-main {
+    gap: 48px;
+}
+
+.comment-container {
+    position: relative;
+    width: 852px;
+    height: 272px;
+    border: 4px solid #9747FF;
+    border-radius: 32px;
+    padding: 24px 40px;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.comment-container>svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-72%, -50%);
+}
+
+.comment-container>p {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.comment-footer {
+    gap: 6px;
+}
+
+.comment-footer-highlight {
+    width: 404px;
+    height: 0;
+    border: 1px solid #1CDAE6;
+}
+
+.comment-footer>p {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.comment-img-container-highlight {
+    width: 100px;
+    height: 0;
+    border: 2px solid #70E61C;
+}
+
+.img-circle {
+    width: 272px;
+    height: 272px;
+    border: 4px solid #70E61C;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.schuster-img {
+    width: 658px;
+    transform: rotateZ(90deg) translate(68px, 202px);
+}
+
+.eichinger-img {
+    width: 498px;
+    transform: rotateZ(0deg) translate(-117px, -10px);
+}
+
+.nuber-img {
+    width: 543px;
+    transform: rotateZ(90deg) translate(15px, 137px);
+}
+
+.switch-comment-btns {
+    width: 100%;
+    gap: 20px;
+}
+
+.switch-comment-btns>button {
+    cursor: pointer;
+    border-width: 0;
+    border: 2px solid transparent;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-mark-highlight circle {
+    fill: #70E61C;
+}
+
+.switch-comment-btns>button:hover {
+    border-color: #70E61C;
+}
+
+@media(max-width: 1400px) {
+
+    .comment-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .comment-container>svg {
+        display: none;
+    }
+
+    .comment-container {
+        width: auto;
+        min-height: 272px;
+        padding: 16px;
+        margin-left: 25px;
+    }
+}
+
+@media(max-width: 1264px) {
+    .comment-container>p {
+        font-size: 18px;
+    }
+}
+
+
+@media(max-width: 1160px) {
+    .comment-container>p {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1080px) {
+    .comments-section-main {
+        gap: 20px;
+    }
+}
+
+@media(max-width: 936px) {
+    .comments-section-main {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+
+    .comments-section-main {
+        gap: 32px;
+    }
+
+    .comment-container {
+        margin: 0 25px;
+        gap: 24px;
+    }
+
+    .comment-container {
+        margin: 0 102px;
+    }
+
+    .comment-img-container {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .comment-img-container-highlight {
+        width: calc(50% - 136px);
+    }
+}
+
+@media(max-width: 720px) {
+    .comment-container {
+        margin: 0 25px;
+    }
+}
+
+@media (max-width: 616px) {
+    .comment-container {
+        min-height: 280px;
+    }
+}
+
+@media(max-width: 566px) {
+
+    .comment-container {
+        min-height: 320px;
+    }
+
+    .comment-footer-big-highlight {
+        display: none;
+    }
+
+    .comment-footer-small-highlight {
+        display: flex;
+    }
+
+    .comment-footer-highlight {
+        width: 55px;
+    }
+
+}
+
+@media(max-width: 480px) {
+
+    .comment-container {
+        min-height: 360px;
+    }
+
+    .img-circle {
+        width: 144px;
+        height: 144px;
+    }
+
+    .schuster-img {
+        width: 352px;
+        transform: rotateZ(90deg) translate(32px, 111px);
+    }
+
+    .eichinger-img {
+        width: 270px;
+        transform: rotateZ(0deg) translate(-66px, -9px);
+    }
+
+    .nuber-img {
+        width: 281px;
+        transform: rotateZ(90deg) translate(8px, 70px);
+    }
+
+    .comment-img-container-highlight {
+        width: calc(50% - 72px);
+    }
+}
+
+@media(max-width: 424px) {
+    .comment-container {
+        min-height: 400px;
+    }
+}
+
+@media(max-width:370px) {
+    .comment-container {
+        margin: 0;
+        min-height: 410px;
+    }
+}

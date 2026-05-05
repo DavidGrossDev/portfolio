@@ -1,0 +1,104 @@
+
+.overlay-card,
+.overlay-header,
+.overlay-nav-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overlay,
+.overlay-menu-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    z-index: 5;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65); 
+}
+
+.fade-in {
+    animation: fadeIn 150ms ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 150ms ease-in-out forwards;
+}
+
+.overlay-card {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+.overlay-header {
+    height: 109px;
+    width: 100%;
+    padding: 37px 50px;
+    background-color: #141D2F;
+}
+
+.overlay-menu-body {
+    flex: 1;
+}
+
+.overlay-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+}
+
+.overlay-nav-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 29px;
+    font-size: 23px;
+    width: 133px;
+}
+
+.overlay-nav-menu-links-highlight-div:hover a,
+.overlay-nav-menu-links-highlight-div:active a{
+    color: #70E61C;
+}
+
+.overlay-nav-menu-links-highlight-div:active .overlay-nav-menu-links-highlight {
+    opacity: 1;
+}
+
+.overlay-nav-menu-links-highlight {
+    border: 1.5px solid #9747FF;
+    width: 55.5px;
+    height: 0;
+    opacity: 0;
+}
+
+.overlay-nav-btns {
+    gap: 0;
+    max-width: 81px;
+}
+
+.overlay-nav-btns>button {
+    cursor: pointer;
+    border-width: 0;
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 23px;
+    padding: 0;
+}
+
+.overlay-nav-btns>button.active {
+    color: #70E61C;
+    font-weight: 600;
+}
