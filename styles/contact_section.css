@@ -104,6 +104,15 @@ textarea {
     color: #FFFFFF;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0px 1000px #141D2F inset;
+    -webkit-text-fill-color: #FFFFFF;
+    caret-color: #FFFFFF;
+}
+
 .inputfield:focus,
 .form-textarea:focus {
     outline: none;
@@ -180,6 +189,13 @@ textarea {
 
 .send-message-btn-df-center-container {
     width: 100%;
+    position: relative;
+}
+
+.succes-send-msg {
+    position: absolute;
+    bottom: -50%;
+    color: #70E61C;
 }
 
 .send-message-btn {
