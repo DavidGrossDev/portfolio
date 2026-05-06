@@ -29,26 +29,26 @@
                 <nav class="overlay-nav">
                     <div class="overlay-nav-menu-links">
                         <div class="overlay-nav-menu-links-highlight-div">
-                            <a data-i18n="nav.about_me" href="#about_me"></a>
+                            <a data-i18n="nav.about_me" href="#about_me" title="to about-me section"></a>
                             <div class="overlay-nav-menu-links-highlight"></div>
                         </div>
                         <div class="overlay-nav-menu-links-highlight-div">
-                            <a data-i18n="nav.skills" href="#skills"></a>
+                            <a data-i18n="nav.skills" href="#skills" title="to skills section"></a>
                             <div class="overlay-nav-menu-links-highlight"></div>
                         </div>
                         <div class="overlay-nav-menu-links-highlight-div">
-                            <a href="#portfolio">Portfolio</a>
+                            <a href="#portfolio" title="to portfolio section">Portfolio</a>
                             <div class="overlay-nav-menu-links-highlight"></div>
                         </div>
                         <div class="overlay-nav-menu-links-highlight-div">
-                            <a data-i18n="nav.contact" href="#contact_section"></a>
+                            <a data-i18n="nav.contact" href="#contact_section" title="to contact section"></a>
                             <div class="overlay-nav-menu-links-highlight"></div>
                         </div>
                     </div>
                     <div class="overlay-nav-btns">
-                        <button id="language_de_mobile">DE</button>
+                        <button id="language_de_mobile" aria-label="Sprache auf Deutsch wechseln">DE</button>
                         <p>/</p>
-                        <button id="language_en_mobile">EN</button>
+                        <button id="language_en_mobile" aria-label="Switch language to English">EN</button>
                     </div>
                 </nav>
             </section>
@@ -57,26 +57,26 @@
     <main class="document-main">
         <nav class="main-nav">
             <div class="main-nav-content-limit">
-                <a id="nav_to_Landing_section" href="#landing_section"><img src="./assets/img/david.png"
+                <a id="nav_to_Landing_section" href="#landing_section" title="to landing section"><img src="./assets/img/david.png"
                         alt="my Name"></a>
                 <section class="main-nav-menu">
                     <div class="main-nav-menu-links">
                         <div class="main-nav-menu-links-highlight-div">
-                            <a data-i18n="nav.about_me" href="#about_me"></a>
+                            <a data-i18n="nav.about_me" href="#about_me" title="to about-me section"></a>
                             <div class="main-nav-menu-links-highlight"></div>
                         </div>
                         <div class="main-nav-menu-links-highlight-div">
-                            <a data-i18n="nav.skills" href="#skills"></a>
+                            <a data-i18n="nav.skills" href="#skills" title="to skills section"></a>
                             <div class="main-nav-menu-links-highlight"></div>
                         </div>
                         <div class="main-nav-menu-links-highlight-div">
-                            <a href="#portfolio">Portfolio</a>
+                            <a href="#portfolio" title="to portfolio section">Portfolio</a>
                             <div class="main-nav-menu-links-highlight"></div>
                         </div>
                     </div>
                     <div class="main-nav-btns">
-                        <button id="language_de">DE</button>
-                        <button id="language_en">EN</button>
+                        <button id="language_de" aria-label="Sprache auf Deutsch wechseln">DE</button>
+                        <button id="language_en" aria-label="Switch language to English">EN</button>
                     </div>
                 </section>
                 <button id="open_overlay" class="main-nav-burger-menu-btn">
@@ -100,7 +100,7 @@
                     </div>
                 </section>
                 <div class="landing-section-content-main-btn-container">
-                    <a class="landing-section-content-main-btn" href="#contact_section" data-i18n="landing.btn"></a>
+                    <a class="landing-section-content-main-btn" href="#contact_section" data-i18n="landing.btn" title="to contact section"></a>
                 </div>
             </div>
             <div class="landing-section-scr-dwn">
@@ -258,7 +258,7 @@
                             <p data-i18n="skills.callOut"></p>
                         </div>
                         <div class="get-in-touch-btn-container">
-                            <a class="get-in-touch-btn" href="#contact_section" data-i18n="skills.btn"></a>
+                            <a class="get-in-touch-btn" href="#contact_section" data-i18n="skills.btn" title="to contact section"></a>
                         </div>
                     </div>
                 </section>
@@ -307,7 +307,7 @@
         <section class="comments-section">
             <div id="comments_area" class="comments-section-main"></div>
             <div class="switch-comment-btns">
-                <button id="comments_left_arrow">
+                <button id="comments_left_arrow" aria-label="Switch to previous comment">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <mask id="mask0_183473_355" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
                             width="32" height="32">
@@ -329,7 +329,7 @@
                 <svg class="comment-mark" width="8" height="8" viewBox="0 0 8 8" fill="none">
                     <circle cx="4" cy="4" r="4" fill="#9747FF" />
                 </svg>
-                <button id="comments_right_arrow">
+                <button id="comments_right_arrow" aria-label="Switch to next comment">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <mask id="mask0_183473_365" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
                             width="32" height="32">
@@ -462,7 +462,7 @@
                         <footer class="form-footer">
                             <div class="alertmessage-container">
                                 <div class="privacy-policy-checkbox-container">
-                                    <button id="privacy_policy_checkbox" class="checkbox" type="button">
+                                    <button id="privacy_policy_checkbox" class="checkbox" type="button" aria-label="Checkbox for accepting the privacy policy">
                                         <svg id="privacy_policy_empty_checkbox" class="" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
                                             <mask id="mask0_183714_1736" style="mask-type:alpha"
@@ -503,7 +503,7 @@
                         </footer>
                     </form>
                     <div class="contact-section-to-landing-section-container">
-                        <a class="to-landing-section" href="#landing_section">
+                        <a class="to-landing-section" href="#landing_section" title="to landing section">
                             <svg class="to-landing-section-svg" width="39" height="39" viewBox="0 0 39 39" fill="none">
                                 <rect x="1" y="1" width="37" height="37" rx="18.5" stroke="white" stroke-width="2" />
                                 <path
@@ -533,8 +533,8 @@
         <footer class="main-footer">
             <div class="main-footer-content-limit">
                 <section class="footer-section">
-                    <a class="footer-section-to-landing-section" href="#landing_section"><img class="footer-name-img"
-                            src="./assets/img/david.png" alt=""></a>
+                    <a class="footer-section-to-landing-section" href="#landing_section" title="to landing section"><img class="footer-name-img"
+                            src="./assets/img/david.png" alt="my Name"></a>
                     <p>© David Groß 2026</p>
                     <div>
                         <section class="landing-section-footer-links">
