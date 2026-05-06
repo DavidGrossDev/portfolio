@@ -47,6 +47,22 @@
     background-color: #141D2F;
 }
 
+.overlay-turn-device-card {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #141D2F;
+    color: #70E61C;
+}
+
+.overlay-turn-device-card>p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 .overlay-menu-body {
     flex: 1;
 }
@@ -101,4 +117,13 @@
 .overlay-nav-btns>button.active {
     color: #70E61C;
     font-weight: 600;
+}
+
+@media(max-height:430px) {
+    .overlay-turn-device-card {
+        display: flex;
+    }
+    .overlay-menu-body {
+        display: none;
+    }
 }

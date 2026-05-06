@@ -212,20 +212,17 @@ h1 {
 
     .landing-section-content-main-p {
         font-size: 60px;
-        /*von 90px (ca.2/3)*/
         width: 158px;
         height: 56px;
     }
 
     h1 {
         font-size: 85px;
-        /*128px*/
         height: 94px;
     }
 
     .landing-section-content-main-container-p {
         font-size: 43px;
-        /*64px*/
         height: auto;
     }
 }
@@ -343,5 +340,42 @@ h1 {
 
     .landing-section-footer-links {
         gap: 24px;
+    }
+}
+
+@media(max-height:500px) {
+    .landing-section-content {
+        margin-top: 110px;
+        gap: 36px;
+    }
+
+    .landing-section-content-main {
+        gap: 5px;
+    }
+
+    .rotate-div {
+        width: 26px;
+        height: 70px;
+    }
+
+    .landing-section-content-main-p {
+        font-size: 26px;
+        width: 70px;
+        height: 26px;
+    }
+
+    h1 {
+        font-size: 36px;
+        height: 42px;
+    }
+
+    .landing-section-content-main-container-p {
+        font-size: 20px;
+        height: 28px;
+    }
+
+    .landing-section-footer-links {
+        gap: 24px;
+        width: 200px;
     }
 }
