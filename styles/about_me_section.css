@@ -81,11 +81,12 @@ h2 {
 }
 
 .sharedbckgrd {
-     flex-direction: column;
+    flex-direction: column;
     background-image: url('../assets/img/about-bckgrnd.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 710px;
+    width: 100%;
 }
 
 @media(max-width:1920px) {
