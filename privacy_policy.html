@@ -52,35 +52,37 @@
     </section>
     <main class="document-main">
         <nav class="main-nav">
-            <a id="nav_to_Landing_section" href="./index.html#landing_section"><img src="./assets/img/david.png"
-                    alt="my Name"></a>
-            <section class="main-nav-menu">
-                <div class="main-nav-menu-links">
-                    <div class="main-nav-menu-links-highlight-div">
-                        <a data-i18n="nav.about_me" href="./index.html#about_me"></a>
-                        <div class="main-nav-menu-links-highlight"></div>
+            <div class="main-nav-content-limit">
+                <a id="nav_to_Landing_section" href="./index.html#landing_section"><img src="./assets/img/david.png"
+                        alt="my Name"></a>
+                <section class="main-nav-menu">
+                    <div class="main-nav-menu-links">
+                        <div class="main-nav-menu-links-highlight-div">
+                            <a data-i18n="nav.about_me" href="./index.html#about_me"></a>
+                            <div class="main-nav-menu-links-highlight"></div>
+                        </div>
+                        <div class="main-nav-menu-links-highlight-div">
+                            <a data-i18n="nav.skills" href="./index.html#skills"></a>
+                            <div class="main-nav-menu-links-highlight"></div>
+                        </div>
+                        <div class="main-nav-menu-links-highlight-div">
+                            <a href="./index.html#portfolio">Portfolio</a>
+                            <div class="main-nav-menu-links-highlight"></div>
+                        </div>
                     </div>
-                    <div class="main-nav-menu-links-highlight-div">
-                        <a data-i18n="nav.skills" href="./index.html#skills"></a>
-                        <div class="main-nav-menu-links-highlight"></div>
+                    <div class="main-nav-btns">
+                        <button id="language_pp_de">DE</button>
+                        <button id="language_pp_en" class="active">EN</button>
                     </div>
-                    <div class="main-nav-menu-links-highlight-div">
-                        <a href="./index.html#portfolio">Portfolio</a>
-                        <div class="main-nav-menu-links-highlight"></div>
-                    </div>
-                </div>
-                <div class="main-nav-btns">
-                    <button id="language_pp_de">DE</button>
-                    <button id="language_pp_en" class="active">EN</button>
-                </div>
-            </section>
-            <button id="open_overlay" class="main-nav-burger-menu-btn">
-                <svg width="32" height="30" viewBox="0 0 32 30" fill="none">
-                    <path d="M1 1H31" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    <path d="M1 15H31" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    <path d="M1 29H31" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </button>
+                </section>
+                <button id="open_overlay" class="main-nav-burger-menu-btn">
+                    <svg width="32" height="30" viewBox="0 0 32 30" fill="none">
+                        <path d="M1 1H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M1 15H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M1 29H31" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
         </nav>
         <section class="privacy-policy-headline">
             <div class="privacy-policy-headline-container">
@@ -122,7 +124,8 @@
                 <p data-i18n="priPol.hosting.infoCall"></p>
                 <h3 data-i18n="priPol.hosting.allInkl.headline" class="privacy-policy-h3"></h3>
                 <p data-i18n="priPol.hosting.allInkl.content.first"></p>
-                <a href="https://all-inkl.com/datenschutzinformationen/">https://all-inkl.com/datenschutzinformationen/</a>
+                <a
+                    href="https://all-inkl.com/datenschutzinformationen/">https://all-inkl.com/datenschutzinformationen/</a>
                 <p data-i18n="priPol.hosting.allInkl.content.second"></p>
                 <h5 data-i18n="priPol.hosting.allInkl.processing.headline" class="privacy-policy-h5"></h5>
                 <p data-i18n="priPol.hosting.allInkl.processing.content"></p>
@@ -204,24 +207,30 @@
             </section>
         </main>
         <footer class="main-footer">
-            <section class="footer-section">
-                <a href="./index.html#landing_section"><img class="footer-name-img" src="./assets/img/david.png" alt=""></a>
-                <p>© David Groß 2026</p>
-                <div>
-                    <section class="landing-section-footer-links">
-                        <a href="https://github.com/DavidGrossDev"><img src="./assets/img/github-icon.png" alt="GitHub-Icon"></a>
-                        <a href="mailto:d.g1r2o3s4s@gmail.com"><img src="./assets/img/email-icon.png" alt="Email-Icon"></a>
-                        <a href="https://www.linkedin.com/in/david-gro%C3%9F-b38459408/"><img src="./assets/img/linkedin-icon.png" alt="Linkedin-Icon"></a>
-                    </section>
+            <div class="main-footer-content-limit">
+                <section class="footer-section">
+                    <a href="./index.html#landing_section"><img class="footer-name-img" src="./assets/img/david.png"
+                            alt=""></a>
+                    <p>© David Groß 2026</p>
+                    <div>
+                        <section class="landing-section-footer-links">
+                            <a href="https://github.com/DavidGrossDev"><img src="./assets/img/github-icon.png"
+                                    alt="GitHub-Icon"></a>
+                            <a href="mailto:d.g1r2o3s4s@gmail.com"><img src="./assets/img/email-icon.png"
+                                    alt="Email-Icon"></a>
+                            <a href="https://www.linkedin.com/in/david-gro%C3%9F-b38459408/"><img
+                                    src="./assets/img/linkedin-icon.png" alt="Linkedin-Icon"></a>
+                        </section>
+                    </div>
+                </section>
+                <div class="legal-notice-link-container">
+                    <a class="legal-notice-link" href="./legal_notice.html" data-i18n="footer.legNot"></a>
+                    <svg class="legal-notice-link-highlight" width="58" height="2" viewBox="0 0 58 2" fill="none">
+                        <path
+                            d="M1 0H0V2H1V0ZM56.5 2C57.0523 2 57.5 1.55228 57.5 1C57.5 0.447715 57.0523 0 56.5 0V2ZM1 2H56.5V0H1V2Z"
+                            fill="#70E61C" />
+                    </svg>
                 </div>
-            </section>
-            <div class="legal-notice-link-container">
-                <a class="legal-notice-link" href="./legal_notice.html" data-i18n="footer.legNot"></a>
-                <svg class="legal-notice-link-highlight" width="58" height="2" viewBox="0 0 58 2" fill="none">
-                    <path
-                        d="M1 0H0V2H1V0ZM56.5 2C57.0523 2 57.5 1.55228 57.5 1C57.5 0.447715 57.0523 0 56.5 0V2ZM1 2H56.5V0H1V2Z"
-                        fill="#70E61C" />
-                </svg>
             </div>
         </footer>
     </main>

@@ -1,6 +1,10 @@
 @import url('../style.css');
 
 
+.privacy-policy-headline {
+    width: 100%;
+}
+
 .privacy-policy-headline-container {
     margin-top: 168px;
     display: flex;
@@ -23,7 +27,7 @@
 
 .privacy-policy-headline-highlight-right {
     border: 2px solid #9747FF;
-    width: 500px;
+    width: calc(50% - 341px);
 }
 
 .privacy-policy-main-content {
@@ -31,7 +35,6 @@
     font-weight: 400;
     font-size: 16px;
     color: #FFFFFF;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,6 +45,7 @@
 
 .privacy-policy-main-content>section {
     width: 100%;
+    max-width: 968px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -71,7 +75,7 @@
 }
 
 .privacy-policy-h2 {
-    font-size: 33px;  
+    font-size: 33px;
 }
 
 .privacy-policy-h3 {
@@ -109,11 +113,13 @@
     }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1150px) {
     .privacy-policy-headline-highlight-left {
         display: none;
     }
+}
 
+@media(max-width: 1000px) {
     .privacy-policy-headline-h1 {
         font-size: 42px;
     }
