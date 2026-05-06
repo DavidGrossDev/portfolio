@@ -136,8 +136,8 @@ function portfolioProjectTemplate(index) {
                         <div class="project-hover-info">
                             <section class="project-hover-info-top">
                                 <div>
-                                    <a class="link-to-github" href="${portfolioProjects[index].linkToGithub}">Github</a>
-                                    <a class="link-to-live-test" href="${portfolioProjects[index].linkToLiveTest}">Live test</a>
+                                    <a class="link-to-github" href="${portfolioProjects[index].linkToGithub}" target="_blank">Github</a>
+                                    <a class="link-to-live-test" href="${portfolioProjects[index].linkToLiveTest}" target="_blank">Live test</a>
                                 </div>
                             </section>
                             <section class="project-hover-info-bottom">
