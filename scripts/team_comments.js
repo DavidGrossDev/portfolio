@@ -1,3 +1,23 @@
+/**
+ * @fileoverview Data array for team comments/testimonials.
+ * Contains team member details, roles, and multilingual comments for display.
+ */
+
+/**
+ * Represents a team comment/testimonial entry.
+ * @typedef {Object} TeamComment
+ * @property {string} name - The name of the team member.
+ * @property {string} role - The role or position of the team member.
+ * @property {string} comment_en - The comment in English.
+ * @property {string} comment_de - The comment in German.
+ * @property {string} imgsrc - Path to the team member's image.
+ * @property {string} class - CSS class for the image.
+ */
+
+/**
+ * Array of team comments/testimonials.
+ * @type {TeamComment[]}
+ */
 const teamComments = [
     {
         name: "V. Schuster",
@@ -14,7 +34,7 @@ const teamComments = [
         comment_de:"David war ein sehr geschätzter Teamkollege bei DA. Sein positives Engagement und seine Bereitschaft, Verantwortung zu übernehmen, haben wesentlich dazu beigetragen, dass wir unsere Ziele erreicht haben.",
         imgsrc: "./assets/img/e-eichinger.png",
         class : "eichinger-img"
-    }, 
+    },
     {
         name: "I. Nuber",
         role: "Frontend Engineer",

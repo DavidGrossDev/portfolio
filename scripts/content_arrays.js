@@ -1,3 +1,31 @@
+/**
+ * @fileoverview Data arrays for skills, special interests, and portfolio projects.
+ * These data structures are used by the portfolio website for rendering icon lists
+ * and project tiles.
+ */
+
+/**
+ * A generic object containing a display name and SVG icon markup.
+ * @typedef {Object} ContentItem
+ * @property {string} name - Display name of the item.
+ * @property {string} svg - SVG markup for the icon.
+ */
+
+/**
+ * An object representing a portfolio project.
+ * @typedef {Object} PortfolioProject
+ * @property {string} className - CSS class name used for project elements.
+ * @property {string} linkToGithub - URL to the GitHub repository.
+ * @property {string} linkToLiveTest - URL to the live demo of the project.
+ * @property {string} name - Project name.
+ * @property {string} dataShort - Short identifier for data attributes or filters.
+ * @property {string} usedTech - Technologies used in the project.
+ */
+
+/**
+ * List of skills with associated SVG icons.
+ * @type {ContentItem[]}
+ */
 const skillsList = [
     {
         name: "HTML",
@@ -91,6 +119,10 @@ const skillsList = [
     }
 ];
 
+/**
+ * List of special interests with associated SVG icons.
+ * @type {ContentItem[]}
+ */
 const specInterest = [
     {
         name: "React",
@@ -130,6 +162,10 @@ const specInterest = [
     }
 ];
 
+/**
+ * List of portfolio projects.
+ * @type {PortfolioProject[]}
+ */
 const portfolioProjects = [
     {
         className: "el-pollo-loco",

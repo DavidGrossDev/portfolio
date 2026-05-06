@@ -1,3 +1,13 @@
+/**
+ * @fileoverview Translation data for the portfolio website.
+ * Contains multilingual text content for English and German languages, including navigation, sections, forms, and legal documents.
+ */
+
+/**
+ * Object containing all translation strings for the website.
+ * Organized by language (en/de) and then by sections like nav, landing, about_me, etc.
+ * @type {Object<string, Object<string, Object>>}
+ */
 const translations = {
     en: {
         nav: {

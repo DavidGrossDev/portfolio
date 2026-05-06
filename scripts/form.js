@@ -1,3 +1,16 @@
+/**
+ * @fileoverview Form validation and submission logic for the contact form.
+ * Handles UI validation state, checkbox toggling, and posting the form data.
+ */
+
+/**
+ * Data object sent by the contact form.
+ * @typedef {Object} ContactFormData
+ * @property {string} name - Trimmed name value.
+ * @property {string} email - Trimmed email value.
+ * @property {string} message - Trimmed message text.
+ */
+
 const inputNameRef = document.getElementById('name');
 const inputNameFailSvgRef = document.getElementById('name_fail_svg');
 const inputNameSuccessSvgRef = document.getElementById('name_success_svg');
@@ -25,6 +38,7 @@ let inputNameIsChecked = false;
 let inputEmailIsChecked = false;
 let textareaIsChecked = false;
 let checkCounter = 0;
+let readyToSendMsg = false;
 
 
 
@@ -44,6 +58,20 @@ inputNameRef?.addEventListener('input', () => {
     checkFormStatus();
 });
 
+/**
+ * Mark the name input field as invalid and show the error UI.
+ * @returns {void}
+ */
+function markNameInputfieldRed() {
+    inputNameRef.classList.add('brd-rd');
+    inputNameFailSvgRef.classList.remove('d_none');
+    inputNameAlertMessageRef.classList.remove('d_none');
+}
+
+/**
+ * Reset the name input validation UI to its default state.
+ * @returns {void}
+ */
 function resetNameInputfield() {
     inputNameRef.classList.remove('brd-rd');
     inputNameRef.classList.remove('brd-gr');
@@ -52,12 +80,10 @@ function resetNameInputfield() {
     inputNameAlertMessageRef.classList.add('d_none');
 }
 
-function markNameInputfieldRed() {
-    inputNameRef.classList.add('brd-rd');
-    inputNameFailSvgRef.classList.remove('d_none');
-    inputNameAlertMessageRef.classList.remove('d_none');
-}
-
+/**
+ * Mark the name input field as valid and show the success icon.
+ * @returns {void}
+ */
 function markNameInputfieldGreen() {
     inputNameRef.classList.add('brd-gr');
     inputNameSuccessSvgRef.classList.remove('d_none');
@@ -79,6 +105,20 @@ inputEmailRef?.addEventListener('input', () => {
     checkFormStatus();
 });
 
+/**
+ * Mark the email input field as invalid and show the error UI.
+ * @returns {void}
+ */
+function markEmailInputfieldRed() {
+    inputEmailRef.classList.add('brd-rd');
+    inputEmailFailSvgRef.classList.remove('d_none');
+    inputEmailAlertMessageRef.classList.remove('d_none');
+}
+
+/**
+ * Reset the email input validation UI to its default state.
+ * @returns {void}
+ */
 function resetEmailInputfield() {
     inputEmailRef.classList.remove('brd-rd');
     inputEmailRef.classList.remove('brd-gr');
@@ -87,12 +127,10 @@ function resetEmailInputfield() {
     inputEmailAlertMessageRef.classList.add('d_none');
 }
 
-function markEmailInputfieldRed() {
-    inputEmailRef.classList.add('brd-rd');
-    inputEmailFailSvgRef.classList.remove('d_none');
-    inputEmailAlertMessageRef.classList.remove('d_none');
-}
-
+/**
+ * Mark the email input field as valid and show the success icon.
+ * @returns {void}
+ */
 function markEmailInputfieldGreen() {
     inputEmailRef.classList.add('brd-gr');
     inputEmailSuccessSvgRef.classList.remove('d_none');
@@ -110,6 +148,20 @@ textareaMessageRef?.addEventListener('input', () => {
     checkFormStatus();
 });
 
+/**
+ * Mark the message textarea as invalid and show the error UI.
+ * @returns {void}
+ */
+function markMessageTextareaRed() {
+    textareaMessageRef.classList.add('brd-rd');
+    textareaMessageFailSvgRef.classList.remove('d_none');
+    textareaMessageAlertMessageRef.classList.remove('d_none');
+}
+
+/**
+ * Reset the message textarea validation UI to its default state.
+ * @returns {void}
+ */
 function resetMessageTextarea() {
     textareaMessageRef.classList.remove('brd-rd');
     textareaMessageRef.classList.remove('brd-gr');
@@ -118,12 +170,10 @@ function resetMessageTextarea() {
     textareaMessageAlertMessageRef.classList.add('d_none');
 }
 
-function markMessageTextareaRed() {
-    textareaMessageRef.classList.add('brd-rd');
-    textareaMessageFailSvgRef.classList.remove('d_none');
-    textareaMessageAlertMessageRef.classList.remove('d_none');
-}
-
+/**
+ * Mark the message textarea as valid and show the success icon.
+ * @returns {void}
+ */
 function markMessageTextareaGreen() {
     textareaMessageRef.classList.add('brd-gr');
     textareaMessageSuccessSvgRef.classList.remove('d_none');
@@ -132,34 +182,55 @@ function markMessageTextareaGreen() {
 privacyPolicyCheckboxRef?.addEventListener('click', () => {
     checkCounter++;
     if (checkCounter == 1) {
-        privacyPolicyAlertMsgRef.classList.add('d_none');
-        privacyPolicyEmptyBoxSvgRef.classList.add('d_none');
-        privacyPolicyCheckedBoxSvgRef.classList.remove('d_none');
-        checkFormStatus();
+        markCheckboxAsChecked();
     } else {
-        privacyPolicyAlertMsgRef.classList.remove('d_none');
-        privacyPolicyEmptyBoxSvgRef.classList.remove('d_none');
-        privacyPolicyCheckedBoxSvgRef.classList.add('d_none');
+        markCheckboxRed();
         checkCounter = 0;
-        checkFormStatus();
     }
+    checkFormStatus();
 });
 
+/**
+ * Toggle the privacy checkbox UI to the checked state.
+ * @returns {void}
+ */
+function markCheckboxAsChecked() {
+    privacyPolicyAlertMsgRef.classList.add('d_none');
+    privacyPolicyEmptyBoxSvgRef.classList.add('d_none');
+    privacyPolicyCheckedBoxSvgRef.classList.remove('d_none');
+}
+
+/**
+ * Toggle the privacy checkbox UI to the unchecked/invalid state.
+ * @returns {void}
+ */
+function markCheckboxRed() {
+    privacyPolicyAlertMsgRef.classList.remove('d_none');
+    privacyPolicyEmptyBoxSvgRef.classList.remove('d_none');
+    privacyPolicyCheckedBoxSvgRef.classList.add('d_none');
+}
+
+/**
+ * Update the form send button state based on current validation flags.
+ * @returns {void}
+ */
 function checkFormStatus() {
     if (!inputNameIsChecked || !inputEmailIsChecked || !textareaIsChecked || checkCounter == 0) {
         sendMessageBtnRef.classList.remove('send-message-btn-active');
-        sendMessageBtnRef.disabled = true;
+        readyToSendMsg = false;
         return;
     }
 
     if (inputNameIsChecked && inputEmailIsChecked && textareaIsChecked && checkCounter == 1) {
         sendMessageBtnRef.classList.add('send-message-btn-active');
-        sendMessageBtnRef.disabled = false;
+        readyToSendMsg = true;
     }
 }
 
 sendMessageBtnRef?.addEventListener('click', async (event) => {
     event.preventDefault();
+    userFeedbackForm();
+    if(!readyToSendMsg) return;
     const formData = {
         name: inputNameRef.value.trim(),
         email: inputEmailRef.value.trim(),
@@ -168,6 +239,30 @@ sendMessageBtnRef?.addEventListener('click', async (event) => {
     await tryPostMessage(formData);
 });
 
+/**
+ * Show feedback for invalid form fields before submit.
+ * @returns {void}
+ */
+function userFeedbackForm() {
+    if (!inputNameIsChecked) {
+        markNameInputfieldRed();
+    }
+    if (!inputEmailIsChecked) {
+        markEmailInputfieldRed();
+    }
+    if (!textareaIsChecked) {
+        markMessageTextareaRed();
+    }
+    if (checkCounter == 0) {
+        markCheckboxRed();
+    }
+}
+
+/**
+ * Send the contact form data to the backend endpoint.
+ * @param {ContactFormData} formData - The data payload to send.
+ * @returns {Promise<void>}
+ */
 async function tryPostMessage(formData) {
     try {
         const response = await fetch("https://gross-david.de/contact.php", {
@@ -185,6 +280,11 @@ async function tryPostMessage(formData) {
     }
 }
 
+/**
+ * Handle the backend response after submitting the form.
+ * @param {{ success: boolean, error?: string }} data - Response payload.
+ * @returns {void}
+ */
 function checkData(data) {
     if (data.success) {
         succesSendMsgRef.classList.remove('d_none');
@@ -199,9 +299,13 @@ function checkData(data) {
     }
     setTimeout(() => {
         succesSendMsgRef.classList.add('d_none');
-    },1000)
+    }, 2000)
 }
 
+/**
+ * Reset the form input values and validation flags.
+ * @returns {void}
+ */
 function resetInputValues() {
     inputNameRef.value = "";
     inputEmailRef.value = "";
@@ -211,6 +315,10 @@ function resetInputValues() {
     textareaIsChecked = false;
 }
 
+/**
+ * Reset the privacy checkbox UI to the default unchecked state.
+ * @returns {void}
+ */
 function resetCheckbox() {
     privacyPolicyEmptyBoxSvgRef.classList.remove('d_none');
     privacyPolicyCheckedBoxSvgRef.classList.add('d_none');

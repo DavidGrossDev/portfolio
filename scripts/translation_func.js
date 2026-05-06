@@ -1,7 +1,30 @@
+/**
+ * @fileoverview Translation and language handling functions for the portfolio website.
+ * Manages language switching, local storage, and text translation across different pages.
+ */
+
+/**
+ * Reference to the skill section call-out element.
+ * @type {HTMLElement}
+ */
 const skillSectionCallOutRef = document.getElementById('skill_section_callOut');
+
+/**
+ * Flag indicating if German language is selected.
+ * @type {boolean}
+ */
 let langDe = false;
+
+/**
+ * Current language code.
+ * @type {string}
+ */
 let currentLang = "";
 
+/**
+ * Language button references for the index page.
+ * @type {Object<string, HTMLElement[]>}
+ */
 const langButtonsIndex = {
     de: [
         document.getElementById('language_de'),
@@ -13,6 +36,10 @@ const langButtonsIndex = {
     ]
 };
 
+/**
+ * Language button references for the legal notice page.
+ * @type {Object<string, HTMLElement[]>}
+ */
 const langButtonsLegal = {
     de: [
         document.getElementById('language_ln_de'),
@@ -24,6 +51,10 @@ const langButtonsLegal = {
     ]
 };
 
+/**
+ * Language button references for the privacy policy page.
+ * @type {Object<string, HTMLElement[]>}
+ */
 const langButtonsPrivacy = {
     de: [
         document.getElementById('language_pp_de'),
@@ -35,6 +66,11 @@ const langButtonsPrivacy = {
     ]
 }
 
+/**
+ * Handles language switch for the index page.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @returns {void}
+ */
 function handleLangSwitchIndex(lang) {
     removeLanguageBtnMark();
     if (lang === 'de') {
@@ -49,6 +85,11 @@ function handleLangSwitchIndex(lang) {
     init(lang);
 }
 
+/**
+ * Handles language switch for the legal notice page.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @returns {void}
+ */
 function handleLangSwitchLegal(lang) {
     removeLanguageLnBtnMark();
     if (lang === 'de') {
@@ -63,6 +104,11 @@ function handleLangSwitchLegal(lang) {
     legalNoticeInit(lang);
 }
 
+/**
+ * Handles language switch for the privacy policy page.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @returns {void}
+ */
 function handleLangSwitchPrivacy(lang) {
     removeLanguagePpBtnMark();
     if (lang === 'de') {
@@ -101,10 +147,19 @@ Object.entries(langButtonsPrivacy).forEach(([lang, buttons]) => {
     })
 });
 
+/**
+ * Saves the selected language to local storage.
+ * @param {string} lang - Language code to store.
+ * @returns {void}
+ */
 function setLangToLocalStorage(lang) {
     localStorage.setItem("lang", JSON.stringify(lang));
 }
 
+/**
+ * Returns the current language code based on the langDe flag.
+ * @returns {string} 'de' if German is selected, otherwise 'en'.
+ */
 function setCurrentLanguage() {
     if (langDe) {
         return 'de';
@@ -113,6 +168,10 @@ function setCurrentLanguage() {
     }
 }
 
+/**
+ * Removes active class from all index page language buttons.
+ * @returns {void}
+ */
 function removeLanguageBtnMark() {
     Object.values(langButtonsIndex).forEach((buttons) => {
         buttons.forEach(btn => {
@@ -122,6 +181,10 @@ function removeLanguageBtnMark() {
 
 }
 
+/**
+ * Removes active class from all legal notice language buttons.
+ * @returns {void}
+ */
 function removeLanguageLnBtnMark() {
     Object.values(langButtonsLegal).forEach((buttons) => {
         buttons.forEach(btn => {
@@ -130,6 +193,10 @@ function removeLanguageLnBtnMark() {
     });
 }
 
+/**
+ * Removes active class from all privacy policy language buttons.
+ * @returns {void}
+ */
 function removeLanguagePpBtnMark() {
     Object.values(langButtonsPrivacy).forEach((buttons) => {
         buttons.forEach(btn => {
@@ -138,6 +205,11 @@ function removeLanguagePpBtnMark() {
     });
 }
 
+/**
+ * Applies translations to elements with data-i18n attributes.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @returns {void}
+ */
 function setLanguage(lang) {
     document.querySelectorAll('[data-i18n]')?.forEach(el => {
         let key = el.getAttribute('data-i18n');
@@ -150,6 +222,12 @@ function setLanguage(lang) {
     });
 }
 
+/**
+ * Retrieves the translation for a given key from the translations object.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @param {string} key - Dot-separated key path (e.g., 'skills.learning').
+ * @returns {string} The translated text.
+ */
 function getTranslation(lang, key) {
     return key.split('.').reduce((obj, i) => obj[i], translations[lang]);
 }

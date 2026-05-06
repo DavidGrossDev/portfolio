@@ -1,18 +1,39 @@
+/**
+ * @fileoverview HTML templates and translation data for the portfolio website.
+ * Contains multilingual text objects and functions that generate HTML strings for various UI components.
+ */
+
+/**
+ * Translation object for the skills call-out message.
+ * @type {Object<string, string>}
+ */
 const translationSkillsCallOut = {
     en: `Looking for <span>another skill</span>?`,
     de: `Suchen Sie eine <span>anderen Fähigkeit</span>?`
 }
 
+/**
+ * Translation object for the privacy policy checkbox text.
+ * @type {Object<string, string>}
+ */
 const translationTemplatePriPol = {
     en: `<p>i've read the <a class="privacy-policy-link" href="./privacy_policy.html">privacy policy</a> and agree to the processing of my data as outlined.</p>`,
     de: `<p>Ich habe die <a class="privacy-policy-link" href="./privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme zu.</p>`
 }
 
+/**
+ * Translation object for the contact call-to-action message.
+ * @type {Object<string, string>}
+ */
 const translationTemplateContact = {
     en: `<p>Need a Frontend developer? <span class="contact-me-msg">Contact me!</span></p>`,
     de: `<p>Suchst du einen Frontend-Entwickler? <span class="contact-me-msg">Kontaktiere mich!</span></p>`
 }
 
+/**
+ * Translation object for legal notice sections.
+ * @type {Object<string, Object<string, string>>}
+ */
 const translationtemplatesLegalNotice = {
     en: {
         acceptance: `By accessing and using <span>Portfolio</span> (Product), you acknowledge and agree to the following
@@ -85,6 +106,11 @@ const translationtemplatesLegalNotice = {
     }
 }
 
+/**
+ * Generates HTML template for a skill card.
+ * @param {number} index - Index of the skill in the skillsList array.
+ * @returns {string} HTML string for the skill card.
+ */
 function skillCardTemplate(index) {
     return `<div class="skills-card">
                             ${skillsList[index].svg}
@@ -92,6 +118,12 @@ function skillCardTemplate(index) {
                         </div>`;
 }
 
+/**
+ * Generates HTML template for the continually learning section.
+ * @param {string} id - ID for the interest container.
+ * @param {string} color - Color for the SVG fill.
+ * @returns {string} HTML string for the learning section.
+ */
 function continuallyLearningTemplate(id, color) {
     return `<svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                             <g clip-path="url(#clip0_183337_1759)">
@@ -123,6 +155,11 @@ function continuallyLearningTemplate(id, color) {
                         </section>`;
 }
 
+/**
+ * Generates HTML template for a special interest card.
+ * @param {number} index - Index of the interest in the specInterest array.
+ * @returns {string} HTML string for the interest card.
+ */
 function specLearnCardTemplate(index) {
     return `<div>
                 ${specInterest[index].svg}
@@ -130,6 +167,11 @@ function specLearnCardTemplate(index) {
             </div>`;
 }
 
+/**
+ * Generates HTML template for a portfolio project card.
+ * @param {number} index - Index of the project in the portfolioProjects array.
+ * @returns {string} HTML string for the project card.
+ */
 function portfolioProjectTemplate(index) {
     return `<section>
                     <div class="porfolio-project-${portfolioProjects[index].className}">
@@ -165,6 +207,11 @@ function portfolioProjectTemplate(index) {
                 </section>`;
 }
 
+/**
+ * Generates HTML template for a team comment section.
+ * @param {string} lang - Language code ('en' or 'de').
+ * @returns {string} HTML string for the comment section.
+ */
 function commentTemplate(lang) {
     return `<section class="comment-container">
             <svg width="97" height="69" viewBox="0 0 97 69" fill="none">
