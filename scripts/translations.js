@@ -62,6 +62,7 @@ const translations = {
             emailMsg: "Your email is required",
             messageMsg: "Your message is empty",
             ppCheck: "Please accept the privacy policy.",
+            sendMsg: "send Message",
             succes: "Sent successfully",
             placeholder: {
                 namePh: "Your Name",
@@ -306,6 +307,7 @@ const translations = {
             emailMsg: "Deine Email ist erforderlich",
             messageMsg: "Deine Nachricht ist leer",
             ppCheck: "Bitte akzeptiere die Datenschutzerklärung",
+            sendMsg: "Nachricht senden",
             succes: "Erfolgreich gesendet",
             placeholder: {
                 namePh: "Dein Name",
