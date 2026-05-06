@@ -10,6 +10,9 @@
  */
 const translations = {
     en: {
+        overlay: {
+            turnMsg: "Please turn your Device"
+        },
         nav: {
             about_me: "About me",
             skills: "Skills",
@@ -251,6 +254,9 @@ const translations = {
         }
     },
     de: {
+        overlay: {
+            turnMsg: "Bitte dreh dein Gerät"
+        },
         nav: {
             about_me: "Über mich",
             skills: "Fähigkeiten",

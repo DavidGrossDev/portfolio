@@ -16,6 +16,12 @@ const overlay = document.getElementById('overlay');
 const navToLandingSectionRef = document.getElementById('nav_to_Landing_section');
 
 /**
+ * Reference to the overlay navigation link to landing section.
+ * @type {HTMLElement}
+ */
+const overlayToLandingSectionRef = document.getElementById('overlay_nav_to_Landing_section');
+
+/**
  * NodeList of main navigation links.
  * @type {NodeList}
  */
@@ -295,6 +301,10 @@ function openOverlay() {
 
 closeOverlayBtnRef?.addEventListener('click', () => {
     closeOverlay();  
+});
+
+overlayToLandingSectionRef?.addEventListener('click', () => {
+    closeOverlay(); 
 });
 
 /**
